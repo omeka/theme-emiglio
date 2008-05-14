@@ -1,0 +1,139 @@
+/* == Reset == */
+@import url("reset.css");
+
+/* == Generic styles ======== */
+body {font:62.5% "Helvetica Neue",Helvetica, Arial, sans-serif; color:#222; background:#f6f6f6;width:884px; margin:36px auto;}
+
+/* Headings */
+h1 {font-size:3.6em; line-height:1em; margin-bottom:1em;}
+h2 {font-size:2.4em; line-height:1.5em; margin-bottom:0.75em;}
+h3 {font-size:1.8em; line-height:1em; margin-bottom:1em; font-weight:bold; color:#a49D4C;}
+h4 {font-size:1.8em; line-height:1em; margin-bottom:1em; color:#7B8D78;}
+h5 {font-size:1.5em; line-height:1.2em; margin-bottom:1.2em; font-weight:bold; color:#7B8D78;}
+h6 {font-size:1.5em; line-height:1.2em; margin-bottom:1.2em; font-style:italic;}
+
+/* Block elements */
+p {font-size:1.2em; line-height:1.5em; margin-bottom:1.5em;}
+ul {font-size:1.2em; line-height:1.5em; margin-bottom:1.5em;margin-left:1.5em; list-style:square;}
+ol {font-size:1.2em; line-height:1.5em; margin-bottom:1.5em;}
+	li {}
+
+dl {font-size:1.2em; line-height:1.5em; margin-bottom:1.5em;}
+	dt {font-weight:bold;}
+	dd {margin-left:1.5em; margin-bottom:1.5em;}
+blockquote { margin-left:1.5em; margin-right:1.5em; font-style:italic;border:1px solid #ddd; border-width: 1px 0; padding:1.5em 0 0; margin-bottom:1.5em;}
+
+/* Inline elements */
+em,i {font-style:italic;}
+strong,b {font-weight:bold;}
+
+/* Links */
+a:link {color:#843418;}
+a:visited {color:#a49D4C;}
+a:hover {color:#7B8D78;}
+a:active {color:#7B8D78;}
+
+h1 a, h2 a, h3 a, h4 a {text-decoration:none;}
+
+/* Misc Classes */
+.navigation {list-style:none; margin-left:0;}
+
+.hTagcloud li {display:inline;}
+	.hTagcloud ul {list-style:none; margin-left:0; padding-left:0; line-height:1.8em;}
+		.hTagcloud li {display:inline;margin-right:8px;}
+
+		.popular {font-size:100%;}
+		.v-popular {font-size:140%;}
+		.vv-popular {font-size:180%;}
+		.vvv-popular {font-size:220%;}
+		.vvvv-popular {font-size:260%;}
+		.vvvvv-popular {font-size:300%;}
+		.vvvvvv-popular {font-size:320%;}
+		.vvvvvvv-popular {font-size:340%;}
+		.vvvvvvvv-popular {font-size:360%;}
+
+		.popular a, .popular a:visited {}
+		.v-popular a, .v-popular a:visited {}
+		.vv-popular a, .vv-popular a:visited {}
+		.vvv-popular a, .vvv-popular a:visited {}
+		.vvvv-popular a, .vvvv-popular a:visited {}
+		.vvvvv-popular a, .vvvvv-popular a:visited {}
+		.vvvvvv-popular a, .vvvvvv-popular a:visited {}
+		.vvvvvvv-popular a, .vvvvvvv-popular a:visited {}
+		.vvvvvvvv-popular a, .vvvvvvvv-popular a:visited {}
+
+ul.tags {margin-left:0;}
+	ul.tags li {display:inline; margin-bottom:0;}
+
+.featured {background: #7B8D78; color:#fff;padding:18px 18px 0; border-bottom:3px solid #4F584D;}
+	.featured h3 {font-size:1.2em; font-weight:bold;margin:-18px -18px 18px; padding:1em 18px; background:#4F584D; color:#fff; }
+	.featured a {color:#fff;}
+	.featured img {width: 72px; height:72px; float:right; margin-left:18px; margin-bottom:18px; border:3px solid #4F584D;}
+	
+/* == Structure == */
+
+/* =Wrap */
+#wrap {overflow:hidden; zoom:1; border:1px solid #ccc; background:#fff url(../../../../i/lines/eighteden.gif); padding:18px; border-width:0 1px 1px 0;}
+
+/* =Header */
+#header {float:left; width: 414px;}
+	#header h1 {margin-bottom:18px;}
+#search {float:right;width:414px;text-align:right;}
+	#search h2 {display:none;}
+#primary-nav {overflow:hidden; zoom:1;clear:both; margin-bottom:18px; border-top:1px solid #ddd; padding-top:18px;}
+#primary-nav ul {margin-right:-18px;}
+#primary-nav li {display:block; float:left; width: 198px; margin-right:18px;}
+	#primary-nav a {display:block; width: 198px; text-decoration:none; text-align:center; padding:9px 0;float:left;}
+	#primary-nav a:link, #primary-nav a:visited {color:#fff; background:#843418;}
+	#primary-nav a:hover, #primary-nav a:active {background:#222;}
+
+/* =Content */
+#content {overflow:hidden; zoom:1;clear:both; border-top:1px solid #ddd; margin-bottom:18px;border-bottom:1px solid #ddd;}
+	#primary {float:left; width: 486px; border-right:1px solid #ddd; padding-right:17px;padding-top:17px;}
+	#secondary {float:right; width: 324px; padding-top:17px;}
+
+	#items #primary {border:none;}
+	
+	
+	/* Secondary Nav */
+	#secondary-nav {overflow:hidden; zoom:1; margin-bottom:18px;}
+	#secondary-nav li {display:block;float:left; width:126px; margin-right:18px;}
+		#secondary-nav a {text-decoration:none; width: 126px; display:block; float:left; padding:9px 0; text-align:center; color:#fff; background:#a49D4C;border:1px solid #79743E; border-width: 0 1px 1px 0;}
+	
+/* =Footer */
+#footer {clear:both;}
+	#footer p {width: 414px; float:left;margin-bottom:0;}
+	#footer ul {width: 414px; float:right; text-align:right; margin-bottom:0;}
+	#footer li {margin-bottom:0; display:inline;}
+	#footer li a {margin-left:9px; text-decoration:none; font-weight:bold; border-left:1px solid #ddd; padding-left:9px;}
+	#footer li.nav-home a {border-width:0;}
+	
+	/* =Homepage */
+
+	#home .item .item-description {font-size:1.2em; margin-bottom:1.5em; line-height:1.5em;}
+
+	/* =ItemsBrowse */
+	.items-nav {overflow:hidden; zoom:1;}
+	.items-nav li {display:block;float:left; width:126px; margin-right:18px;}
+		.items-nav a {text-decoration:none; width: 126px; display:block; float:left; padding:9px 0; text-align:center; color:#fff; background:#a49D4C;}
+	
+	div.item {overflow:hidden; zoom:1;border-top:1px solid #ddd; padding-top:18px;}
+		div.item .item-img img {width: 100px; height:100px; float:right; margin-left:18px;border:3px solid #4F584D;}
+
+	/* =ItemsShow */
+
+	.field {}
+	.field-value {font-size:1.2em; margin-bottom:1.5em; line-height:1.5em;}
+		.field-value p {font-size:1em;}
+
+	.item-pagination {clear:both; overflow:hidden; zoom:1;border-top:1px solid #ddd;padding-top:16px; font-size:1.5em; font-weight:bold; line-height:1.2em; margin-bottom:1.2em;}
+		.item-pagination li {display:block; float:left; width: 400px; margin-bottom:0;}
+			.item-pagination li.next {float:right; text-align:right;}
+		.item-pagination a {text-decoration:none;display:block; float:left; width: 400px;}
+
+	.item-file {font-size:1.2em; line-height:1.5em; margin-bottom:1.5em;}
+	/* =Exhibits */
+
+	#featured-exhibit {background: #7B8D78; color:#fff;padding:18px; border-bottom:3px solid #4F584D;}
+		#featured-exhibit h3 {font-size:1.2em; font-weight:bold;margin:-18px -18px 18px; padding:1em 18px; background:#4F584D; color:#fff; }
+		#featured-exhibit a {color:#fff;}

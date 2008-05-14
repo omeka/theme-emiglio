@@ -1,0 +1,17 @@
+body {background:#fff; font-size: 220%; padding:0; margin:0; width:auto;}
+
+/* == Wrap == */
+#wrap {width:auto;padding:0;}
+
+#header {}
+
+#primary-nav {float:none; text-align:left; width:100%; clear:both; padding-top:0; position:absolute; top:0; left:0;}
+	#primary-nav li, #primary-nav a {float:left;width: 25%; text-align:center; margin:0;}
+	#primary-nav li {margin-bottom:2px;}
+	#primary-nav a {padding:36px 0; width: 100%; background:#222;}
+
+#content {padding:18px;}
+#primary {width: auto; float:none; margin:0;}
+
+#secondary {width:auto; float:none; margin:0;}
+
