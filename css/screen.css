@@ -65,7 +65,7 @@ h1 a, h2 a, h3 a, h4 a {text-decoration:none;}
 ul.tags {margin-left:0;}
 	ul.tags li {display:inline; margin-bottom:0;}
 
-.featured {background: #7B8D78; color:#fff;padding:18px 18px 0; border-bottom:3px solid #4F584D;}
+.featured {overflow:hidden;background: #7B8D78; color:#fff;padding:18px 18px 0; border-bottom:3px solid #4F584D;}
 	.featured h3 {font-size:1.2em; font-weight:bold;margin:-18px -18px 18px; padding:1em 18px; background:#4F584D; color:#fff; }
 	.featured a {color:#fff;}
 	.featured img {width: 72px; height:72px; float:right; margin-left:18px; margin-bottom:18px; border:3px solid #4F584D;}
@@ -92,7 +92,7 @@ ul.tags {margin-left:0;}
 	#primary {float:left; width: 486px; border-right:1px solid #ddd; padding-right:17px;padding-top:17px;}
 	#secondary {float:right; width: 324px; padding-top:17px;}
 
-	#items #primary {border:none;}
+	#items.show #primary {border:none;}
 	
 	
 	/* Secondary Nav */
@@ -107,18 +107,24 @@ ul.tags {margin-left:0;}
 	#footer li {margin-bottom:0; display:inline;}
 	#footer li a {margin-left:9px; text-decoration:none; font-weight:bold; border-left:1px solid #ddd; padding-left:9px;}
 	#footer li.nav-home a {border-width:0;}
+	#footer a:visited {color:#843418;}
 	
 	/* =Homepage */
 
 	#home .item .item-description {font-size:1.2em; margin-bottom:1.5em; line-height:1.5em;}
 
 	/* =ItemsBrowse */
+	.item {clear:both;}
+	
 	.items-nav {overflow:hidden; zoom:1;}
 	.items-nav li {display:block;float:left; width:126px; margin-right:18px;}
 		.items-nav a {text-decoration:none; width: 126px; display:block; float:left; padding:9px 0; text-align:center; color:#fff; background:#a49D4C;}
 	
+	.pagination ul {clear:both; overflow:hidden; zoom:1;padding-top:16px; font-size:1.5em; line-height:1.2em; margin-bottom:1.2em;float:right;}
+	.pagination li {display:block;float:left;margin-right:.5em;}
+	
 	div.item {overflow:hidden; zoom:1;border-top:1px solid #ddd; padding-top:18px;}
-		div.item .item-img img {width: 100px; height:100px; float:right; margin-left:18px;border:3px solid #4F584D;}
+		div.item .item-img img {width: 100px; height:100px; float:right; margin-left:18px;margin-bottom:1.5em;border:3px solid #4F584D;}
 
 	/* =ItemsShow */
 
