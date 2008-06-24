@@ -73,22 +73,23 @@ ul.tags {margin-left:0;}
 /* == Structure == */
 
 /* =Wrap */
-#wrap {overflow:hidden; zoom:1; border:1px solid #ccc; background:#fff url(../../../../i/lines/eighteden.gif); padding:18px; border-width:0 1px 1px 0;}
+#wrap {overflow:hidden; zoom:1; border:1px solid #ccc; background:#fff; padding:18px; border-width:0 1px 1px 0;}
 
 /* =Header */
 #header {float:left; width: 414px;}
 	#header h1 {margin-bottom:18px;}
 #search {float:right;width:414px;text-align:right;}
 	#search h2 {display:none;}
-#primary-nav {overflow:hidden; zoom:1;clear:both; margin-bottom:18px; border-top:1px solid #ddd; padding-top:18px;}
-#primary-nav ul {margin-right:-18px;}
+#primary-nav {overflow:hidden; clear:both; margin-bottom:18px; border-top:1px solid #ddd; padding-top:18px;}
+#primary-nav ul {margin-right:-18px;margin-bottom:0;}
 #primary-nav li {display:block; float:left; width: 198px; margin-right:18px;}
 	#primary-nav a {display:block; width: 198px; text-decoration:none; text-align:center; padding:9px 0;float:left;}
 	#primary-nav a:link, #primary-nav a:visited {color:#fff; background:#843418;}
-	#primary-nav a:hover, #primary-nav a:active {background:#222;}
+	#primary-nav a:hover {color:#fff; background:#222222;}
+	#primary-nav li.current a {color:#fff; background:#222222;}
 
 /* =Content */
-#content {overflow:hidden; zoom:1;clear:both; border-top:1px solid #ddd; margin-bottom:18px;border-bottom:1px solid #ddd;}
+#content {overflow:hidden; zoom:1;clear:both; border-top:1px solid #ddd; padding-bottom:18px;border-bottom:1px solid #ddd;}
 	#primary {float:left; width: 486px; border-right:1px solid #ddd; padding-right:17px;padding-top:17px;}
 	#secondary {float:right; width: 324px; padding-top:17px;}
 
@@ -143,3 +144,9 @@ ul.tags {margin-left:0;}
 	#featured-exhibit {background: #7B8D78; color:#fff;padding:18px; border-bottom:3px solid #4F584D;}
 		#featured-exhibit h3 {font-size:1.2em; font-weight:bold;margin:-18px -18px 18px; padding:1em 18px; background:#4F584D; color:#fff; }
 		#featured-exhibit a {color:#fff;}
+		
+	ul.exhibit-section-nav {clear:both; overflow:hidden; zoom:1; font-size:1.5em; line-height:1.2em; margin-bottom:1.2em;float:right;}
+	li.exhibit-section-nav {display:block;float:left;margin-right:.5em;}
+	
+	ul.exhibit-page-nav {clear:both; overflow:hidden; zoom:1; font-size:1.5em; line-height:1.2em; margin-bottom:1.2em;float:right;}
+	li.exhibit-page-nav {display:block;float:left;margin-right:.5em;}

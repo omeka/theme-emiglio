@@ -14,10 +14,15 @@
 <link rel="stylesheet" media="screen" href="<?php echo css('screen'); ?>" />
 <link rel="stylesheet" media="print" href="<?php echo css('print'); ?>" />
 
+<!-- Only IE6 and below see the following link -->
+<!--[if IE ]>
+	<link rel="stylesheet" media="screen" href="<?php echo css('ie'); ?>" />
+<![endif]-->
+
 <link media="only screen and (max-device-width: 480px)" href="<?php echo css('iphone'); ?>" type="text/css" rel="stylesheet" />
 
 <!-- JavaScripts -->
-<?php echo js('default'); ?>
+<?php echo js('prototype'); ?>
 
 <!-- Plugin Stuff -->
 <?php echo plugin_header(); ?>
