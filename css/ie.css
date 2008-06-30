@@ -1,0 +1,7 @@
+#primary-nav {zoom:1;}
+
+#primary-nav ul {zoom:1;}
+
+#primary-nav li.nav-collections {margin-right:0;}
+
+#primary-nav li.current a:link, #primary-nav li.current a:visited {color:#fff; background:#222222;}
