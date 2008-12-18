@@ -1,194 +1,64 @@
 <?php head(array('title' => h($item->title),'bodyid'=>'items','bodyclass' => 'show item')); ?>
 
-
-<?php
-if (function_exists('COinS')):
-    COinS($item);
-endif;
-?>
-
-
-	<div id="primary">
-		<h2><?php if($item->title) echo h($item->title); else echo 'Untitled'; ?></h2>
+<div id="primary">
+    
+	<h1><?php echo item('Dublin Core', 'Title'); ?></h1>
 	
-<!--  The following is extended metadata that is assigned based on the Type that is assigned to an item -->
-	
-	<div id="extended-metadata">
-	    <?php if(has_type($item)): ?>
-	        <div id="item-type" class="field">
-            <h3>Item Type</h3>
-            <div class="field-value"><?php echo h($item->Type->name); ?></div>
-            </div>
-            
-            <!-- This loop outputs all of the extended metadata -->
-            <?php foreach( $item->TypeMetadata as $field => $text ): ?>
-                <div id="<?php echo text_to_id($field); ?>" class="field">
-                    <h3><?php echo h($field); ?></h3>
-                    <div class="field-value"><?php echo nls2p(h($text)); ?></div>
-                </div>
-            <?php endforeach; ?>
-            
-	    <?php endif; ?>
+	<ul class="title-list">
+	    <h3>All Titles</h3>
+        <?php foreach (item('Dublin Core', 'Title', 'all') as $title): ?>
+           <li class="item-title">
+           <?php echo $title; ?>
+           </li>
+        <?php endforeach ?>
+	</ul>
 
-	</div>
-	
-	<div id="item-metadata">
+    <!--  The following function prints all the the metadata associated with an item: Dublin Core, extra element sets, etc. See http://omeka.org/codex or the examples on items/browse for information on how to print only select metadata fields. -->
+	<?php echo show_item_metadata(); ?>
 
-<!-- The following is dublin core metadata.  You can remove these fields if you do not wish
-    to display that data on the public theme -->
+</div><!-- end primary -->
 
-	    <?php if($item->publisher): ?>
-	        <div id="publisher" class="field">
-            <h3>Publisher</h3>
-            <div class="field-value"><?php echo nls2p(h($item->publisher)); ?></div> 
-            </div>   
-	    <?php endif; ?>
-	
-	    <?php if($item->creator): ?>
-	        <div id="creator" class="field">
-            <h3>Creator</h3>
-            <div class="field-value"><?php echo nls2p(h($item->creator)); ?></div>
-            </div>
-	    <?php endif; ?>
-	
-
-        <?php if($item->description): ?>
-            <div id="description" class="field">
-            <h3>Description</h3>
-            <div class="field-value"><?php echo nls2p(h($item->description)); ?></div>
-            </div>
-        <?php endif; ?>
-	    	    
-	    <?php if($item->relation): ?>
-	        <div id="relation" class="field">
-            <h3>Relation</h3>
-            <div class="field-value"><?php echo nls2p(h($item->relation)); ?></div>
-            </div>
-	    <?php endif; ?>
-	    
-	    <?php if($item->spatial_coverage): ?>
-	        <div id="spatial-coverage" class="field">
-            <h3>Spatial Coverage</h3>
-            <div class="field-value"><?php echo nls2p(h($item->spatial_coverage)); ?></div>
-            </div>
-	    <?php endif; ?>
-	    
-	    <?php if($item->rights): ?>
-	        <div id="rights" class="field">
-            <h3>Rights</h3>
-            <div class="field-value"><?php echo nls2p(h($item->rights)); ?></div>
-            </div>
-	    <?php endif; ?>
-	    
-	    <?php if($item->source): ?>
-	        <div id="source" class="field">
-            <h3>Source</h3>
-            <div class="field-value"><?php echo nls2p(h($item->source)); ?></div>
-            </div>
-	    <?php endif; ?>
-	    
-	    <?php if($item->subject): ?>
-	        <div id="subject" class="field">
-            <h3>Subject</h3>
-            <div class="field-value"><?php echo nls2p(h($item->subject)); ?></div>
-            </div>
-	    <?php endif; ?>
-	    
-	    <?php if($item->additional_creator): ?>
-	        <div id="additional-creator" class="field">
-            <h3>Additional Creator</h3>
-            <div class="field-value"><?php echo nls2p(h($item->additional_creator)); ?></div>
-            </div>
-	    <?php endif; ?>
-	    
-	    <?php if($item->format): ?>
-	        <div id="format" class="field">
-            <h3>Format</h3>
-            <div class="field-value"><?php echo nls2p(h($item->format)); ?></div>
-            </div>
-	    <?php endif; ?>
-	    
-	    <?php if($item->contributor): ?>
-	        <div id="contributor" class="field">
-            <h3>Contributor</h3>
-            <div class="field-value"><?php echo nls2p(h($item->contributor)); ?></div>
-            </div>
-	    <?php endif; ?>
-	    
-	    <?php if($item->rights_holder): ?>
-	        <div id="rights-holder" class="field">
-            <h3>Rights Holder</h3>
-            <div class="field-value"><?php echo nls2p(h($item->rights_holder)); ?></div>
-            </div>
-	    <?php endif; ?>
-	    
-	    <?php if($item->provenance): ?>
-	        <div id="provenance" class="field">
-            <h3>Provenance</h3>
-            <div class="field-value"><?php echo nls2p(h($item->provenance)); ?></div>
-            </div>
-	    <?php endif; ?>
-	    
-	    <?php if($item->date): ?>
-	        <div id="date" class="field">
-            <h3>Provenance</h3>
-            <div class="field-value"><?php echo nls2p(date('m.d.Y', strtotime($item->date))); ?></div>
-            </div>
-	    <?php endif; ?>
-	    
-	    <?php if($item->temporal_coverage_start): ?>
-	        <div id="temporal-coverage" class="field">
-            <h3>Temporal Coverage</h3>
-            <div class="field-value">
-                <?php echo date('m.d.Y', strtotime($item->temporal_coverage_start)); ?>&ndash;<?php echo date('m.d.Y', strtotime($item->temporal_coverage_end)); ?></div>
-            </div>
-	    <?php endif; ?>
-	    
-	    <div id="date-added" class="field">
-        <h3>Date Added</h3>
-        <div class="field-value"><?php echo nls2p(date('m.d.Y', strtotime($item->added))); ?></div>
-	    </div>
-	    
-	    <?php if ( has_collection($item) ): ?>
-    	    <div id="collection" class="field">
-            <h3>Collection</h3>
-            <div class="field-value"><?php echo nls2p(h($item->Collection->name)); ?></div>
-            </div>
-    	<?php endif; ?>
-	
-	</div><!-- End Dublin Core metadata -->
-</div>
 <div id="secondary">
-	<?php if(count($item->Files)): ?>
-	<div id="itemfiles">
-		<h3>Files</h3>
-		<?php echo display_files($item->Files); ?>
+    
+	<!-- The following returns all of the files associated with an item. -->
+	<div id="itemfiles" class="element">
+	    <h3>Files</h3>
+		<div class="element-text"><?php echo display_files_for_item(); ?></div>
 	</div>
-	<?php endif; ?>
 
-	<?php if(count($item->Tags)): ?>
-		<?php $tagcount = count($item->Tags); ?>
-	<div class="tags">
-		<h3>Tags:</h3>
-		<ul class="tags">
-		<?php foreach ($item->Tags as $key=>$tag): ?>
-			<li><a href="<?php echo uri('items/browse/tag/'.urlencode($tag->name)); ?>" rel="tag"><?php echo h($tag->name); ?></a><?php if($tagcount > 1 && $key != $tagcount -1) echo ', '; ?></li>
-		<?php endforeach; ?>
-		</ul>
+    <!-- The following prints a list of all tags associated with the item -->
+	<?php if (item_has_tags()): ?>
+	<div id="item-tags" class="element">
+		<h3>Tags</h3>
+		<div class="element-text tags"><?php echo item_tags_as_string(); ?></div> 
 	</div>
 	<?php endif;?>
 	
-	<div id="citation" class="field">
+	<!-- If the item belongs to a collection, the following creates a link to that collection. -->
+	<?php if ( item_belongs_to_collection() ): ?>
+        <div id="collection" class="element">
+            <h3>Collection</h3>
+            <div class="element-text"><p><?php echo link_to_collection_for_item(); ?></p></div>
+        </div>
+    <?php endif; ?>
+
+	<!-- The following prints a citation for this item. -->
+	<div id="item-citation" class="element">
     	<h3>Citation</h3>
-    	<div id="citation-value" class="field-value"><?php echo nls2p($item->getCitation()); ?></div>
+    	<div class="element-text"><?php echo item_citation(); ?></div>
 	</div>
-</div>
-	<ul class="item-pagination navigation">
-	<li id="previous-item" class="previous">
-		<?php echo link_to_previous_item($item,'Previous Item'); ?>
-	</li>
-	<li id="next-item" class="next">
-		<?php echo link_to_next_item($item,'Next Item'); ?>
-	</li>
-	</ul>
+
+</div><!-- end secondary -->
+
+    <ul class="item-pagination navigation">
+    <li id="previous-item" class="previous">
+    	<?php echo link_to_previous_item('Previous Item'); ?>
+    </li>
+    <li id="next-item" class="next">
+    	<?php echo link_to_next_item('Next Item'); ?>
+    </li>
+    </ul>
+
+	<?php echo plugin_append_to_items_show(); ?>	
+
 <?php foot(); ?>

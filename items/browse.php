@@ -1,65 +1,60 @@
 <?php head(array('title'=>'Browse Items','bodyid'=>'items','bodyclass' => 'browse')); ?>
 
-<?php
-if (function_exists('COinSMultiple')):
-    COinSMultiple($items);
-endif;
-?>
-
-	<div id="primary" class="browse">
-		<h2>Browse Items</h2>
-		<ul class="items-nav navigation" id="secondary-nav">
-			<?php echo nav(array('Browse All' => uri('items'), 'Browse by Tag' => uri('items/tags'))); ?>
-		</ul>
-		<?php echo htmlentities($_GET['tag']);?>
-		<div id="pagination-top" class="pagination"><?php echo pagination_links(); ?></div>
-		<?php foreach($items as $key => $item): ?>
-			<div class="item hentry">
-				<div class="item-meta">
-				<h3><?php echo link_to_item($item, 'show', null, array('class'=>'permalink')); ?></h3>
-
-				<?php if(has_thumbnail($item)): ?>
+<div id="primary" class="browse">
+    
+	<h1>Browse Items (<?php echo total_results(); ?> total)</h1>
+	
+	<ul class="items-nav navigation" id="secondary-nav">
+		<?php echo nav(array('Browse All' => uri('items'), 'Browse by Tag' => uri('items/tags'))); ?>
+	</ul>
+	
+	<div id="pagination-top" class="pagination"><?php echo pagination_links(); ?></div>
+	
+	<?php while (loop_items()): ?>
+		<div class="item hentry">
+			<div class="item-meta">
+			    
+			<?php if (item_has_thumbnail()): ?>
 				<div class="item-img">
-					<?php echo link_to_square_thumbnail($item); ?>						
+				<?php echo link_to_item(item_square_thumbnail()); ?>						
 				</div>
-				<?php endif; ?>
-
-				<?php if($text = item_metadata($item,'Text')): ?>
-	    			<div class="item-description">
-    				<p><?php echo snippet($text,0,250); ?></p>
-    				</div>
-				<?php elseif(!empty($item->description)): ?>
-    				<div class="item-description">
-    				<?php echo nls2p(h(snippet($item->description, 0, 250))); ?>
-    				</div>
-				<?php endif; ?>
-
-				<?php if(count($item->Tags)): ?>
-				<div class="tags"><p><strong>Tags:</strong>
-				<?php echo tag_string($item, uri('items/browse/tag/')); ?></p>
-				</div>
-				<?php endif;?>
-
-				</div>
-			</div>
-		<?php endforeach; ?>
-		<div id="pagination-bottom" class="pagination"><?php echo pagination_links(); ?></div>
+			<?php endif; ?>
 			
-	</div>
-	<div id="secondary">
-		<!-- Featured Item -->
-		<div id="featured-item" class="featured">
-			<?php $featuredItem = random_featured_item();  ?>
-			<h3>Featured Item</h3>
-			<?php if ( $featuredItem ): ?>
-			    <h4><?php echo link_to_item($featuredItem); ?></h4>
-    			<?php if(has_thumbnail($featuredItem)): ?>
-    			    <?php echo link_to_square_thumbnail($featuredItem, array('class'=>'image')); ?>
-    			<?php endif; ?>
-    			<p class="item-description"><?php echo h(snippet($featuredItem->description, 0, 150)); ?></p>	
-    		<?php else: ?>
-    				<p>You have no featured items. </p>	
-    		<?php endif; ?>	
-		</div><!--end featured-item-->
-	</div>
+			<h2><?php echo link_to_item(item('Dublin Core', 'Title'), array('class'=>'permalink')); ?></h2>
+			
+			<?php if ($text = item('Item Type Metadata', 'Text', array('snippet'=>250))): ?>
+				<div class="item-description">
+				<p><?php echo $text; ?></p>
+				</div>
+			<?php elseif ($description = item('Dublin Core', 'Description', array('snippet'=>250))): ?>
+				<div class="item-description">
+				<?php echo $description; ?>
+				</div>
+			<?php endif; ?>
+
+			<?php if (item_has_tags()): ?>
+				<div class="tags"><p><strong>Tags:</strong>
+				<?php echo item_tags_as_string(); ?></p>
+				</div>
+			<?php endif; ?>
+			
+			<?php echo plugin_append_to_items_browse_each(); ?>
+
+			</div><!-- end class="item-meta" -->
+		</div><!-- end class="item hentry" -->			
+	<?php endwhile; ?>
+	
+	<div id="pagination-bottom" class="pagination"><?php echo pagination_links(); ?></div>
+		
+</div>
+<div id="secondary">
+	<!-- Featured Item -->
+	<div id="featured-item" class="featured">
+	    <?php echo display_random_featured_item(); ?>
+	</div><!--end featured-item-->
+	
+	<?php echo plugin_append_to_items_browse(); ?>
+
+</div><!-- end primary -->
+
 <?php foot(); ?>

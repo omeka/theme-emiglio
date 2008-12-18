@@ -22,7 +22,7 @@
 <link media="only screen and (max-device-width: 480px)" href="<?php echo css('iphone'); ?>" type="text/css" rel="stylesheet" />
 
 <!-- JavaScripts -->
-<?php echo js('prototype'); ?>
+<?php echo js('default'); ?>
 
 <!-- Plugin Stuff -->
 <?php echo plugin_header(); ?>
@@ -32,15 +32,19 @@
 	<div id="wrap">
 
 		<div id="header">
-			<h1><a href="<?php echo uri(''); ?>"><?php echo settings('site_title'); ?></a></h1>
+		    
+			<div id="site-title"><?php echo link_to_home_page(); ?></div>
 		</div>
+		
 		<div id="search">
 		    <h2>Search</h2>
-		    <?php echo simple_search(array('id'=>'simple-search'),uri('items/browse')); ?>
+			<?php echo simple_search(); ?>
+			<?php echo link_to_advanced_search(); ?>
 		</div>
+		
 		<div id="primary-nav">
 			<ul class="navigation">
-			    <?php echo nav(array('About' => uri('about'), 'Items' => uri('items'), 'Exhibits' => uri('exhibits'), 'Collections'=>uri('collections'))); ?>
+			   <?php echo public_nav_main(array('Browse Items' => uri('items'), 'Browse Collections'=>uri('collections'))); ?>
 			</ul>
 		</div>
 		<div id="content">

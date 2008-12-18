@@ -5,17 +5,17 @@
 body {font:62.5% "Helvetica Neue",Helvetica, Arial, sans-serif; color:#222; background:#f6f6f6;width:884px; margin:36px auto;}
 
 /* Headings */
-h1 {font-size:3.6em; line-height:1em; margin-bottom:1em;}
-h2 {font-size:2.4em; line-height:1.5em; margin-bottom:0.75em;}
-h3 {font-size:1.8em; line-height:1em; margin-bottom:1em; font-weight:bold; color:#a49D4C;}
-h4 {font-size:1.8em; line-height:1em; margin-bottom:1em; color:#7B8D78;}
-h5 {font-size:1.5em; line-height:1.2em; margin-bottom:1.2em; font-weight:bold; color:#7B8D78;}
-h6 {font-size:1.5em; line-height:1.2em; margin-bottom:1.2em; font-style:italic;}
+#site-title {font-size:3.6em; line-height:1em; margin-bottom:1em;}
+h1 {font-size:2.4em; line-height:1.5em; margin-bottom:0.75em;}
+h2 {font-size:1.8em; line-height:1em; margin-bottom:1em; font-weight:bold; color:#a49D4C;}
+h3 {font-size:1.8em; line-height:1em; margin-bottom:1em; color:#7B8D78;}
+h4 {font-size:1.5em; line-height:1.2em; margin-bottom:1.2em; font-weight:bold; color:#7B8D78;}
+h5 {font-size:1.5em; line-height:1.2em; margin-bottom:1.2em; font-style:italic;}
 
 /* Block elements */
 p {font-size:1.2em; line-height:1.5em; margin-bottom:1.5em;}
 ul {font-size:1.2em; line-height:1.5em; margin-bottom:1.5em;margin-left:1.5em; list-style:square;}
-ol {font-size:1.2em; line-height:1.5em; margin-bottom:1.5em;}
+ol {font-size:1.2em; line-height:1.5em; margin-bottom:1.5em;list-style:decimal inside;}
 	li {}
 
 dl {font-size:1.2em; line-height:1.5em; margin-bottom:1.5em;}
@@ -33,7 +33,7 @@ a:visited {color:#a49D4C;}
 a:hover {color:#7B8D78;}
 a:active {color:#7B8D78;}
 
-h1 a, h2 a, h3 a, h4 a {text-decoration:none;}
+h1 a, h2 a, h3 a, h4 a, #site-title a {text-decoration:none;}
 
 /* Misc Classes */
 .navigation {list-style:none; margin-left:0;}
@@ -78,8 +78,9 @@ ul.tags {margin-left:0;}
 /* =Header */
 #header {float:left; width: 414px;}
 	#header h1 {margin-bottom:18px;}
-#search {float:right;width:414px;text-align:right;}
-	#search h2 {display:none;}
+div#search {float:right;width:414px;text-align:right;}
+	div#search h2 {display:none;}
+	div#search a {display:block;padding:5px 0;}
 #primary-nav {overflow:hidden; clear:both; margin-bottom:18px; border-top:1px solid #ddd; padding-top:18px;}
 #primary-nav ul {margin-right:-18px;margin-bottom:0;}
 #primary-nav li {display:block; float:left; width: 198px; margin-right:18px;}
@@ -112,7 +113,8 @@ ul.tags {margin-left:0;}
 	
 	/* =Homepage */
 
-	#home .item .item-description {font-size:1.2em; margin-bottom:1.5em; line-height:1.5em;}
+    .item-description {font-size:1.2em; margin-bottom:1.5em; line-height:1.5em;}
+    .item-description p {font-size:1em;}
 
 	/* =ItemsBrowse */
 	.item {clear:both;}
@@ -130,8 +132,9 @@ ul.tags {margin-left:0;}
 	/* =ItemsShow */
 
 	.field {}
-	.field-value {font-size:1.2em; margin-bottom:1.5em; line-height:1.5em;}
-		.field-value p {font-size:1em;}
+	.element-text {font-size:1.2em; margin-bottom:1.5em; line-height:1.5em;}
+	.element-text-empty {font-size:1.2em; margin-bottom:1.5em; line-height:1.5em;}
+		.element-text p {font-size:1em;}
 
 	.item-pagination {clear:both; overflow:hidden; zoom:1;border-top:1px solid #ddd;padding-top:16px; font-size:1.5em; font-weight:bold; line-height:1.2em; margin-bottom:1.2em;}
 		.item-pagination li {display:block; float:left; width: 400px; margin-bottom:0;}
@@ -139,6 +142,31 @@ ul.tags {margin-left:0;}
 		.item-pagination a {text-decoration:none;display:block; float:left; width: 400px;}
 
 	.item-file {font-size:1.2em; line-height:1.5em; margin-bottom:1.5em;}
+	
+	/* Advanced Search */
+    textarea {width:328px; height:312px;float:right;}
+    legend {display:none;}
+    fieldset {display:block; clear:both;}
+    label {font-size:1.2em;}
+    .label {font-size:1.23em;}
+    .inputs {overflow:hidden;zoom:1;}
+    .field {padding:1.5em 0; overflow:hidden; width:472px;}
+    .field label {float:left; width: 124px;font-weight:normal;clear:left; }
+    .field .label {float:left; width: 124px;font-weight:normal;clear:left; }
+    .field .textinput, .field select {float:right; width: 328px;background:#fff;}
+    .field select {width: 328px;}
+    .field input {margin:0;margin-left:16px;}
+    input.submitinput {margin-top:1em;}
+    .radioinputs {display:block; margin-bottom:0.5em; overflow:hidden;}
+    .radioinputs label {display:block; float:left; width: 48%; clear:none;}
+    input#description {width: 328px; height: 312px;}
+    .search-entry select {margin-bottom:.5em;}
+    #primary #submit_search {margin:.5em 0 1em 425px;}
+	
+	.no-results {margin:10px;}
+	#advanced_search_header {font-size:1.4em;}
+	#primary #basic_search_header {font-size:1.4em;}
+	
 	/* =Exhibits */
 
 	#featured-exhibit {background: #7B8D78; color:#fff;padding:18px; border-bottom:3px solid #4F584D;}
