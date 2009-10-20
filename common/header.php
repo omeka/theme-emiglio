@@ -11,15 +11,15 @@
 <?php echo auto_discovery_link_tag(); ?>
 
 <!-- Stylesheets -->
-<link rel="stylesheet" media="screen" href="<?php echo css('screen'); ?>" />
-<link rel="stylesheet" media="print" href="<?php echo css('print'); ?>" />
+<link rel="stylesheet" media="screen" href="<?php echo html_escape(css('screen')); ?>" />
+<link rel="stylesheet" media="print" href="<?php echo html_escape(css('print')); ?>" />
 
 <!-- Only IE6 and below see the following link -->
 <!--[if IE ]>
-	<link rel="stylesheet" media="screen" href="<?php echo css('ie'); ?>" />
+	<link rel="stylesheet" media="screen" href="<?php echo html_escape(css('ie')); ?>" />
 <![endif]-->
 
-<link media="only screen and (max-device-width: 480px)" href="<?php echo css('iphone'); ?>" type="text/css" rel="stylesheet" />
+<link media="only screen and (max-device-width: 480px)" href="<?php echo html_escape(css('iphone')); ?>" type="text/css" rel="stylesheet" />
 
 <!-- JavaScripts -->
 <?php echo js('default'); ?>
@@ -36,7 +36,7 @@
 			<div id="site-title"><?php echo link_to_home_page(); ?></div>
 		</div>
 		
-		<div id="search">
+		<div id="search-wrap">
 		    <h2>Search</h2>
 			<?php echo simple_search(); ?>
 			<?php echo link_to_advanced_search(); ?>

@@ -1,11 +1,11 @@
-<?php head(array('title' => h($item->title),'bodyid'=>'items','bodyclass' => 'show item')); ?>
+<?php head(array('title' => html_escape($item->title),'bodyid'=>'items','bodyclass' => 'show item')); ?>
 
 <div id="primary">
     
 	<h1><?php echo item('Dublin Core', 'Title'); ?></h1>
-	
+
+    <h3>All Titles</h3>
 	<ul class="title-list">
-	    <h3>All Titles</h3>
         <?php foreach (item('Dublin Core', 'Title', 'all') as $title): ?>
            <li class="item-title">
            <?php echo $title; ?>
@@ -35,7 +35,7 @@
 	<?php endif;?>
 	
 	<!-- If the item belongs to a collection, the following creates a link to that collection. -->
-	<?php if ( item_belongs_to_collection() ): ?>
+	<?php if (item_belongs_to_collection()): ?>
         <div id="collection" class="element">
             <h3>Collection</h3>
             <div class="element-text"><p><?php echo link_to_collection_for_item(); ?></p></div>

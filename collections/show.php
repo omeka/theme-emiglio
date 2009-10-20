@@ -1,4 +1,4 @@
-<?php head(array('title'=>h($collection->name))); ?>
+<?php head(array('title'=>html_escape($collection->name))); ?>
 
 <div id="primary" class="show">
 

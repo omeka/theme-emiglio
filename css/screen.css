@@ -78,9 +78,9 @@ ul.tags {margin-left:0;}
 /* =Header */
 #header {float:left; width: 414px;}
 	#header h1 {margin-bottom:18px;}
-div#search {float:right;width:414px;text-align:right;}
-	div#search h2 {display:none;}
-	div#search a {display:block;padding:5px 0;}
+div#search-wrap {float:right;width:414px;text-align:right;}
+	div#search-wrap h2 {display:none;}
+	div#search-wrap a {display:block;padding:5px 0;}
 #primary-nav {overflow:hidden; clear:both; margin-bottom:18px; border-top:1px solid #ddd; padding-top:18px;}
 #primary-nav ul {margin-right:-18px;margin-bottom:0;}
 #primary-nav li {display:block; float:left; width: 198px; margin-right:18px;}
@@ -161,7 +161,8 @@ div#search {float:right;width:414px;text-align:right;}
     .radioinputs label {display:block; float:left; width: 48%; clear:none;}
     input#description {width: 328px; height: 312px;}
     .search-entry select {margin-bottom:.5em;}
-    #primary #submit_search {margin:.5em 0 1em 425px;}
+    #submit_search_advanced {margin:.5em 0 1em 425px;}
+
 	
 	.no-results {margin:10px;}
 	#advanced_search_header {font-size:1.4em;}

@@ -27,7 +27,7 @@
     				</div>
 				<?php endif; ?>
 				
-				<?php if($desc = item('Dublin Core', 'Description', array('snippet'=>150))): ?>
+				<?php if ($desc = item('Dublin Core', 'Description', array('snippet'=>150))): ?>
 				    
 				    <div class="item-description"><?php echo $desc; ?><p><?php echo link_to_item('see more',(array('class'=>'show'))) ?></p></div>
 				
@@ -42,7 +42,7 @@
 			
 		<?php endif; ?>
 		
-		<p class="view-items-link"><a href="<?php echo uri('items'); ?>">View All Items</a></p>
+		<p class="view-items-link"><a href="<?php echo html_escape(uri('items')); ?>">View All Items</a></p>
 		
 	</div><!--end recent-items -->		
 </div>
