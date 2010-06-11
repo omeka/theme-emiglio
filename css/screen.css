@@ -1,5 +1,46 @@
 /* == Reset == */
-@import url("reset.css");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+/* remember to define focus styles! */
+:focus, :active {
+	outline: 0;
+}
+body {
+	line-height: 1;
+	color: black;
+	background: white;
+}
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+caption, th, td {
+	text-align: left;
+	font-weight: normal;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+}
 
 /* == Generic styles ======== */
 body {font:62.5% "Helvetica Neue",Helvetica, Arial, sans-serif; color:#222; background:#f6f6f6;width:884px; margin:36px auto;}
@@ -11,13 +52,17 @@ h2 {font-size:1.8em; line-height:1em; margin-bottom:1em; font-weight:bold; color
 h3 {font-size:1.8em; line-height:1em; margin-bottom:1em; color:#7B8D78;}
 h4 {font-size:1.5em; line-height:1.2em; margin-bottom:1.2em; font-weight:bold; color:#7B8D78;}
 h5 {font-size:1.5em; line-height:1.2em; margin-bottom:1.2em; font-style:italic;}
+h6 {font-size:1.2em; line-height: 1.5em; font-weight:bold;}
 
 /* Block elements */
-p {font-size:1.2em; line-height:1.5em; margin-bottom:1.5em;}
-ul {font-size:1.2em; line-height:1.5em; margin-bottom:1.5em;margin-left:1.5em; list-style:square;}
-ol {font-size:1.2em; line-height:1.5em; margin-bottom:1.5em;list-style:decimal inside;}
-	li {}
-
+p,ul,ol,do {font-size:1.2em; line-height:1.5em; margin-bottom:1.5em;}
+ul {margin-left:1.5em;}
+ol {margin-left:1.5em;}
+li * {font-size:1em;}
+ul ul,
+ul ol,
+ol ol,
+ol ul {margin-bottom:0;}
 dl {font-size:1.2em; line-height:1.5em; margin-bottom:1.5em;}
 	dt {font-weight:bold;}
 	dd {margin-left:1.5em; margin-bottom:1.5em;}
@@ -34,6 +79,11 @@ a:hover {color:#7B8D78;}
 a:active {color:#7B8D78;}
 
 h1 a, h2 a, h3 a, h4 a, #site-title a {text-decoration:none;}
+
+/* Tables */
+table {width: 100%;font-size:1.2em;}
+th,td {border-bottom:1px solid #ddd; margin:0;padding:0.5em 0;}
+th {border-width: 3px; text-align:left;color: #a49D4C;font-weight:bold;}
 
 /* Misc Classes */
 .navigation {list-style:none; margin-left:0;}
@@ -66,7 +116,7 @@ ul.tags {margin-left:0;}
 	ul.tags li {display:inline; margin-bottom:0;}
 
 .featured {overflow:hidden;background: #7B8D78; color:#fff;padding:18px 18px 0; border-bottom:3px solid #4F584D;}
-	.featured h3 {font-size:1.2em; font-weight:bold;margin:-18px -18px 18px; padding:1em 18px; background:#4F584D; color:#fff; }
+	.featured h2 {font-size:1.2em; font-weight:bold;margin:-18px -18px 18px; padding:1em 18px; background:#4F584D; color:#fff; }
 	.featured a {color:#fff;}
 	.featured img {width: 72px; height:72px; float:right; margin-left:18px; margin-bottom:18px; border:3px solid #4F584D;}
 	
@@ -103,8 +153,8 @@ div#search-wrap {float:right;width:414px;text-align:right;}
 		#secondary-nav a {text-decoration:none; width: 126px; display:block; float:left; padding:9px 0; text-align:center; color:#fff; background:#a49D4C;border:1px solid #79743E; border-width: 0 1px 1px 0;}
 	
 /* =Footer */
-#footer {clear:both;}
-	#footer p {width: 414px; float:left;margin-bottom:0;}
+#footer {clear:both;padding-top:18px;}
+	#footer p {width: 414px; float:left;margin-bottom:0; font-weight:bold;}
 	#footer ul {width: 414px; float:right; text-align:right; margin-bottom:0;}
 	#footer li {margin-bottom:0; display:inline;}
 	#footer li a {margin-left:9px; text-decoration:none; font-weight:bold; border-left:1px solid #ddd; padding-left:9px;}
