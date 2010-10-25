@@ -30,7 +30,18 @@
 		<?php endwhile; ?>
 	<?php else: ?>
 	    <p>No collections to display.</p>
-	<?php endif; ?>
+	<?php endif; ?></div><!-- end ="primary" -->
+	<div id="secondary">
+	<div id="featured-collection">
+	    <?php echo display_random_featured_collection(); ?>
+	</div><!-- end featured collection -->
+</div>
+	
+    <?php echo plugin_append_to_collections_browse(); ?>
+
+
+		
+<?php foot(); ?>
         <?php echo plugin_append_to_collections_browse(); ?>
 
 </div><!-- end primary -->

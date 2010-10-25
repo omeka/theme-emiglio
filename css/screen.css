@@ -234,7 +234,7 @@ div#search-wrap {float:right;width:414px;text-align:right;}
 	#featured-exhibit {background: #7B8D78; color:#fff;padding:18px; border-bottom:3px solid #4F584D;}
 		#featured-exhibit h3 {font-size:1.2em; font-weight:bold;margin:-18px -18px 18px; padding:1em 18px; background:#4F584D; color:#fff; }
 		#featured-exhibit a {color:#fff;}
-		
+		#exhibit #primary {width: 776px;}
 	ul.exhibit-section-nav {clear:both; overflow:hidden; zoom:1; font-size:1.5em; line-height:1.2em; margin-bottom:1.2em;float:right;}
 	li.exhibit-section-nav {display:block;float:left;margin-right:.5em;}
 	
