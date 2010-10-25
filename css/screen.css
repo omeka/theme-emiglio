@@ -205,7 +205,6 @@ div#search-wrap {float:right;width:414px;text-align:right;}
 	.item-file {font-size:1.2em; line-height:1.5em; margin-bottom:1.5em;}
 	
 	/* Advanced Search */
-    textarea {width:328px; height:312px;float:right;}
     legend {display:none;}
     fieldset {display:block; clear:both;}
     label {font-size:1.2em;}
@@ -216,7 +215,6 @@ div#search-wrap {float:right;width:414px;text-align:right;}
     .field .label {float:left; width: 124px;font-weight:normal;clear:left; }
     .field .textinput, .field select {float:right; width: 328px;background:#fff;}
     .field select {width: 328px;}
-    .field input {margin:0;margin-left:16px;}
     input.submitinput {margin-top:1em;}
     .radioinputs {display:block; margin-bottom:0.5em; overflow:hidden;}
     .radioinputs label {display:block; float:left; width: 48%; clear:none;}
