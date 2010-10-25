@@ -1,6 +1,7 @@
 <?php head(array('title'=>'Browse Collections','bodyid'=>'collections','bodyclass' => 'browse')); ?>
 <div id="primary">
 	<h1>Collections</h1>
+	<?php if (has_collections_for_loop()): ?>
     <div class="pagination"><?php echo pagination_links(); ?></div>
 		<?php while (loop_collections()): ?>
 			<div class="collection">
@@ -27,7 +28,9 @@
             
             </div><!-- end class="collection" -->
 		<?php endwhile; ?>
-		
+	<?php else: ?>
+	    <p>No collections to display.</p>
+	<?php endif; ?>
         <?php echo plugin_append_to_collections_browse(); ?>
 
 </div><!-- end primary -->

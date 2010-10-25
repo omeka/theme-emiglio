@@ -14,7 +14,7 @@
 	</ul>
 
     <!--  The following function prints all the the metadata associated with an item: Dublin Core, extra element sets, etc. See http://omeka.org/codex or the examples on items/browse for information on how to print only select metadata fields. -->
-	<?php echo show_item_metadata(); ?>
+	<?php echo emiglio_show_item_metadata(); ?>
 
 </div><!-- end primary -->
 

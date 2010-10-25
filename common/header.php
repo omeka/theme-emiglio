@@ -32,7 +32,7 @@
 
 		<div id="header">
 		    
-			<div id="site-title"><?php echo link_to_home_page(); ?></div>
+		<div id="site-title"><?php echo link_to_home_page(emiglio_display_logo()); ?></div>
 		</div>
 		
 		<div id="search-wrap">
@@ -40,10 +40,11 @@
 			<?php echo simple_search(); ?>
 			<?php echo link_to_advanced_search(); ?>
 		</div>
+		<?php echo emiglio_header_image(); ?>
 		
 		<div id="primary-nav">
 			<ul class="navigation">
-			   <?php echo public_nav_main(array('Browse Items' => uri('items'), 'Browse Collections'=>uri('collections'))); ?>
+			   <?php echo emiglio_public_nav_header(); ?>
 			</ul>
 		</div>
 		<div id="content">

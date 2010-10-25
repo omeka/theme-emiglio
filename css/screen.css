@@ -139,6 +139,17 @@ div#search-wrap {float:right;width:414px;text-align:right;}
 	#primary-nav a:hover {color:#fff; background:#222222;}
 	#primary-nav li.current a {color:#fff; background:#222222;}
 
+    #header-image {
+        clear:both;
+        margin-bottom:18px;
+        padding-top:17px;
+        border-top: 1px solid #ddd;
+    }
+    #header-image img {
+        display:block;
+        max-width: 100%;
+    }
+    
 /* =Content */
 #content {overflow:hidden; zoom:1;clear:both; border-top:1px solid #ddd; padding-bottom:18px;border-bottom:1px solid #ddd;}
 	#primary {float:left; width: 486px; border-right:1px solid #ddd; padding-right:17px;padding-top:17px;}
