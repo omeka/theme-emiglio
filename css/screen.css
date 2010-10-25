@@ -132,11 +132,11 @@ div#search-wrap {float:right;width:414px;text-align:right;}
 	div#search-wrap h2 {display:none;}
 	div#search-wrap a {display:block;padding:5px 0;}
 #primary-nav {overflow:hidden; clear:both; margin-bottom:18px; border-top:1px solid #ddd; padding-top:18px;}
-#primary-nav ul {margin-right:-18px;margin-bottom:0;}
-#primary-nav li {display:block; float:left; width: 198px; margin-right:18px;}
-	#primary-nav a {display:block; width: 198px; text-decoration:none; text-align:center; padding:9px 0;float:left;}
+#primary-nav ul {margin-right:-18px;margin-bottom:0;background:#843418;overflow:hidden;}
+#primary-nav li {display:block; float:left; margin-right:18px;}
+	#primary-nav a {display:block;text-decoration:none; text-align:center; padding:9px;float:left;}
 	#primary-nav a:link, #primary-nav a:visited {color:#fff; background:#843418;}
-	#primary-nav a:hover {color:#fff; background:#222222;}
+	#primary-nav a:hover {color:#fff;}
 	#primary-nav li.current a {color:#fff; background:#222222;}
 
     #header-image {
