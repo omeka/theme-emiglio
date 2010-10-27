@@ -1,7 +1,7 @@
 <?php head(array('bodyid'=>'home')); ?>	
 
 <div id="primary">
-    <p><?php echo strip_formatting(get_theme_option('Homepage Text')); ?></p>
+    <p><?php echo get_theme_option('Homepage Text'); ?></p>
 	    <?php if (get_theme_option('Display Featured Item') == 1): ?>
 	<!-- Featured Item -->
 	<div id="featured-item">
