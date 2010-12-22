@@ -1,38 +1,35 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en-us">
 <head>
-<title><?php echo settings('site_title'); echo $title ? ' | ' . $title : ''; ?></title>
-
-<!-- Meta -->
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="description" content="<?php echo settings('description'); ?>" />
-
-<?php echo auto_discovery_link_tag(); ?>
-
-<!-- Stylesheets -->
-<link rel="stylesheet" media="screen" href="<?php echo html_escape(css('screen')); ?>" />
-
-<!-- Only IE6 and below see the following link -->
-<!--[if IE ]>
-	<link rel="stylesheet" media="screen" href="<?php echo html_escape(css('ie')); ?>" />
-<![endif]-->
-
-<link media="only screen and (max-device-width: 480px)" href="<?php echo html_escape(css('iphone')); ?>" type="text/css" rel="stylesheet" />
-
-<!-- JavaScripts -->
-<?php echo js('default'); ?>
-
-<!-- Plugin Stuff -->
-<?php echo plugin_header(); ?>
+    <meta charset="utf-8">
+    <?php if ( $description = settings('description')): ?>
+    <meta name="description" content="<?php echo $description; ?>" />
+    <?php endif; ?>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title><?php echo settings('site_title'); echo isset($title) ? ' | ' . $title : ''; ?></title>
+    
+    <?php echo auto_discovery_link_tag(); ?>
+    
+    <!-- Plugin Stuff -->
+    <?php plugin_header(); ?>
+    
+    <!-- Stylesheets -->
+    <?php 
+    queue_css('style');
+    display_css(); 
+    ?>
+    
+    <!-- JavaScripts -->
+    <?php display_js(); ?>
 
 </head>
-<body<?php echo $bodyid ? ' id="'.$bodyid.'"' : ''; ?><?php echo $bodyclass ? ' class="'.$bodyclass.'"' : ''; ?>>
+<body<?php echo isset($bodyid) ? ' id="'.$bodyid.'"' : ''; ?><?php echo isset($bodyclass) ? ' class="'.$bodyclass.'"' : ''; ?>>
 	<div id="wrap">
 
 		<div id="header">
 		    
-		<div id="site-title"><?php echo link_to_home_page(emiglio_display_logo()); ?></div>
+		<div id="site-title"><?php echo link_to_home_page(custom_display_logo()); ?></div>
 		</div>
 		
 		<div id="search-wrap">
@@ -40,11 +37,11 @@
 			<?php echo simple_search(); ?>
 			<?php echo link_to_advanced_search(); ?>
 		</div>
-		<?php echo emiglio_header_image(); ?>
+		<?php echo custom_header_image(); ?>
 		
 		<div id="primary-nav">
 			<ul class="navigation">
-			   <?php echo emiglio_public_nav_header(); ?>
+			   <?php echo custom_public_nav_header(); ?>
 			</ul>
 		</div>
 		<div id="content">
