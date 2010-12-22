@@ -1,4 +1,4 @@
-<?php head(array('title'=>'Browse by Tag','bodyid'=>'items','bodyclass'=>'tags')); ?>
+<?php head(array('title'=>'Browse by Tag','bodyid'=>'items','bodyclass'=>'tags full')); ?>
 
 <div id="primary">
     

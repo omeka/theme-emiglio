@@ -1,4 +1,4 @@
-<?php head(array('title'=>html_escape($collection->name))); ?>
+<?php head(array('title'=>collection('Name'), 'bodyid'=>'collections', 'bodyclass' => 'show')); ?>
 
 <div id="primary" class="show">
 
@@ -18,8 +18,8 @@
         </div>
     </div><!-- end collectors -->
 
-    <p class="view-items-link"><?php echo link_to_browse_items('View the items in ' . collection('Name'), array('collection' => collection('id'))); ?></p>
-    
+</div>
+<div id="secondary">
     <div id="collection-items">
         <?php while (loop_items_in_collection(5)): ?>
             
@@ -40,12 +40,12 @@
     			<?php echo $description; ?>
     			</div>
 		    <?php endif; ?>
-		
+	
     <?php endwhile; ?>
     </div><!-- end collection-items -->
-    
-    <?php echo plugin_append_to_collections_show(); ?>
+        <p class="view-items-link"><?php echo link_to_browse_items('View the items in ' . collection('Name'), array('collection' => collection('id'))); ?></p>
 
 </div>
+<?php echo plugin_append_to_collections_show(); ?>
 
 <?php foot(); ?>

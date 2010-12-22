@@ -1,17 +1,8 @@
-<?php head(array('title' => html_escape($item->title),'bodyid'=>'items','bodyclass' => 'show item')); ?>
+<?php head(array('title' => item('Dublin Core', 'Title'), 'bodyid'=>'items','bodyclass' => 'show')); ?>
 
 <div id="primary">
     
 	<h1><?php echo item('Dublin Core', 'Title'); ?></h1>
-
-    <h3>All Titles</h3>
-	<ul class="title-list">
-        <?php foreach (item('Dublin Core', 'Title', 'all') as $title): ?>
-           <li class="item-title">
-           <?php echo $title; ?>
-           </li>
-        <?php endforeach ?>
-	</ul>
 
     <!--  The following function prints all the the metadata associated with an item: Dublin Core, extra element sets, etc. See http://omeka.org/codex or the examples on items/browse for information on how to print only select metadata fields. -->
 	<?php echo custom_show_item_metadata(); ?>
@@ -32,7 +23,7 @@
 		<h3>Tags</h3>
 		<div class="element-text tags"><?php echo item_tags_as_string(); ?></div> 
 	</div>
-	<?php endif;?>
+	<?php endif; ?>
 	
 	<!-- If the item belongs to a collection, the following creates a link to that collection. -->
 	<?php if (item_belongs_to_collection()): ?>
