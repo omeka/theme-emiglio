@@ -1,8 +1,11 @@
 <?php head(array('bodyid'=>'home')); ?>	
 
 <div id="primary">
-    <p><?php echo get_theme_option('Homepage Text'); ?></p>
-	    <?php if (get_theme_option('Display Featured Item') == 1): ?>
+    <?php if ($homepageText = get_theme_option('Homepage Text')): ?>
+        <!-- Homepage Text -->
+        <?php echo $homepageText; ?>
+    <?php endif; ?>
+	<?php if (get_theme_option('Display Featured Item') == 1): ?>
 	<!-- Featured Item -->
 	<div id="featured-item">
 	    <?php echo display_random_featured_item(); ?>
@@ -51,7 +54,7 @@
 <div id="secondary">
 	<?php if (get_theme_option('Display Featured Collection') == 1): ?>
 		<!-- Featured Collection -->
-		    	<div id="featured-collection">
+		    	<div id="featured-collection" class="featured">
 		    	    <?php echo display_random_featured_collection(); ?>
 		    	</div><!-- end featured collection -->
 				<?php endif; ?>	
