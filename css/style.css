@@ -216,7 +216,7 @@
 
     	#featured-exhibit {background: #7B8D78; color:#fff;padding:18px; border-bottom:3px solid #4F584D;}
     		#featured-exhibit h2 {font-size:1.2em; font-weight:bold;margin:-18px -18px 18px; padding:1em 18px; background:#4F584D; color:#fff; }
-    		#featured-exhibit a {color:#fff;}
+    		#featured-exhibit a {color:#4F584D;}
     		#exhibit #primary {width: auto; border:none;}
 
             .exhibit-section-nav,
@@ -228,8 +228,8 @@
             .exhibit-page-nav li {display:block; float:left; margin-right:18px;}
             	.exhibit-section-nav a,
             	.exhibit-page-nav a {display:block;text-decoration:none; text-align:center; padding:9px;float:left;}
-            	.exhibit-section-nav a:link, #primary-nav a:visited {color:#fff; }
-            	.exhibit-section-nav a:hover {color:#fff;}
+            	.exhibit-section-nav a:link, #primary-nav a:visited {color:#4F584D }
+            	.exhibit-section-nav a:hover {color:#7B8D78;}
             	.exhibit-section-nav li.current a {color:#444; font-weight:bold;border-bottom:3px solid #ddd;}
             .exhibit-page-nav {margin-bottom:20px;}
             .exhibit-page-nav li.current a {font-weight:bold; color: #444;}
