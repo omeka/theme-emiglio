@@ -55,7 +55,8 @@
     body {font:62.5% "Helvetica Neue",Helvetica, Arial, sans-serif; color:#222; background:#f6f6f6;width:884px; margin:36px auto;}
 
     /* Headings */
-    #site-title {font-size:3.6em; line-height:1em; margin-bottom:1em;}
+    #header {margin-bottom:18px;}
+    #site-title {font-size:3.6em;}
     h1 {font-size:2.4em; line-height:1.5em; margin-bottom:0.75em;}
     h2 {font-size:1.8em; line-height:1em; margin-bottom:1em; font-weight:bold; color:#a49D4C;}
     h3 {font-size:1.8em; line-height:1em; margin-bottom:1em; color:#7B8D78;}
