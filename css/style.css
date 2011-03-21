@@ -103,7 +103,7 @@
     .navigation {list-style:none; margin-left:0;}
 
     .hTagcloud li {display:inline;margin-right:8px;}
-        .hTagcloud ul {list-style:none; margin-left:0; padding-left:0; line-height:1.8em;}
+        .hTagcloud ul {list-style:none; margin-left:0; padding-left:0; line-height:1.2;}
 
             .popular {font-size:100%;}
             .v-popular {font-size:140%;}
