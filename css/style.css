@@ -132,7 +132,7 @@
     #header h1 {margin-bottom:18px;}
     #search-container {float:right;text-align:right;}
         #search-container form {margin-bottom:5px;}
-        #primary-nav {overflow:hidden; clear:both; margin-bottom:18px; border-top:1px solid #ddd; padding-top:18px;}
+        #primary-nav {overflow:hidden; clear:both; padding:10px 0; border-top:1px solid #ddd;}
         #primary-nav ul {margin-right:-18px;margin-bottom:0;}
         #primary-nav li {display:block; float:left; width: 198px; margin: 2px 18px 2px 0px;}
             #primary-nav a {display:block; width: 198px; text-decoration:none; text-align:center; padding:9px 0;float:left;}
