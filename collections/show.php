@@ -6,6 +6,7 @@
         <h2>Description</h2>
         <div class="element-text"><?php echo nls2p(collection('Description')); ?></div>
     </div><!-- end description -->
+    <?php if (collection_has_collectors()): ?>
     <div id="collectors" class="element">
         <h2>Collector(s)</h2>
         <div class="element-text">
@@ -14,6 +15,7 @@
             </ul>
         </div>
     </div><!-- end collectors -->
+    <?php endif; ?>
     <?php echo plugin_append_to_collections_show(); ?>
 </div>
 <div id="secondary">
