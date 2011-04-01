@@ -215,7 +215,7 @@
 
     /* =Exhibits */
 
-    #featured-exhibit {background: #7B8D78; color:#fff;padding:18px; border-bottom:3px solid #4F584D;}
+    #featured-exhibit {background: #7B8D78; color:#fff;padding:18px 18px 0; border-bottom:3px solid #4F584D;}
         #featured-exhibit h2 {font-size:1.2em; font-weight:bold;margin:-18px -18px 18px; padding:1em 18px; background:#4F584D; color:#fff; }
         #featured-exhibit a {color:#fff;}
         #exhibit #primary {width: 100%; border:none;}
