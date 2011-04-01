@@ -167,7 +167,7 @@
 
     /* =Footer */
     #footer {clear:both;padding-top:18px;}
-        #footer p {width: 414px; float:left;margin-bottom:0; font-weight:bold;}
+        #footer-text {width: 414px; margin-bottom:0;}
         #footer ul {width: 414px; float:right; text-align:right; margin-bottom:0;}
         #footer li {margin-bottom:0; display:inline;}
         #footer li a {margin-left:9px; text-decoration:none; font-weight:bold; border-left:1px solid #ddd; padding-left:9px;}
