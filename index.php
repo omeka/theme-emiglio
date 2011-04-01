@@ -55,7 +55,7 @@
 <div id="secondary">
     <?php if (get_theme_option('Display Featured Collection') !== '0'): ?>
     <!-- Featured Collection -->
-    <div id="featured-collection">
+    <div id="featured-collection" class="featured">
         <?php echo display_random_featured_collection(); ?>
     </div><!-- end featured collection -->
     <?php endif; ?>
