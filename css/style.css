@@ -132,6 +132,7 @@
     #header h1 {margin-bottom:18px;}
     #search-container {float:right;text-align:right;}
         #search-container form {margin-bottom:5px;}
+        #search-container a {font-size: 1.1em; font-weight:bold; text-decoration:none;}
         #primary-nav {overflow:hidden; clear:both; padding:10px 0; border-top:1px solid #ddd;}
         #primary-nav ul {margin-right:-18px;margin-bottom:0;}
         #primary-nav li {display:block; float:left; width: 198px; margin: 2px 18px 2px 0px;}
@@ -229,7 +230,7 @@
         .exhibit-page-nav li {display:block; float:left; margin-right:18px;}
             .exhibit-section-nav a,
             #exhibit.exhibit-page-nav a {display:block;text-decoration:none; text-align:center; padding:9px;float:left;}
-            #exhibit.exhibit-section-nav a:link, a:visited {color:#4F584D }
+            #exhibit.exhibit-section-nav a:link, #exhibit.exhibit-section-nav a:visited {color:#4F584D }
             .exhibit-section-nav a:hover {color:#7B8D78;}
             .exhibit-section-nav li.current a {color:#444; font-weight:bold;border-bottom:3px solid #ddd;}
         .exhibit-page-nav {margin-bottom:20px;}
