@@ -14,7 +14,7 @@
     <?php endif; ?>
 
     <div id="recent-items">
-        <h2>Recently Added Items</h2>
+        <h2><?php echo __('Recently Added Items'); ?></h2>
         <?php
             $homepageRecentItems = (int)get_theme_option('Homepage Recent Items') ? get_theme_option('Homepage Recent Items') : '3';
             set_items_for_loop(recent_items($homepageRecentItems));
@@ -35,7 +35,7 @@
 
                 <?php if ($desc = item('Dublin Core', 'Description', array('snippet'=>150))): ?>
 
-                    <div class="item-description"><?php echo $desc; ?><p><?php echo link_to_item('see more',(array('class'=>'show'))) ?></p></div>
+                    <div class="item-description"><?php echo $desc; ?><p><?php echo link_to_item(__('see more'),(array('class'=>'show'))) ?></p></div>
 
                 <?php endif; ?>
 
@@ -44,11 +44,11 @@
         </div>
 
         <?php else: ?>
-            <p>No recent items available.</p>
+            <p><?php echo __('No recent items available.'); ?></p>
 
         <?php endif; ?>
 
-        <p class="view-items-link"><a href="<?php echo html_escape(uri('items')); ?>">View All Items</a></p>
+        <p class="view-items-link"><a href="<?php echo html_escape(uri('items')); ?>"><?php echo __('View All Items'); ?></a></p>
 
     </div><!--end recent-items -->
 </div>
