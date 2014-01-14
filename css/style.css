@@ -52,7 +52,7 @@
     }
 
     /* == Generic styles ======== */
-    body {font:62.5% "Helvetica Neue",Helvetica, Arial, sans-serif; color:#222; background:#f6f6f6;width:884px; margin:36px auto;}
+    body {font:62.5% "Helvetica Neue",Helvetica, Arial, sans-serif; color:#222; background:#f6f6f6}
 
     /* Headings */
     #header {margin-bottom:18px;}
@@ -126,7 +126,7 @@
     /* == Structure == */
 
     /* =Wrap */
-    #wrap {overflow:hidden; zoom:1; border:1px solid #ccc; background:#fff; padding:18px; border-width:0 1px 1px 0;}
+    #wrap {overflow:hidden; zoom:1; border:1px solid #ccc; background:#fff; padding:18px; border-width:0 1px 1px 0;;width:884px; margin:36px auto;}
 
     /* =Header */
     #header h1 {margin-bottom:18px;}

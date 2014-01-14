@@ -1,4 +1,4 @@
-<?php head(array('bodyid'=>'home')); ?>
+<?php echo head(array('bodyid'=>'home')); ?>
 
 <div id="primary">
     <?php if ($homepageText = get_theme_option('Homepage Text')): ?>
@@ -9,7 +9,7 @@
     <?php if (get_theme_option('Display Featured Item') !== '0'): ?>
     <!-- Featured Item -->
     <div id="featured-item">
-        <?php echo display_random_featured_item(); ?>
+        <?php echo random_featured_items(1); ?>
     </div><!--end featured-item-->
     <?php endif; ?>
 
@@ -17,30 +17,30 @@
         <h2><?php echo __('Recently Added Items'); ?></h2>
         <?php
             $homepageRecentItems = (int)get_theme_option('Homepage Recent Items') ? get_theme_option('Homepage Recent Items') : '3';
-            set_items_for_loop(recent_items($homepageRecentItems));
-            if (has_items_for_loop()):
+            set_loop_records('items', get_recent_items($homepageRecentItems));
+            if (has_loop_records('items')):
         ?>
         <div class="items-list">
-            <?php while (loop_items()): ?>
-
+            <?php foreach(loop('items') as $item): ?>
+            <?php set_current_record('items', $item); ?>
             <div class="item">
 
                 <h3><?php echo link_to_item(); ?></h3>
 
-                <?php if(item_has_thumbnail()): ?>
+                <?php if(metadata($item, 'has thumbnail')): ?>
                     <div class="item-img">
-                    <?php echo link_to_item(item_square_thumbnail()); ?>
+                    <?php echo link_to_item(item_image('square_thumbnail')); ?>
                     </div>
                 <?php endif; ?>
 
-                <?php if ($desc = item('Dublin Core', 'Description', array('snippet'=>150))): ?>
+                <?php if ($desc = metadata($item, array('Dublin Core','Description'), array('snippet'=>150))): ?>
 
                     <div class="item-description"><?php echo $desc; ?><p><?php echo link_to_item(__('see more'),(array('class'=>'show'))) ?></p></div>
 
                 <?php endif; ?>
 
             </div>
-            <?php endwhile; ?>
+            <?php endforeach; ?>
         </div>
 
         <?php else: ?>
@@ -68,4 +68,4 @@
     <?php endif; ?>
 </div>
 
-<?php foot();
+<?php echo foot(); ?>
