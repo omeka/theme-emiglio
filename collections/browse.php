@@ -31,6 +31,7 @@
 </div><!-- end primary -->
 <div id="secondary">
     <div id="featured-collection" class="featured">
+        <h2><?php echo __('Featured Collection'); ?></h2>
         <?php echo random_featured_collection(); ?>
     </div><!-- end featured collection -->
 </div>

@@ -53,6 +53,7 @@ echo head(array('title'=>$pageTitle,'bodyid'=>'items','bodyclass' => 'browse'));
 <div id="secondary">
     <!-- Featured Item -->
     <div id="featured-item" class="featured">
+        <h2><?php echo __('Featured Item'); ?></h2>
         <?php echo random_featured_items(1); ?>
     </div><!--end featured-item-->
 
