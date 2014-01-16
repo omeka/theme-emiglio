@@ -2,8 +2,9 @@
 $collectionId = $collection->id;
 echo head(array('title'=>metadata('collection', array('Dublin Core', 'Title')), 'bodyid'=>'collections', 'bodyclass' => 'show')); ?>
 
+<h1><?php echo metadata('collection', array('Dublin Core', 'Title')); ?></h1>
+
 <div id="primary" class="show">
-    <h1><?php echo metadata('collection', array('Dublin Core', 'Title')); ?></h1>
     <div id="description" class="element">
         <h2><?php echo __('Description'); ?></h2>
         <div class="element-text"><?php echo metadata('collection', array('Dublin Core', 'Description')); ?></div>
