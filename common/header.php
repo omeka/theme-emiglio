@@ -26,7 +26,10 @@
     ?>
 
     <!-- JavaScripts -->
-    <?php echo head_js(); ?>
+    <?php 
+    queue_js_file('jquery-accessibleMegaMenu');
+    echo head_js(); 
+    ?>
 </head>
 
 <?php echo body_tag(array('id' => @$bodyid, 'class' => @$bodyclass)); ?>
