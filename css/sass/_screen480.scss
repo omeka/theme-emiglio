@@ -1,12 +1,23 @@
-body {background:#fff; font-size: 220%; padding:0; margin:0; width:auto;}
+.navigation {
+    position: relative;
+}
 
-/* == Wrap == */
-#wrap {width:auto;padding:0; border: 5px solid #333;}
+.navigation li {
+    display: block;
+    width: 100%;
+    border-color: rgba(255,255,255,.15);
+    @include trailing-border(1px, 0, $base-font-size, solid);
+    
+    a {
+        width: 100%;
+    }
+    
+    &:last-of-type {
+        border-color: transparent;
+    }
+}
 
-#primary-nav {float:none; text-align:left; width:100%; clear:both; padding-top:0; position:absolute; top:0; left:0;}
-
-#content {padding:20px;}
-
-#primary {width: auto; float:none; margin:0;}
-
-#secondary {width:auto; float:none; margin:0;}
+.sub-nav.open {
+    width: 100%;
+    min-width: intrinsic;
+}

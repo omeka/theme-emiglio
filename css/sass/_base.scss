@@ -1,3 +1,8 @@
+@import "compass/reset";
+@import "compass/css3";
+@import "compass/typography";
+@import "compass/layout/grid-background";
+
 // Colors
 
 $gray: #ddd;
@@ -7,4 +12,4 @@ $red: #843418;
 // Typography
 
 $base-font-size: 14px;
-$base-line-height: 20px;
+$base-line-height: 21px;
