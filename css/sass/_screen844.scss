@@ -1,0 +1,15 @@
+body, #wrap {
+    width: 100%;
+    margin: 0;
+}
+
+#primary, #secondary {
+    width: 100%;
+    border-right: 0;
+    padding: 0;
+}
+
+#search-container {
+    width: 100%;
+    @include trailer();
+}
