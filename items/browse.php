@@ -7,11 +7,26 @@ echo head(array('title'=>$pageTitle,'bodyid'=>'items','bodyclass' => 'browse'));
 
     <h1><?php echo $pageTitle; ?> <?php echo __('(%s total)', total_records('items')); ?></h1>
 
+    <?php echo item_search_filters(); ?>
+
     <ul class="items-nav navigation" id="secondary-nav">
         <?php echo public_nav_items(); ?>
     </ul>
 
     <div id="pagination-top" class="pagination"><?php echo pagination_links(); ?></div>
+
+    <?php if ($total_results > 0): ?>
+    
+    <?php
+    $sortLinks[__('Title')] = 'Dublin Core,Title';
+    $sortLinks[__('Creator')] = 'Dublin Core,Creator';
+    $sortLinks[__('Date Added')] = 'added';
+    ?>
+    <div id="sort-links">
+        <span class="sort-label"><?php echo __('Sort by: '); ?></span><?php echo browse_sort_links($sortLinks); ?>
+    </div>
+    
+    <?php endif; ?>
 
     <?php foreach (loop('items') as $item): ?>
         <div class="item hentry">
@@ -36,8 +51,8 @@ echo head(array('title'=>$pageTitle,'bodyid'=>'items','bodyclass' => 'browse'));
             <?php endif; ?>
 
             <?php if (metadata($item, 'has tags')): ?>
-                <div class="tags"><p><strong><?php echo __('Tags'); ?></strong>
-                <?php echo tag_string(); ?></p>
+                <div class="tags"><p><strong><?php echo __('Tags'); ?>: </strong>
+                <?php echo tag_string('items'); ?></p>
                 </div>
             <?php endif; ?>
 

@@ -140,6 +140,8 @@ textarea {
     font-size: $base-font-size;
     line-height: $base-line-height;
     margin: rhythm(.25) 0;;
+    max-width: 100%;
+    display: block;
 }
 
 input[type=submit],
@@ -208,18 +210,29 @@ label,
 #content {
     clear:both;
     border-top:1px solid $gray;
-    padding-bottom:18px;border-bottom:1px solid $gray;
+    border-bottom:1px solid $gray;
     float: left;
+    width: 100%;
+    
+    & > h1:first-of-type {
+        padding: rhythm(.5) 0;
+        margin: 0;
+    }
+    
+    & > #primary, #secondary {
+        @include padding-leader();
+    }
 }
 
 
-#primary {
+#content > #primary:first-child, #content > #primary:not(:only-child) {
     float:left;
     width: 65%;
     border-right:1px solid $gray;
-    padding: rhythm() rhythm() 0 0;
+    padding: 0 rhythm() rhythm() 0;
     
     h1:first-of-type {
+        @include leader(1, 2 * $base-font-size);
         @include trailer(1, 2 * $base-font-size);
     }
 }
@@ -228,7 +241,7 @@ label,
 #secondary {
     float:right;
     width: 35%;
-    padding: rhythm() 0 0 rhythm();
+    padding: 0 0 rhythm() rhythm();
     word-break: break-all;
 }
 
@@ -250,6 +263,7 @@ label,
     margin: 0 5px 0 0;
     width: 4em;
     text-align: center;
+    display: inline;
 }
 
 .page-input {
@@ -580,6 +594,43 @@ footer {
 
 /* @end */
 
+/* @group ----- Search ----- */
+
+#search-filters ul {
+    margin-left: 0;
+
+    ul {
+        display: inline-block;
+    }
+}
+
+#search-filters li {
+    display: inline-block;
+}    
+
+#search-filters > ul > li {
+    padding: rhythm(.5) 10px;
+    background-color: $yellow;
+    @include leader();
+    color: #fff;
+}
+
+#search-filters li li {
+    text-transform: lowercase;
+    
+    &:after {
+        content: ", "
+    }
+    
+    &:last-of-type:after {
+        content: "";
+    }
+}
+
+
+/* @end */
+
+
 /* @group ----- Home ----- */
 
 .featured {
@@ -628,7 +679,11 @@ footer {
 /* @group ----- Items ----- */
 
 #items.show #primary {
-    border:none;
+    border: none;
+}
+
+#items.show #secondary {
+    padding-top: 0;
 }
 
 #items.show h1 {
@@ -638,7 +693,8 @@ footer {
 }
 
 .items-nav,
-#secondary-nav {
+#secondary-nav,
+.secondary-nav {
     overflow:hidden;
     @include trailer();
 
@@ -733,4 +789,38 @@ div.item {
     }
 }
 
+#pagination-top {
+    float: left;
+}
+
+#sort-links {
+    @include leader(.25);
+    float: right;
+}
+
+#sort-links-list {
+    margin-left: 10px;
+    display: inline;
+
+    li {
+        display: inline;
+        margin-right: 10px;
+    }
+}
+
+.sorting {
+    font-weight: bold;
+}
+
+#advanced-search-form {
+    @include padding-trailer(2);
+}
+
+#advanced-search-form input {
+    display: inline;
+}
+
+.remove_search {
+    padding: rhythm(.25) 10px;
+}
 /* @end */
