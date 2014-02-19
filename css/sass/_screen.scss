@@ -219,13 +219,13 @@ label,
         margin: 0;
     }
     
-    & > #primary, #secondary {
+    #intro + #primary, & > #primary, #secondary {
         @include padding-leader();
     }
 }
 
-
-#content > #primary:first-child, #content > #primary:not(:only-child) {
+#content > #primary:first-child, 
+#content > #primary:not(:only-child) {
     float:left;
     width: 65%;
     border-right:1px solid $gray;
@@ -632,6 +632,12 @@ footer {
 
 
 /* @group ----- Home ----- */
+
+#intro {
+    border-color: $gray;
+    @include padding-leader();
+    @include trailing-border(1px, 1, $base-font-size, solid);
+}
 
 .featured {
     overflow: hidden;

@@ -1,10 +1,13 @@
 <?php echo head(array('bodyid'=>'home')); ?>
 
+<?php if ($homepageText = get_theme_option('Homepage Text')): ?>
+    <!-- Homepage Text -->
+    <div id="intro">
+    <?php echo $homepageText; ?>
+    </div>
+<?php endif; ?>
+
 <div id="primary">
-    <?php if ($homepageText = get_theme_option('Homepage Text')): ?>
-        <!-- Homepage Text -->
-        <?php echo $homepageText; ?>
-    <?php endif; ?>
 
     <?php if (get_theme_option('Display Featured Item') !== '0'): ?>
     <!-- Featured Item -->
