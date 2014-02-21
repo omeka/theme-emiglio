@@ -4,9 +4,9 @@ body, #wrap {
 }
 
 #primary, #secondary {
-    width: 100%;
-    border-right: 0;
-    padding: 0;
+    width: 100% !important;
+    border-right: 0 !important;
+    padding: 0 !important;
 }
 
 #search-container {

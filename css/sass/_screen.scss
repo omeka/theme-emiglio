@@ -147,6 +147,8 @@ textarea {
 input[type=submit],
 button,
 .button {
+    @include appearance(none);
+    @include border-radius(0);
     font-family: "Lato", sans-serif;
     font-size: $base-font-size;
     line-height: $base-line-height;
