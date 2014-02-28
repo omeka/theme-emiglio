@@ -244,7 +244,7 @@ label,
     float:right;
     width: 35%;
     padding: 0 0 rhythm() rhythm();
-    word-break: break-all;
+    word-wrap: break-word;
 }
 
 .navigation {
@@ -673,6 +673,10 @@ footer {
     }
 }
 
+#home #content #primary {
+    padding-top: rhythm() !important;
+}
+
 #featured-item {
     @include trailer();
 }
@@ -831,4 +835,14 @@ div.item {
 .remove_search {
     padding: rhythm(.25) 10px;
 }
+/* @end */
+
+/* @group ----- Simple Pages ----- */
+
+.page #primary {
+    width: 100% !important;
+    border-right: 0 !important;
+    padding-top: rhythm() !important;
+}
+
 /* @end */
