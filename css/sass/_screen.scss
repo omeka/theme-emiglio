@@ -226,7 +226,6 @@ label,
     }
 }
 
-#content > #primary:first-child, 
 #content > #primary:not(:only-child) {
     float:left;
     width: 65%;
@@ -239,6 +238,9 @@ label,
     }
 }
 
+#content nav {
+    overflow:hidden;
+}
 
 #secondary {
     float:right;
