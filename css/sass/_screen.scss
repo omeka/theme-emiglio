@@ -1,3 +1,17 @@
+/*
+Table of Contents
+=================
+-- General HTML Elements
+-- Global classes
+-- Header
+-- Footer
+-- Search
+-- Home
+-- Items
+-- Simple Pages
+-- Exhibits
+*/
+
 /* @group ----- Generic HTML elements ----- */
 
 @include establish-baseline;
@@ -634,7 +648,6 @@ footer {
 
 /* @end */
 
-
 /* @group ----- Home ----- */
 
 #intro {
@@ -708,7 +721,8 @@ footer {
 
 .items-nav,
 #secondary-nav,
-.secondary-nav {
+.secondary-nav,
+#exhibit-child-pages {
     overflow:hidden;
     @include trailer();
 
@@ -845,6 +859,80 @@ div.item {
     width: 100% !important;
     border-right: 0 !important;
     padding-top: rhythm() !important;
+}
+
+/* @end */
+
+/* @group ----- Exhibits ----- */
+
+.summary #content > h1:first-of-type {
+    float: left;
+    width: 65%;
+    border-right: 1px solid #DDD;
+}
+
+.summary #content > h1:first-of-type {
+    margin-right: rhythm(1, 2 * $base-font-size);
+}
+
+.summary #content #primary {
+    margin-right: rhythm(1, 2 * $base-font-size);
+}
+
+#exhibit-pages {
+    ul {
+        margin: 0;
+        padding: 0;
+        overflow:hidden;
+        @include trailer();
+        
+        ul {
+            padding-left: rhythm();
+            border-left: 1px solid $gray;
+            @include trailer(0);
+        }
+    
+        li {
+            width: 100%;
+            display: block;
+            padding: 0;
+            @include trailer();
+            
+            &:last-of-type {
+                @include trailer(0);
+            }
+        }
+    
+        a {
+            width: 100%;
+            text-align: left;
+            text-decoration:none;
+            display:block;
+            padding: rhythm(.5);
+            color:#fff;
+            background:$yellow;
+            border-width: 0 1px 1px 0;
+            
+            &:hover {
+                background-color: darken($yellow, 20%);
+                color: #fff;
+            }
+        }
+    }
+    
+    .current a {
+        background-color: darken($yellow, 15%);
+    }
+}
+
+.summary #exhibit-pages {
+    padding: rhythm();    
+}
+
+#exhibit-page-navigation {
+    border-color: $gray;
+    @include leading-border(1px, 1, $base-font-size, solid);
+    margin: rhythm() 0;
 }
 
 /* @end */
