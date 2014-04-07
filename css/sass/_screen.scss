@@ -160,7 +160,7 @@ textarea {
 
 input[type=submit],
 button,
-.button {
+a.button {
     @include appearance(none);
     @include border-radius(0);
     font-family: "Lato", sans-serif;
@@ -196,7 +196,6 @@ textarea {
 
 label,
 .label {
-    font-size: 1.125 * $base-font-size;
     font-weight: bold;
     vertical-align: top;
 }
@@ -842,6 +841,10 @@ div.item {
 
 #advanced-search-form {
     @include padding-trailer(2);
+}
+
+#advanced-search-form label {
+    font-size: 1.125 * $base-font-size;
 }
 
 #advanced-search-form input {
