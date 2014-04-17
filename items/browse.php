@@ -16,7 +16,7 @@ echo head(array('title'=>$pageTitle,'bodyid'=>'items','bodyclass' => 'browse'));
     <div id="pagination-top" class="pagination"><?php echo pagination_links(); ?></div>
 
     <?php if ($total_results > 0): ?>
-    
+
     <?php
     $sortLinks[__('Title')] = 'Dublin Core,Title';
     $sortLinks[__('Creator')] = 'Dublin Core,Creator';
@@ -25,7 +25,7 @@ echo head(array('title'=>$pageTitle,'bodyid'=>'items','bodyclass' => 'browse'));
     <div id="sort-links">
         <span class="sort-label"><?php echo __('Sort by: '); ?></span><?php echo browse_sort_links($sortLinks); ?>
     </div>
-    
+
     <?php endif; ?>
 
     <?php foreach (loop('items') as $item): ?>
@@ -56,12 +56,12 @@ echo head(array('title'=>$pageTitle,'bodyid'=>'items','bodyclass' => 'browse'));
                 </div>
             <?php endif; ?>
 
-            <?php echo fire_plugin_hook('admin_items_browse_simple_each'); ?>
+            <?php echo fire_plugin_hook('admin_items_browse_simple_each', array('view' => $this, 'item' =>$item)); ?>
 
             </div><!-- end class="item-meta" -->
         </div><!-- end class="item hentry" -->
     <?php endforeach; ?>
-    <?php echo fire_plugin_hook('public_items_browse'); ?>
+    <?php echo fire_plugin_hook('public_items_browse', array('items'=>$items, 'view' => $this)); ?>
 
     <div id="pagination-bottom" class="pagination"><?php echo pagination_links(); ?></div>
 </div>

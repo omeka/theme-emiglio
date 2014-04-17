@@ -1,4 +1,4 @@
-<?php 
+<?php
 $collectionId = $collection->id;
 echo head(array('title'=>metadata('collection', array('Dublin Core', 'Title')), 'bodyid'=>'collections', 'bodyclass' => 'show')); ?>
 
@@ -19,7 +19,7 @@ echo head(array('title'=>metadata('collection', array('Dublin Core', 'Title')), 
         </div>
     </div><!-- end collectors -->
     <?php endif; ?>
-    <?php echo fire_plugin_hook('public_collections_show'); ?>
+    <?php echo fire_plugin_hook('public_collections_show', array('view' => $this, 'collection' => $collection)); ?>
 </div>
 <div id="secondary">
     <div id="collection-items">

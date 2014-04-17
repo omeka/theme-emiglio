@@ -20,14 +20,14 @@
         </div>
         <p class="view-items-link"><?php echo link_to_items_browse(__('View the items in %s', metadata($collection, array('Dublin Core', 'Title')), array('collection' => $collection->id))); ?></p>
 
-        <?php echo fire_plugin_hook('public_collections_browse_each'); ?>
+        <?php echo fire_plugin_hook('public_collections_browse_each', array('view' => $this, 'collection' => $collection)); ?>
 
         </div><!-- end class="collection" -->
     <?php endforeach; ?>
     <?php else: ?>
         <p><?php echo __('There are no collections.'); ?></p>
     <?php endif; ?>
-        <?php echo fire_plugin_hook('public_collections_browse'); ?>
+        <?php echo fire_plugin_hook('public_collections_browse', array('collections'=>$collections, 'view' => $this)); ?>
 </div><!-- end primary -->
 <div id="secondary">
     <div id="featured-collection" class="featured">
