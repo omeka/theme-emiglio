@@ -1,4 +1,4 @@
-<?php echo head(array('title' => metadata($item, array('Dublin Core', 'Title')), 'bodyid'=>'items','bodyclass' => 'show')); ?>
+<?php echo head(array('title' => metadata($item, array('Dublin Core', 'Title')), 'bodyclass' => 'items show')); ?>
 
 <h1><?php echo metadata($item, array('Dublin Core', 'Title')); ?></h1>
 
@@ -13,10 +13,12 @@
 <div id="secondary">
 
     <!-- The following returns all of the files associated with an item. -->
+    <?php if (metadata($item, 'has files')): ?>
     <div id="itemfiles" class="element">
         <h2>Files</h2>
         <div class="element-text"><?php echo files_for_item(); ?></div>
     </div>
+    <?php endif; ?>
 
     <!-- The following prints a list of all tags associated with the item -->
     <?php if (metadata($item, 'has tags')): ?>

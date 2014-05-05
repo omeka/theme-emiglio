@@ -768,18 +768,22 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
   /* @end */
   /* @group ----- Items ----- */
-  #items.show #primary {
-    border: none;
+  .items.show #content > #primary {
+    padding-top: 1.5em;
   }
 
-  #items.show #secondary {
+  .items.show #secondary {
     padding-top: 0;
   }
 
-  #items.show h1 {
+  .items.show h1 {
     width: 100%;
     display: inline-block;
+    border-color: #dddddd;
     margin-top: 0.75em;
+    border-bottom-width: 0.03571em;
+    border-bottom-style: solid;
+    padding-bottom: 0.71429em;
   }
 
   .items-nav,
@@ -827,13 +831,18 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     border-top-style: solid;
     padding-top: 1.42857em;
   }
-  div.item img {
+
+  .item img, .item-file img {
     width: 6em;
     height: auto;
     padding: 3px;
     border: 1px solid #ccc;
     float: left;
     margin: 0 1.5em 1.5em 0;
+  }
+
+  #itemfiles + * {
+    clear: left;
   }
 
   .element-text {
@@ -853,6 +862,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     border-top-width: 0.07143em;
     border-top-style: solid;
     padding-top: 1.42857em;
+    padding-bottom: 1.5em;
     margin-bottom: 0em;
   }
   .item-pagination li {

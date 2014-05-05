@@ -717,18 +717,20 @@ footer {
 
 /* @group ----- Items ----- */
 
-#items.show #primary {
-    border: none;
+.items.show #content > #primary {
+    @include padding-leader();
 }
 
-#items.show #secondary {
+.items.show #secondary {
     padding-top: 0;
 }
 
-#items.show h1 {
+.items.show h1 {
     width: 100%;
     display: inline-block;
+    border-color: $gray;
     @include leader(1, 2 * $base-font-size);
+    @include trailing-border(1px, 1, 2 * $base-font-size, solid);
 }
 
 .items-nav,
@@ -767,15 +769,19 @@ div.item {
     overflow:hidden;
     border-color: $gray;
     @include leading-border(1px, 1, $base-font-size, solid);
+}
 
-    img {
-        width: rhythm(4);
-        height: auto;
-        padding: 3px;
-        border: 1px solid #ccc;
-        float: left;
-        margin: 0 rhythm() rhythm() 0;
-    }
+.item img, .item-file img {
+    width: rhythm(4);
+    height: auto;
+    padding: 3px;
+    border: 1px solid #ccc;
+    float: left;
+    margin: 0 rhythm() rhythm() 0;
+}
+
+#itemfiles + * {
+    clear: left;
 }
 
 .element-text {
@@ -793,6 +799,7 @@ div.item {
     border-color: $gray;
     font-weight:bold;
     @include leading-border(1px, 1, $base-font-size, solid);
+    @include padding-trailer();
     @include trailer(0);
 
     li {
