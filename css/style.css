@@ -746,6 +746,18 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     margin-bottom: 1.5em;
   }
 
+  #featured-item .item {
+    border-top-width: 0em;
+    border-top-style: solid;
+    padding-top: 0em;
+  }
+
+  #featured-item *:last-child,
+  #featured-collection *:last-child,
+  #featured-exhibit *:last-child {
+    margin-bottom: 0em;
+  }
+
   .item-description {
     margin-bottom: 1.5em;
   }

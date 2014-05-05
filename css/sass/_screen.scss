@@ -695,6 +695,15 @@ footer {
     @include trailer();
 }
 
+#featured-item .item {
+    @include leading-border(0px, 0, $base-font-size, solid);
+}
+
+#featured-item *:last-child,
+#featured-collection *:last-child,
+#featured-exhibit *:last-child {
+    @include trailer(0);
+}
 
 .item-description {
     @include trailer();
