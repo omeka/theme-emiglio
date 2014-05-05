@@ -1,6 +1,6 @@
 <?php
 $pageTitle = __('Browse Items');
-echo head(array('title'=>$pageTitle,'bodyid'=>'items','bodyclass' => 'browse'));
+echo head(array('title'=>$pageTitle, 'bodyclass' => 'items browse'));
 ?>
 
 <div id="primary" class="browse">
@@ -32,13 +32,13 @@ echo head(array('title'=>$pageTitle,'bodyid'=>'items','bodyclass' => 'browse'));
         <div class="item hentry">
             <div class="item-meta">
 
+            <h2><?php echo link_to_item(metadata($item, array('Dublin Core', 'Title'), array('class'=>'permalink'))); ?></h2>
+
             <?php if (metadata($item, 'has thumbnail')): ?>
                 <div class="item-img">
                 <?php echo link_to_item(item_image('square_thumbnail')); ?>
                 </div>
             <?php endif; ?>
-
-            <h2><?php echo link_to_item(metadata($item, array('Dublin Core', 'Title'), array('class'=>'permalink'))); ?></h2>
 
             <?php if ($text = metadata($item, array('Item Type Metadata', 'Text'), array('snippet'=>250))): ?>
                 <div class="item-description">

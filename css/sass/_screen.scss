@@ -709,6 +709,10 @@ footer {
     @include trailer();
 }
 
+#recent-items .item img {
+    width: rhythm(3);
+}
+
 /* @end */
 
 /* @group ----- Items ----- */
@@ -764,12 +768,13 @@ div.item {
     border-color: $gray;
     @include leading-border(1px, 1, $base-font-size, solid);
 
-    .item-img img {
-        width: rhythm(5);
+    img {
+        width: rhythm(4);
         height: auto;
-        float:right;
-        margin: 0 0 rhythm() rhythm();
-        border: 3px solid #4F584D;
+        padding: 3px;
+        border: 1px solid #ccc;
+        float: left;
+        margin: 0 rhythm() rhythm() 0;
     }
 }
 

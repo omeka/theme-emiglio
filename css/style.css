@@ -762,6 +762,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     margin-bottom: 1.5em;
   }
 
+  #recent-items .item img {
+    width: 4.5em;
+  }
+
   /* @end */
   /* @group ----- Items ----- */
   #items.show #primary {
@@ -823,12 +827,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     border-top-style: solid;
     padding-top: 1.42857em;
   }
-  div.item .item-img img {
-    width: 7.5em;
+  div.item img {
+    width: 6em;
     height: auto;
-    float: right;
-    margin: 0 0 1.5em 1.5em;
-    border: 3px solid #4F584D;
+    padding: 3px;
+    border: 1px solid #ccc;
+    float: left;
+    margin: 0 1.5em 1.5em 0;
   }
 
   .element-text {
