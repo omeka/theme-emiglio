@@ -218,6 +218,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     margin: 0.375em 0;
     max-width: 100%;
     display: block;
+    min-height: 2.25em;
   }
 
   input[type=submit],
@@ -278,6 +279,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
   /* @end */
   /* @group ----- Global classes ----- */
+  .screen-reader-text {
+    position: absolute;
+    left: -9999px;
+  }
+
   #wrap {
     overflow: hidden;
     background: #fff;
@@ -328,15 +334,17 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     margin-left: 0;
   }
 
+  .pagination {
+    position: relative;
+  }
   .pagination ul {
+    height: 2.25em;
     clear: both;
-    overflow: hidden;
     margin: 0 0 1.5em;
     background-color: #dddddd;
     display: inline-block;
     vertical-align: top;
   }
-
   .pagination input {
     margin: 0 5px 0 0;
     width: 4em;
@@ -352,13 +360,27 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   .pagination_previous {
     background-color: #a49d4c;
     font-size: 14px;
-    padding: 0.375em 10px;
+    padding: 0 10px;
+    position: relative;
   }
   .pagination_next a,
   .pagination_previous a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
+    height: 2.25em;
+    display: block;
+    line-height: 31.5px;
+  }
+
+  .pagination_next a:after {
+    font-family: "FontAwesome";
+    content: "\f105";
+  }
+
+  .pagination_previous a:after {
+    font-family: "FontAwesome";
+    content: "\f104";
   }
 
   .pagination li {

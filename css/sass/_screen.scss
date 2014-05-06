@@ -156,6 +156,7 @@ textarea {
     margin: rhythm(.25) 0;;
     max-width: 100%;
     display: block;
+    min-height: rhythm(1.5);
 }
 
 input[type=submit],
@@ -214,6 +215,11 @@ label,
 
 /* @group ----- Global classes ----- */
 
+.screen-reader-text {
+    position: absolute;
+    left: -9999px;
+}
+
 #wrap {
     overflow: hidden;
     background: #fff;
@@ -267,20 +273,24 @@ label,
     margin-left: 0;
 }
 
-.pagination ul {
-    clear:both;
-    overflow:hidden;
-    margin: 0 0 rhythm();
-    background-color: $gray;
-    display: inline-block;
-    vertical-align: top;
-}
+.pagination {
+    position: relative;
 
-.pagination input {
-    margin: 0 5px 0 0;
-    width: 4em;
-    text-align: center;
-    display: inline;
+    ul {
+        height: rhythm(1.5);
+        clear:both;
+        margin: 0 0 rhythm();
+        background-color: $gray;
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    input {
+        margin: 0 5px 0 0;
+        width: 4em;
+        text-align: center;
+        display: inline;
+    }
 }
 
 .page-input {
@@ -291,13 +301,27 @@ label,
 .pagination_previous {
     background-color: $yellow;
     font-size: $base-font-size;
-    padding: rhythm(.25) 10px;
-    
+    padding: 0 10px;
+    position: relative;
+
     a {
         color: #fff;
         text-decoration: none;
         font-weight: bold;
+        height: rhythm(1.5);
+        display: block;
+        line-height: 1.5 * $base-line-height;
     }
+}
+
+.pagination_next a:after {
+    font-family: "FontAwesome";
+    content: "\f105";
+}
+
+.pagination_previous a:after {
+    font-family: "FontAwesome";
+    content: "\f104";
 }
 
 .pagination li {

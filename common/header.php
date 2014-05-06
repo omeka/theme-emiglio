@@ -22,7 +22,7 @@
     <!-- Stylesheets -->
     <?php
     queue_css_url('http://fonts.googleapis.com/css?family=Lato');
-    queue_css_file('style');
+    queue_css_file(array('iconfonts', 'style'));
     echo head_css();
     ?>
 
