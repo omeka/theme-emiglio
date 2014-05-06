@@ -476,26 +476,45 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     margin: 0;
   }
   #search-container input[type=text] {
-    width: 70%;
+    width: 100%;
     float: left;
     height: 31.5px;
   }
-  #search-container input[type=submit] {
-    width: 30%;
+  #search-container button {
+    width: 2.25em;
     float: left;
   }
 
   #search-container.with-advanced input[type=text] {
-    width: 60%;
+    width: 100%;
+    padding-right: 4.5em;
   }
-  #search-container.with-advanced input[type=submit] {
-    width: 25%;
+  #search-container.with-advanced button,
+  #search-container.with-advanced .show-advanced {
+    width: 2.25em;
+    position: absolute;
+  }
+  #search-container.with-advanced button {
+    right: 2.25em;
+    text-indent: -9999px;
+  }
+  #search-container.with-advanced button:after {
+    font-family: "FontAwesome";
+    content: "\f002";
+    text-indent: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 2.25em;
+    line-height: 2.25em;
+    text-align: center;
   }
   #search-container.with-advanced .show-advanced {
-    width: 15%;
+    width: 2.25em;
     color: #fff !important;
     display: block;
-    float: left;
+    right: 0;
     text-align: center;
     border-left: 1px solid rgba(0, 0, 0, 0.08);
   }
