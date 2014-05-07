@@ -1,6 +1,10 @@
-<?php echo head(array('title'=>__('Browse Collections'),'bodyclass' => 'collections browse')); ?>
+<?php 
+$pageTitle = __('Browse Collections');
+echo head(array('title'=>$pageTitle,'bodyclass' => 'collections browse')); 
+?>
+
 <div id="primary">
-    <h1><?php echo __('Collections'); ?> <?php echo __('(%s total)', $total_results); ?></h1>
+    <h1><?php echo $pageTitle; ?> <?php echo __('(%s total)', $total_results); ?></h1>
     <?php echo pagination_links(); ?>
     
     <?php

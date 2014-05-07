@@ -949,10 +949,6 @@ div.item {
 
 .collections.browse h1 {
     float: left;
-    
-    & + #sort-links {
-        @include leader(1.5);
-    }
 }
 
 /* @end */

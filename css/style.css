@@ -1003,9 +1003,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   .collections.browse h1 {
     float: left;
   }
-  .collections.browse h1 + #sort-links {
-    margin-top: 2.25em;
-  }
 
   /* @end */
   /* @group ----- Simple Pages ----- */
