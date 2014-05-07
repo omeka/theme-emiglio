@@ -364,6 +364,12 @@ ul.tags li {
     margin-bottom:0;
 }
 
+.collection {
+    border-color: $gray;
+    @include leading-border(1px, .5, $base-font-size, solid);
+    clear: both;
+}
+
 /* @end */
 
 /* @group ----- Header ----- */
@@ -736,18 +742,20 @@ footer {
     padding-top: rhythm() !important;
 }
 
-#featured-item {
-    @include trailer();
-}
-
-#featured-item .item {
-    @include leading-border(0px, 0, $base-font-size, solid);
-}
-
 #featured-item *:last-child,
 #featured-collection *:last-child,
 #featured-exhibit *:last-child {
     @include trailer(0);
+}
+
+#featured-item .item,
+#featured-collection .collection,
+#featured-exhibit .exhibit {
+    @include leading-border(0px, 0, $base-font-size, solid);
+}
+
+#featured-item {
+    @include trailer();
 }
 
 .item-description {
@@ -777,6 +785,7 @@ footer {
     @include leader(1, 2 * $base-font-size);
     @include trailing-border(1px, 1, 2 * $base-font-size, solid);
 }
+
 
 .items-nav,
 #secondary-nav,
@@ -887,7 +896,7 @@ div.item {
 }
 
 #sort-links {
-    @include leader(.25);
+    margin: rhythm(.25) 0 rhythm();
     float: right;
 }
 
@@ -934,6 +943,18 @@ div.item {
 .remove_search {
     padding: rhythm(.25) 10px;
 }
+/* @end */
+
+/* @group ----- Collections ----- */
+
+.collections.browse h1 {
+    float: left;
+    
+    & + #sort-links {
+        @include leader(1.5);
+    }
+}
+
 /* @end */
 
 /* @group ----- Simple Pages ----- */

@@ -1,27 +1,40 @@
-<?php echo head(array('title'=>__('Browse Collections'),'bodyid'=>'collections','bodyclass' => 'browse')); ?>
+<?php echo head(array('title'=>__('Browse Collections'),'bodyclass' => 'collections browse')); ?>
 <div id="primary">
-    <h1><?php echo __('Collections'); ?></h1>
+    <h1><?php echo __('Collections'); ?> <?php echo __('(%s total)', $total_results); ?></h1>
+    <?php echo pagination_links(); ?>
+    
+    <?php
+    $sortLinks[__('Title')] = 'Dublin Core,Title';
+    $sortLinks[__('Date Added')] = 'added';
+    ?>
+
+    <div id="sort-links">
+        <span class="sort-label"><?php echo __('Sort by: '); ?></span><?php echo browse_sort_links($sortLinks); ?>
+    </div>
+
     <?php if (total_records('collection') > 0): ?>
-        <div class="pagination"><?php echo pagination_links(); ?></div>
     <?php foreach (loop('collection') as $collection): ?>
         <div class="collection">
             <h2><?php echo link_to_collection(); ?></h2>
+            <?php if (metadata('collection', array('Dublin Core', 'Description'))): ?>
             <div class="element">
                 <h3><?php echo __('Description'); ?></h3>
-            <div class="element-text"><?php echo metadata($collection, array('Dublin Core', 'Description'), array('snippet'=>150)); ?></div>
-        </div>
-        <div class="element">
-            <h3><?php echo __('Contributor'); ?></h3>
-            <?php if($collectors = metadata($collection, array('Dublin Core', 'Contributor'), array('delimiter'=>', '))): ?>
-            <div class="element-text">
-                <p><?php echo $collectors; ?></p>
+                <div class="element-text"><?php echo text_to_paragraphs(metadata('collection', array('Dublin Core', 'Description'), array('snippet'=>150))); ?></div>
             </div>
             <?php endif; ?>
-        </div>
-        <p class="view-items-link"><?php echo link_to_items_browse(__('View the items in %s', metadata($collection, array('Dublin Core', 'Title')), array('collection' => $collection->id))); ?></p>
-
-        <?php echo fire_plugin_hook('public_collections_browse_each', array('view' => $this, 'collection' => $collection)); ?>
-
+        
+            <?php if ($collection->hasContributor()): ?>
+            <div class="element">
+                <h3><?php echo __('Contributors'); ?></h3>
+                <div class="element-text">
+                    <p><?php echo metadata('collection', array('Dublin Core', 'Contributor'), array('all'=>true, 'delimiter'=>', ')); ?></p>
+                </div>
+            </div>
+            <?php endif; ?>
+            <p class="view-items-link"><?php echo link_to_items_browse(__('View the items in %s', metadata($collection, array('Dublin Core', 'Title')), array('collection' => $collection->id))); ?></p>
+    
+            <?php echo fire_plugin_hook('public_collections_browse_each', array('view' => $this, 'collection' => $collection)); ?>
+    
         </div><!-- end class="collection" -->
     <?php endforeach; ?>
     <?php else: ?>

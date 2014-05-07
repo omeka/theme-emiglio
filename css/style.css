@@ -443,6 +443,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     margin-bottom: 0;
   }
 
+  .collection {
+    border-color: #dddddd;
+    border-top-width: 0.07143em;
+    border-top-style: solid;
+    padding-top: 0.67857em;
+    clear: both;
+  }
+
   /* @end */
   /* @group ----- Header ----- */
   header {
@@ -783,20 +791,22 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     padding-top: 1.5em !important;
   }
 
-  #featured-item {
-    margin-bottom: 1.5em;
+  #featured-item *:last-child,
+  #featured-collection *:last-child,
+  #featured-exhibit *:last-child {
+    margin-bottom: 0em;
   }
 
-  #featured-item .item {
+  #featured-item .item,
+  #featured-collection .collection,
+  #featured-exhibit .exhibit {
     border-top-width: 0em;
     border-top-style: solid;
     padding-top: 0em;
   }
 
-  #featured-item *:last-child,
-  #featured-collection *:last-child,
-  #featured-exhibit *:last-child {
-    margin-bottom: 0em;
+  #featured-item {
+    margin-bottom: 1.5em;
   }
 
   .item-description {
@@ -941,7 +951,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   }
 
   #sort-links {
-    margin-top: 0.375em;
+    margin: 0.375em 0 1.5em;
     float: right;
   }
 
@@ -986,6 +996,15 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
   .remove_search {
     padding: 0.375em 10px;
+  }
+
+  /* @end */
+  /* @group ----- Collections ----- */
+  .collections.browse h1 {
+    float: left;
+  }
+  .collections.browse h1 + #sort-links {
+    margin-top: 2.25em;
   }
 
   /* @end */
