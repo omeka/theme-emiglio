@@ -954,6 +954,20 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     margin-right: 10px;
   }
 
+  .asc a:after, .desc a:after {
+    display: inline-block;
+    font-family: "FontAwesome";
+    text-decoration: underline;
+  }
+
+  .asc a:after {
+    content: "\00a0\f0d8";
+  }
+
+  .desc a:after {
+    content: "\00a0\f0d7";
+  }
+
   .sorting {
     font-weight: bold;
   }
