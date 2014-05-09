@@ -395,6 +395,7 @@ header {
         margin: rhythm(.25) 0;
         float: left;
         width: 100%;
+        position: relative;
         
         a {
             font-weight:bold;
@@ -415,7 +416,23 @@ header {
     
     button {
         width: rhythm(1.5);
-        float: left;
+        position: absolute;
+        top: 0;
+        right: 0;
+        text-indent: -9999px;
+        
+        &:after {
+            font-family: "FontAwesome";
+            content: "\f002";
+            text-indent: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: rhythm(1.5);
+            line-height: rhythm(1.5);
+            text-align: center;
+        }
     }
 }
 
@@ -433,20 +450,6 @@ header {
     
     button {
         right: rhythm(1.5);
-        text-indent: -9999px;
-        
-        &:after {
-            font-family: "FontAwesome";
-            content: "\f002";
-            text-indent: 0;
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            width: rhythm(1.5);
-            line-height: rhythm(1.5);
-            text-align: center;
-        }
     }
     
     .show-advanced {

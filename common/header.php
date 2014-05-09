@@ -43,7 +43,11 @@
             <?php fire_plugin_hook('public_header', array('view'=>$this)); ?>
 
             <div id="search-container">
+                <?php if (get_theme_option('use_advanced_search')): ?>
                 <?php echo search_form(array('show_advanced' => true)); ?>
+                <?php else: ?>
+                <?Php echo search_form(); ?>
+                <?php endif; ?>
             </div><!-- end search -->
 
             <div id="site-title"><?php echo link_to_home_page(theme_logo()); ?></div>

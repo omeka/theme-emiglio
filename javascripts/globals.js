@@ -1,14 +1,16 @@
 (function($) {
     $(document).ready(function() {
         var show_advanced = '<a href="#" class="show-advanced button">&hellip;</a>';
-        var search_submit = $('#search-form input[type=submit]');
+        var search_submit = $('#search-form button');
         var advanced_form = $('#advanced-form');
 
         /* 
             Setup classes and DOM elements jQuery will use.
         */
-        $('#search-container').addClass('with-advanced');
-        advanced_form.addClass('closed').before(show_advanced);
+        if (advanced_form.length > 0) {
+            $('#search-container').addClass('with-advanced');
+            advanced_form.addClass('closed').before(show_advanced);
+        }
         
         /*
             Setup flags for when "shift" key is used, mainly for

@@ -50,7 +50,7 @@ a img {
   border: none;
 }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
 
@@ -69,14 +69,18 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   -- Exhibits
   */
   /* @group ----- Generic HTML elements ----- */
-  html {
+  * html {
     font-size: 87.5%;
+  }
+
+  html {
+    font-size: 14px;
     line-height: 1.5em;
   }
 
   * {
-    -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
   }
 
@@ -144,8 +148,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     font-style: italic;
     border-color: #dddddd;
     padding: 1.5em 1.5em 0;
-    border-top-width: 0.07143em;
     border-top-style: solid;
+    border-top-width: 0.07143em;
     padding-top: 1.42857em;
   }
 
@@ -210,8 +214,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   textarea {
     font-family: "Lato", sans-serif;
     border-color: #dddddd;
-    border-width: 0.07143em;
     border-style: solid;
+    border-width: 0.07143em;
     padding: 0.30357em;
     font-size: 14px;
     line-height: 21px;
@@ -224,10 +228,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   input[type=submit],
   button,
   a.button {
-    -moz-appearance: none;
     -webkit-appearance: none;
-    -moz-border-radius: 0;
+    -moz-appearance: none;
+    appearance: none;
     -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
     border-radius: 0;
     font-family: "Lato", sans-serif;
     font-size: 14px;
@@ -256,8 +263,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     min-width: 50%;
     min-height: 9em;
     border-color: #dddddd;
-    border-width: 0.07143em;
     border-style: solid;
+    border-width: 0.07143em;
     padding: 0.67857em;
     vertical-align: top;
   }
@@ -445,8 +452,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
   .collection {
     border-color: #dddddd;
-    border-top-width: 0.07143em;
     border-top-style: solid;
+    border-top-width: 0.07143em;
     padding-top: 0.67857em;
     clear: both;
   }
@@ -474,6 +481,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     margin: 0.375em 0;
     float: left;
     width: 100%;
+    position: relative;
   }
   #search-container form a {
     font-weight: bold;
@@ -490,7 +498,22 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   }
   #search-container button {
     width: 2.25em;
-    float: left;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-indent: -9999px;
+  }
+  #search-container button:after {
+    font-family: "FontAwesome";
+    content: "\f002";
+    text-indent: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 2.25em;
+    line-height: 2.25em;
+    text-align: center;
   }
 
   #search-container.with-advanced input[type=text] {
@@ -504,19 +527,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   }
   #search-container.with-advanced button {
     right: 2.25em;
-    text-indent: -9999px;
-  }
-  #search-container.with-advanced button:after {
-    font-family: "FontAwesome";
-    content: "\f002";
-    text-indent: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 2.25em;
-    line-height: 2.25em;
-    text-align: center;
   }
   #search-container.with-advanced .show-advanced {
     width: 2.25em;
@@ -535,8 +545,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     width: 100%;
     border-color: #dddddd;
     border-top-color: #fff;
-    border-width: 0.07143em;
     border-style: solid;
+    border-width: 0.07143em;
     padding: 0.30357em;
     text-align: left;
     padding: 0.75em;
@@ -665,8 +675,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     clear: both;
     margin: 1.5em 0;
     border-color: #dddddd;
-    border-top-width: 0.07143em;
     border-top-style: solid;
+    border-top-width: 0.07143em;
     padding-top: 1.42857em;
   }
   #header-image img {
@@ -748,8 +758,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   #intro {
     border-color: #dddddd;
     padding-top: 1.5em;
-    border-bottom-width: 0.07143em;
     border-bottom-style: solid;
+    border-bottom-width: 0.07143em;
     padding-bottom: 1.42857em;
   }
 
@@ -759,8 +769,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     color: #fff;
     padding: 1.5em 1.5em 0;
     border-color: #4F584D;
-    border-bottom-width: 0.21429em;
     border-bottom-style: solid;
+    border-bottom-width: 0.21429em;
     padding-bottom: 1.28571em;
     margin-bottom: 1.5em;
   }
@@ -800,8 +810,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   #featured-item .item,
   #featured-collection .collection,
   #featured-exhibit .exhibit {
-    border-top-width: 0em;
     border-top-style: solid;
+    border-top-width: 0em;
     padding-top: 0em;
   }
 
@@ -832,8 +842,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     display: inline-block;
     border-color: #dddddd;
     margin-top: 0.75em;
-    border-bottom-width: 0.03571em;
     border-bottom-style: solid;
+    border-bottom-width: 0.03571em;
     padding-bottom: 0.71429em;
   }
 
@@ -878,8 +888,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     clear: both;
     overflow: hidden;
     border-color: #dddddd;
-    border-top-width: 0.07143em;
     border-top-style: solid;
+    border-top-width: 0.07143em;
     padding-top: 1.42857em;
   }
 
@@ -910,8 +920,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     overflow: hidden;
     border-color: #dddddd;
     font-weight: bold;
-    border-top-width: 0.07143em;
     border-top-style: solid;
+    border-top-width: 0.07143em;
     padding-top: 1.42857em;
     padding-bottom: 1.5em;
     margin-bottom: 0em;
@@ -1072,8 +1082,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
   #exhibit-page-navigation {
     border-color: #dddddd;
-    border-top-width: 0.07143em;
     border-top-style: solid;
+    border-top-width: 0.07143em;
     padding-top: 1.42857em;
     margin: 1.5em 0;
   }
@@ -1106,8 +1116,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     display: block;
     width: 100%;
     border-color: rgba(255, 255, 255, 0.15);
-    border-bottom-width: 0.07143em;
     border-bottom-style: solid;
+    border-bottom-width: 0.07143em;
     padding-bottom: -0.07143em;
   }
   .navigation li a {
