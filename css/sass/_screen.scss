@@ -364,10 +364,27 @@ ul.tags li {
     margin-bottom:0;
 }
 
-.collection {
+.collection:not(.record-image) {
     border-color: $gray;
     @include leading-border(1px, .5, $base-font-size, solid);
     clear: both;
+}
+
+.collection.record-image {
+    float: left;
+    display: block;
+    height: rhythm(4);
+    margin: 0 rhythm() rhythm() 6px;
+    @include box-shadow(-3px -3px 0 rgba(0,0,0,.2), -6px -6px 0 rgba(0,0,0,.1));
+    
+    img {
+        height: 100%;
+        width: auto;
+        padding: 3px;
+        border: 1px solid #ccc;
+        margin: 0;
+        background-color: #fff;
+    }
 }
 
 /* @end */
@@ -833,6 +850,7 @@ div.item {
     height: auto;
     padding: 3px;
     border: 1px solid #ccc;
+    background-color: #fff;
     float: left;
     margin: 0 rhythm() rhythm() 0;
 }
