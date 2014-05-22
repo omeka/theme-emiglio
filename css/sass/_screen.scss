@@ -364,18 +364,17 @@ ul.tags li {
     margin-bottom:0;
 }
 
-.collection:not(.record-image) {
+.collection {
     border-color: $gray;
     @include leading-border(1px, .5, $base-font-size, solid);
     clear: both;
 }
 
-.collection.record-image {
+.image {
     float: left;
     display: block;
     height: rhythm(4);
-    margin: 0 rhythm() rhythm() 6px;
-    @include box-shadow(-3px -3px 0 rgba(0,0,0,.2), -6px -6px 0 rgba(0,0,0,.1));
+    margin: 0 rhythm() rhythm() 0;
     
     img {
         height: 100%;
@@ -385,6 +384,12 @@ ul.tags li {
         margin: 0;
         background-color: #fff;
     }
+}
+
+.collection .image,
+.exhibit .image {
+    @include box-shadow(-3px -3px 0 rgba(0,0,0,.2), -6px -6px 0 rgba(0,0,0,.1));
+    margin-left: 6px;
 }
 
 /* @end */
@@ -726,7 +731,8 @@ footer {
     @include trailing-border(1px, 1, $base-font-size, solid);
 }
 
-.featured {
+.featured,
+#featured-exhibit {
     overflow: hidden;
     background: #7B8D78;
     color: #fff;
@@ -748,14 +754,6 @@ footer {
     
     a:hover { color: lighten(saturate($yellow, 20%), 20%); }
 
-    img {
-        width: auto;
-        height: rhythm(4);
-        float:right;
-        margin-left:18px;
-        @include trailer();
-        border: 3px solid #4F584D;
-    }
 }
 
 #home #content #primary {
@@ -845,13 +843,17 @@ div.item {
     @include leading-border(1px, 1, $base-font-size, solid);
 }
 
-.item img, .item-file img {
+.item img, 
+.item-file img {
     width: rhythm(4);
     height: auto;
     padding: 3px;
     border: 1px solid #ccc;
     background-color: #fff;
     float: left;
+}
+
+.item-img img {
     margin: 0 rhythm() rhythm() 0;
 }
 
