@@ -690,7 +690,7 @@ footer {
 /* @group ----- Search ----- */
 
 #search-filters ul {
-    margin-left: 0;
+    margin: 0;
 
     ul {
         display: inline-block;
@@ -704,7 +704,6 @@ footer {
 #search-filters > ul > li {
     padding: rhythm(.5) 10px;
     background-color: $yellow;
-    @include leader();
     color: #fff;
 }
 
@@ -720,6 +719,17 @@ footer {
     }
 }
 
+#search-results {
+    @include leader();
+    
+    td, th {
+        vertical-align: top;
+    }
+    
+    .image {
+        margin-bottom: 0;
+    }
+}
 
 /* @end */
 

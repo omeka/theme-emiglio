@@ -749,7 +749,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   /* @end */
   /* @group ----- Search ----- */
   #search-filters ul {
-    margin-left: 0;
+    margin: 0;
   }
   #search-filters ul ul {
     display: inline-block;
@@ -762,7 +762,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   #search-filters > ul > li {
     padding: 0.75em 10px;
     background-color: #a49d4c;
-    margin-top: 1.5em;
     color: #fff;
   }
 
@@ -774,6 +773,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   }
   #search-filters li li:last-of-type:after {
     content: "";
+  }
+
+  #search-results {
+    margin-top: 1.5em;
+  }
+  #search-results td, #search-results th {
+    vertical-align: top;
+  }
+  #search-results .image {
+    margin-bottom: 0;
   }
 
   /* @end */
