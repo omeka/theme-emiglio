@@ -181,8 +181,14 @@ a.button {
 
 select {
     display: inline-block;
-    vertical-align: top;
-    margin: rhythm(.5) 5px rhythm(.5) 0;
+    margin: rhythm(.25) 0;
+    @include border-radius(0px);
+    border: 1px solid #ccc;
+    font-size: $base-font-size;
+    line-height: 1.5 * $base-line-height;
+    height: 1.5 * $base-line-height;
+    margin-right: 3px;
+    vertical-align: top;    
 }
     
 
@@ -963,14 +969,14 @@ div.item {
 
 #advanced-search-form {
     @include padding-trailer(2);
-}
 
-#advanced-search-form label {
-    font-size: 1.125 * $base-font-size;
-}
+    label {
+        font-size: 1.125 * $base-font-size;
+    }
 
-#advanced-search-form input {
-    display: inline;
+    input {
+        display: inline-block;
+    }
 }
 
 .remove_search {

@@ -254,8 +254,18 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
   select {
     display: inline-block;
+    margin: 0.375em 0;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -o-border-radius: 0px;
+    border-radius: 0px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    line-height: 31.5px;
+    height: 31.5px;
+    margin-right: 3px;
     vertical-align: top;
-    margin: 0.75em 5px 0.75em 0;
   }
 
   textarea {
@@ -1028,13 +1038,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   #advanced-search-form {
     padding-bottom: 3em;
   }
-
   #advanced-search-form label {
     font-size: 15.75px;
   }
-
   #advanced-search-form input {
-    display: inline;
+    display: inline-block;
   }
 
   .remove_search {
