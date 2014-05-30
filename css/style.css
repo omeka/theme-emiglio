@@ -1047,6 +1047,21 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
   .remove_search {
     padding: 0.375em 10px;
+    text-indent: -9999px;
+    width: 31.5px;
+    position: relative;
+    height: 31.5px;
+  }
+  .remove_search:after {
+    content: "\f00d";
+    font-family: "FontAwesome";
+    text-indent: 0;
+    text-align: center;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    line-height: 31.5px;
   }
 
   /* @end */

@@ -981,6 +981,22 @@ div.item {
 
 .remove_search {
     padding: rhythm(.25) 10px;
+    text-indent: -9999px;
+    width: 1.5 * $base-line-height;
+    position: relative;
+    height: 1.5 * $base-line-height;
+    
+    &:after {
+        content: "\f00d";
+        font-family: "FontAwesome";
+        text-indent: 0;
+        text-align: center;
+        width: 100%;
+        top: 0;
+        left: 0;
+        position: absolute;
+        line-height: 1.5 * $base-line-height;
+    }
 }
 /* @end */
 
