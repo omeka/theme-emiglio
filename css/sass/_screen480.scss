@@ -21,3 +21,13 @@
     width: 100%;
     min-width: intrinsic;
 }
+
+.search-entry {
+    @include trailer();
+}
+
+.search-entry select, 
+.search-entry input[type=text] {
+    display: block;
+    width: 100%;
+}
