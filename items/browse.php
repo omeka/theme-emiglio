@@ -5,7 +5,7 @@ echo head(array('title'=>$pageTitle, 'bodyclass' => 'items browse'));
 
 <div id="primary" class="browse">
 
-    <h1><?php echo $pageTitle; ?> <?php echo __('(%s total)', total_records('items')); ?></h1>
+    <h1><?php echo $pageTitle;?> <?php echo __('(%s total)', $total_results); ?></h1>
 
     <?php echo item_search_filters(); ?>
 
