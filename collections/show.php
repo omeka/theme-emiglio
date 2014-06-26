@@ -5,10 +5,12 @@ echo head(array('title'=>metadata('collection', array('Dublin Core', 'Title')), 
 <h1><?php echo metadata('collection', array('Dublin Core', 'Title')); ?></h1>
 
 <div id="primary" class="show">
+    <?php if ($collectionDescription = metadata('collection', array('Dublin Core', 'Description'))): ?>
     <div id="description" class="element">
         <h2><?php echo __('Description'); ?></h2>
-        <div class="element-text"><?php echo metadata('collection', array('Dublin Core', 'Description')); ?></div>
+        <div class="element-text"><?php echo $collectionDescription; ?></div>
     </div><!-- end description -->
+    <?php endif; ?>
     <?php if (metadata('collection', array('Dublin Core', 'Contributor'))): ?>
     <div id="collectors" class="element">
         <h2><?php echo __('Contributor(s)'); ?></h2>
@@ -23,14 +25,14 @@ echo head(array('title'=>metadata('collection', array('Dublin Core', 'Title')), 
 </div>
 <div id="secondary">
     <div id="collection-items">
-        <?php $collectionItems = get_records('item', array('collection' => $collectionId)); ?>
+        <?php $collectionItems = get_records('item', array('collection' => $collectionId), 3); ?>
         <?php foreach (loop('items', $collectionItems) as $item): ?>
 
-            <h3><?php echo link_to_item(metadata('Dublin Core', 'Title'), array('class'=>'permalink')); ?></h3>
+            <h3><?php echo link_to_item(metadata($item, array('Dublin Core', 'Title')), array('class'=>'permalink'), 'show', $item); ?></h3>
 
-            <?php if (item_has_thumbnail()): ?>
+            <?php if (metadata($item, 'has thumbnail')): ?>
             <div class="item-img">
-                <?php echo link_to_item(item_square_thumbnail(array('alt'=>item('Dublin Core', 'Title')))); ?>
+                <?php echo link_to_item(item_image('square_thumbnail', array('alt'=>metadata($item,array('Dublin Core', 'Title'))))); ?>
             </div>
             <?php endif; ?>
 
