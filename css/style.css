@@ -121,7 +121,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
   ul, ol, dl {
     margin-left: 1.5em;
-    list-style-type: inherit;
+  }
+
+  ul {
+    list-style-type: disc;
+  }
+
+  ol {
+    list-style-type: decimal;
   }
 
   ul ul,
@@ -303,10 +310,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
   #content {
     clear: both;
+    padding-bottom: 1.5em;
     border-top: 1px solid #dddddd;
     border-bottom: 1px solid #dddddd;
     float: left;
     width: 100%;
+    position: relative;
   }
   #content > h1:first-of-type {
     padding: 0.75em 0;
@@ -316,15 +325,35 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     padding-top: 1.5em;
   }
 
+  #content > h1:first-child {
+    width: 100%;
+    display: inline-block;
+    border-color: #dddddd;
+    border-bottom-width: 0.03571em;
+    border-bottom-style: solid;
+    padding-bottom: 0.71429em;
+  }
+
   #content > #primary:not(:only-child) {
     float: left;
     width: 65%;
-    border-right: 1px solid #dddddd;
-    padding: 0 1.5em 1.5em 0;
+    padding: 1.5em 1.5em 1.5em 0;
+    margin-bottom: -1.5em;
+    position: relative;
   }
-  #content > #primary:not(:only-child) h1:first-of-type {
-    margin-top: 0.75em;
+  #content > #primary:not(:only-child) > h1:first-child, #content > #primary:not(:only-child) > h2:first-child {
+    margin-top: 0em;
     margin-bottom: 0.75em;
+  }
+  #content > #primary:not(:only-child):after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: -1px;
+    top: 0;
+    bottom: 0;
+    background-color: #dddddd;
+    width: 1px;
   }
 
   #content nav {
@@ -336,6 +365,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     width: 35%;
     padding: 0 0 1.5em 1.5em;
     word-wrap: break-word;
+    border-left: 1px solid #dddddd;
+    margin-bottom: -1.5em;
   }
 
   .navigation {
@@ -867,16 +898,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     padding-top: 0;
   }
 
-  .items.show h1 {
-    width: 100%;
-    display: inline-block;
-    border-color: #dddddd;
-    margin-top: 0.75em;
-    border-bottom-width: 0.03571em;
-    border-bottom-style: solid;
-    padding-bottom: 0.71429em;
-  }
-
   .items-nav,
   #secondary-nav,
   .secondary-nav,
@@ -958,8 +979,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     border-top-width: 0.07143em;
     border-top-style: solid;
     padding-top: 1.42857em;
-    padding-bottom: 1.5em;
-    margin-bottom: 0em;
+    margin: 1.5em 0 0;
+    float: left;
+    width: 100%;
   }
   .item-pagination li {
     display: block;
@@ -1075,7 +1097,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   .summary #content > h1:first-of-type {
     float: left;
     width: 65%;
-    border-right: 1px solid #DDD;
   }
 
   .summary #content > h1:first-of-type {
@@ -1083,7 +1104,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   }
 
   .summary #content #primary {
-    margin-right: 0.75em;
+    margin-right: 1.5em;
+  }
+
+  .exhibits #secondary h2 {
+    margin-bottom: 0.5em;
   }
 
   .browse .exhibit:not(:last-child) {
@@ -1102,14 +1127,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   }
   #exhibit-pages ul ul {
     padding-left: 1.5em;
-    border-left: 1px solid #dddddd;
     margin-bottom: 0em;
   }
   #exhibit-pages ul li {
     width: 100%;
     display: block;
     padding: 0;
-    margin-bottom: 1.5em;
   }
   #exhibit-pages ul li:last-of-type {
     margin-bottom: 0em;
@@ -1128,12 +1151,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     background-color: #5e5a2c;
     color: #fff;
   }
-  #exhibit-pages .current a {
+  #exhibit-pages .current > a {
     background-color: #706b34;
   }
 
   .summary #exhibit-pages {
-    padding: 1.5em;
+    padding: 1.5em 0;
   }
 
   #exhibit-page-navigation {
@@ -1141,7 +1164,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     border-top-width: 0.07143em;
     border-top-style: solid;
     padding-top: 1.42857em;
-    margin: 1.5em 0;
+    margin: 1.5em 0 0;
+    float: left;
+    width: 100%;
   }
 
   /* @end */
