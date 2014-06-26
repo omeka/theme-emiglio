@@ -56,7 +56,7 @@ echo head(array('title'=>$pageTitle, 'bodyclass' => 'items browse'));
                 </div>
             <?php endif; ?>
 
-            <?php echo fire_plugin_hook('admin_items_browse_simple_each', array('view' => $this, 'item' =>$item)); ?>
+            <?php echo fire_plugin_hook('public_items_browse_each', array('view' => $this, 'item' =>$item)); ?>
 
             </div><!-- end class="item-meta" -->
         </div><!-- end class="item hentry" -->
