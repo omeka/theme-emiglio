@@ -1031,6 +1031,25 @@ div.item {
     float: left;
 }
 
+.collections .item-img {
+    float: left;
+    margin: 0 rhythm() rhythm() 0;
+    
+    a {
+        display: block;
+        height: rhythm(4);
+    }
+    
+    img {
+        height: 100%;
+        width: auto;
+        padding: 3px;
+        border: 1px solid #ccc;
+        margin: 0;
+        background-color: #fff;
+    }    
+}
+
 /* @end */
 
 /* @group ----- Simple Pages ----- */

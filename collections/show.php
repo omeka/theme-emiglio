@@ -1,6 +1,6 @@
 <?php
 $collectionId = $collection->id;
-echo head(array('title'=>metadata('collection', array('Dublin Core', 'Title')), 'bodyid'=>'collections', 'bodyclass' => 'show')); ?>
+echo head(array('title'=>metadata('collection', array('Dublin Core', 'Title')), 'bodyclass' => 'collections show')); ?>
 
 <h1><?php echo metadata('collection', array('Dublin Core', 'Title')); ?></h1>
 
