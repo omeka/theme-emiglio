@@ -1045,6 +1045,10 @@ div.item {
 
 /* @group ----- Exhibits ----- */
 
+.exhibit {
+    overflow: hidden;
+}
+
 .summary #content > h1:first-of-type {
     float: left;
     width: 65%;
