@@ -50,7 +50,7 @@ a img {
   border: none;
 }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
 
@@ -69,18 +69,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   -- Exhibits
   */
   /* @group ----- Generic HTML elements ----- */
-  * html {
-    font-size: 87.5%;
-  }
-
   html {
-    font-size: 14px;
+    font-size: 87.5%;
     line-height: 1.5em;
   }
 
   * {
-    -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
   }
 
@@ -156,8 +152,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     font-style: italic;
     border-color: #dddddd;
     padding: 1.5em 1.5em 0;
-    border-top-style: solid;
     border-top-width: 0.07143em;
+    border-top-style: solid;
     padding-top: 1.42857em;
   }
 
@@ -222,8 +218,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   textarea {
     font-family: "Lato", sans-serif;
     border-color: #dddddd;
-    border-style: solid;
     border-width: 0.07143em;
+    border-style: solid;
     padding: 0.30357em;
     font-size: 14px;
     line-height: 21px;
@@ -236,13 +232,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   input[type=submit],
   button,
   a.button {
-    -webkit-appearance: none;
     -moz-appearance: none;
-    appearance: none;
-    -webkit-border-radius: 0;
+    -webkit-appearance: none;
     -moz-border-radius: 0;
-    -ms-border-radius: 0;
-    -o-border-radius: 0;
+    -webkit-border-radius: 0;
     border-radius: 0;
     font-family: "Lato", sans-serif;
     font-size: 14px;
@@ -263,10 +256,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   select {
     display: inline-block;
     margin: 0.375em 0;
-    -webkit-border-radius: 0px;
     -moz-border-radius: 0px;
-    -ms-border-radius: 0px;
-    -o-border-radius: 0px;
+    -webkit-border-radius: 0px;
     border-radius: 0px;
     border: 1px solid #ccc;
     font-size: 14px;
@@ -281,8 +272,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     min-width: 50%;
     min-height: 9em;
     border-color: #dddddd;
-    border-style: solid;
     border-width: 0.07143em;
+    border-style: solid;
     padding: 0.67857em;
     vertical-align: top;
   }
@@ -337,10 +328,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   #content > h1:first-child {
     width: 100%;
     display: inline-block;
-    border-color: #dddddd;
-    border-bottom-style: solid;
-    border-bottom-width: 0.03571em;
-    padding-bottom: 0.71429em;
   }
 
   #content > #primary:not(:only-child) {
@@ -383,10 +370,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     margin-left: 0;
   }
 
-  .pagination {
+  .pagination-nav {
     position: relative;
   }
-  .pagination ul {
+  .pagination-nav ul {
     height: 2.25em;
     clear: both;
     margin: 0 0 1.5em;
@@ -394,7 +381,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     display: inline-block;
     vertical-align: top;
   }
-  .pagination input {
+  .pagination-nav input {
     margin: 0 5px 0 0;
     width: 4em;
     text-align: center;
@@ -494,8 +481,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
   .collection {
     border-color: #dddddd;
-    border-top-style: solid;
     border-top-width: 0.07143em;
+    border-top-style: solid;
     padding-top: 0.67857em;
     clear: both;
   }
@@ -517,8 +504,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
   .collection .image,
   .exhibit .image {
-    -webkit-box-shadow: -3px -3px 0 rgba(0, 0, 0, 0.2), -6px -6px 0 rgba(0, 0, 0, 0.1);
     -moz-box-shadow: -3px -3px 0 rgba(0, 0, 0, 0.2), -6px -6px 0 rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: -3px -3px 0 rgba(0, 0, 0, 0.2), -6px -6px 0 rgba(0, 0, 0, 0.1);
     box-shadow: -3px -3px 0 rgba(0, 0, 0, 0.2), -6px -6px 0 rgba(0, 0, 0, 0.1);
     margin-left: 6px;
   }
@@ -610,8 +597,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     width: 100%;
     border-color: #dddddd;
     border-top-color: #fff;
-    border-style: solid;
     border-width: 0.07143em;
+    border-style: solid;
     padding: 0.30357em;
     text-align: left;
     padding: 0.75em;
@@ -740,8 +727,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     clear: both;
     margin: 1.5em 0;
     border-color: #dddddd;
-    border-top-style: solid;
     border-top-width: 0.07143em;
+    border-top-style: solid;
     padding-top: 1.42857em;
   }
   #header-image img {
@@ -832,8 +819,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   #intro {
     border-color: #dddddd;
     padding-top: 1.5em;
-    border-bottom-style: solid;
     border-bottom-width: 0.07143em;
+    border-bottom-style: solid;
     padding-bottom: 1.42857em;
   }
 
@@ -844,8 +831,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     color: #fff;
     padding: 1.5em 1.5em 0;
     border-color: #4F584D;
-    border-bottom-style: solid;
     border-bottom-width: 0.21429em;
+    border-bottom-style: solid;
     padding-bottom: 1.28571em;
     margin-bottom: 1.5em;
   }
@@ -880,8 +867,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   #featured-item .item,
   #featured-collection .collection,
   #featured-exhibit .exhibit {
-    border-top-style: solid;
     border-top-width: 0em;
+    border-top-style: solid;
     padding-top: 0em;
   }
 
@@ -948,8 +935,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     clear: both;
     overflow: hidden;
     border-color: #dddddd;
-    border-top-style: solid;
     border-top-width: 0.07143em;
+    border-top-style: solid;
     padding-top: 1.42857em;
   }
 
@@ -985,8 +972,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     overflow: hidden;
     border-color: #dddddd;
     font-weight: bold;
-    border-top-style: solid;
     border-top-width: 0.07143em;
+    border-top-style: solid;
     padding-top: 1.42857em;
     margin: 1.5em 0 0;
     float: left;
@@ -1141,12 +1128,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     margin-bottom: 0.5em;
   }
 
-  .browse .exhibit:not(:last-child) {
+  .browse .exhibit {
     border-color: #dddddd;
-    border-bottom-style: solid;
-    border-bottom-width: 0.07143em;
-    padding-bottom: -0.07143em;
-    margin-bottom: 1.5em;
+    border-top-width: 0.07143em;
+    border-top-style: solid;
+    padding-top: 1.42857em;
+    margin-top: 1.5em;
   }
 
   #exhibit-pages ul {
@@ -1191,8 +1178,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
   #exhibit-page-navigation {
     border-color: #dddddd;
-    border-top-style: solid;
     border-top-width: 0.07143em;
+    border-top-style: solid;
     padding-top: 1.42857em;
     margin: 1.5em 0 0;
     float: left;
@@ -1227,8 +1214,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     display: block;
     width: 100%;
     border-color: rgba(255, 255, 255, 0.15);
-    border-bottom-style: solid;
     border-bottom-width: 0.07143em;
+    border-bottom-style: solid;
     padding-bottom: -0.07143em;
   }
   .navigation li a {

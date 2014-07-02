@@ -264,8 +264,6 @@ label,
 #content > h1:first-child {
     width: 100%;
     display: inline-block;
-    border-color: $gray;
-    @include trailing-border(1px, 1, 2 * $base-font-size, solid);
 }
 
 #content > #primary:not(:only-child) {
@@ -311,7 +309,7 @@ label,
     margin-left: 0;
 }
 
-.pagination {
+.pagination-nav {
     position: relative;
 
     ul {
@@ -1085,10 +1083,10 @@ div.item {
     @include trailer(.5, 1.5 * $base-font-size);
 }
 
-.browse .exhibit:not(:last-child) {
+.browse .exhibit {
     border-color: $gray;
-    @include trailing-border(1px, 0, $base-font-size, solid);
-    @include trailer();
+    @include leading-border(1px, 1, $base-font-size, solid);
+    @include leader();
 }
 
 #exhibit-pages {
