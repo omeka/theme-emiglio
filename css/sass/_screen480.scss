@@ -1,0 +1,33 @@
+.navigation {
+    position: relative;
+}
+
+.navigation li {
+    display: block;
+    width: 100%;
+    border-color: rgba(255,255,255,.15);
+    @include trailing-border(1px, 0, $base-font-size, solid);
+    
+    a {
+        width: 100%;
+    }
+    
+    &:last-of-type {
+        border-color: transparent;
+    }
+}
+
+.sub-nav.open {
+    width: 100%;
+    min-width: intrinsic;
+}
+
+.search-entry {
+    @include trailer();
+}
+
+.search-entry select, 
+.search-entry input[type=text] {
+    display: block;
+    width: 100%;
+}

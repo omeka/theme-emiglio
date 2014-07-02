@@ -1,0 +1,1150 @@
+/*
+Table of Contents
+=================
+-- General HTML Elements
+-- Global classes
+-- Header
+-- Footer
+-- Search
+-- Home
+-- Items
+-- Simple Pages
+-- Exhibits
+*/
+
+/* @group ----- Generic HTML elements ----- */
+
+@include establish-baseline;
+
+* {
+    @include box-sizing(border-box);
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+    color:#222;
+    background:#f6f6f6
+}
+
+h1 {
+    font-size: 2 * $base-font-size;
+    line-height: 2 * $base-line-height;
+    @include trailer(1);
+}
+
+
+h2 {
+    font-size: 1.75 * $base-font-size;
+    line-height: 2 * $base-line-height;
+    @include trailer(1, 1.75 * $base-font-size);
+    font-weight: bold;
+    color: #9e9e9e;
+}
+
+
+h3 {
+    font-size: 1.25 * $base-font-size;
+    line-height: $base-line-height;
+    @include trailer(1, 1.25 * $base-font-size);
+    color:#7B8D78;
+}
+
+
+h4 {
+    @include trailer();
+    font-weight:bold;
+    color:#7B8D78;
+}
+
+p, ul, ol, dl {
+    @include trailer();
+}
+
+
+ul, ol, dl {
+    margin-left: 1.5em;
+}
+
+ul {
+    list-style-type: disc;
+}
+
+ol {
+    list-style-type: decimal;
+}
+
+
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+    margin-bottom:0;
+}
+
+dt {
+    font-weight:bold;
+}
+
+
+dd {
+    margin-left:1.5em;
+    @include trailer();
+}
+
+
+blockquote { 
+    margin: rhythm(2) 0;
+    font-style:italic;
+    border-color: $gray;
+    padding: rhythm() 1.5em 0;
+    @include leading-border(1px, 1, $base-font-size, solid);
+}
+
+em, i {
+    font-style:italic;
+}
+
+strong, b {
+    font-weight:bold;
+}
+
+a:link { color:$red; }
+
+a:visited { color:$yellow; }
+
+a:hover { color:#7B8D78; }
+
+a:active { color:#7B8D78; }
+
+h1 a, 
+h2 a, 
+h3 a, 
+h4 a, 
+#site-title a { text-decoration:none; }
+
+table {
+    width: 100%;
+    margin: rhythm(2) 0;
+    border-collapse: collapse;
+    border-spacing: 0px;
+}
+
+// KKN: Chrome renders table padding and relative units (em) differently
+// than Firefox, and the two will only appear identical with absolute
+// units (px). Known issue with Chrome, and this sort of thing won't be
+// fixed for years if ever.
+
+th,td {
+    margin:0;
+    padding: 10px 0;
+    border-bottom: 1px solid $gray;
+}
+
+th {
+    text-align:left;
+    color: $yellow;
+    font-weight:bold;
+    border-bottom: 2px solid $gray;
+}
+
+input {
+    margin: 0;
+}
+
+input[type=text],
+input[type=password],
+textarea {
+    font-family: "Lato", sans-serif;
+    border-color: $gray;
+    @include rhythm-borders(1px, .25, $base-font-size, solid);
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+    margin: rhythm(.25) 0;;
+    max-width: 100%;
+    display: block;
+    min-height: rhythm(1.5);
+}
+
+input[type=submit],
+button,
+a.button {
+    @include appearance(none);
+    @include border-radius(0);
+    font-family: "Lato", sans-serif;
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+    background-color: $yellow;
+    color: #fff;
+    border: 0;
+    padding: rhythm(.25);
+    cursor: pointer;
+    margin: 0;
+    
+    &:hover {
+        background-color: darken($yellow, 15%);
+    }
+}
+
+select {
+    display: inline-block;
+    margin: rhythm(.25) 0;
+    @include border-radius(0px);
+    border: 1px solid #ccc;
+    font-size: $base-font-size;
+    line-height: 1.5 * $base-line-height;
+    height: 1.5 * $base-line-height;
+    margin-right: 3px;
+    vertical-align: top;    
+}
+    
+
+textarea {
+    @include trailer(1, $base-font-size);
+    min-width: 50%;
+    min-height: rhythm(6);
+    border-color: $gray;
+    @include rhythm-borders(1px, .5, $base-font-size, solid);
+    vertical-align: top;
+}
+
+label,
+.label {
+    font-weight: bold;
+    vertical-align: top;
+}
+
+.field {
+    @include trailer();
+}
+
+.inputs {
+    min-height: rhythm(2);
+    line-height: 2 * $base-line-height;
+}
+
+
+/* @end */
+
+/* @group ----- Global classes ----- */
+
+.screen-reader-text {
+    position: absolute;
+    left: -9999px;
+}
+
+#wrap {
+    overflow: hidden;
+    background: #fff;
+    width: 884px;
+    padding: rhythm();
+    margin: rhythm(2) auto;
+}
+
+#content {
+    clear:both;
+    @include padding-trailer();
+    border-top:1px solid $gray;
+    border-bottom:1px solid $gray;
+    float: left;
+    width: 100%;
+    position: relative;
+    
+    & > h1:first-of-type {
+        padding: rhythm(.5) 0;
+        margin: 0;
+    }
+    
+    #intro + #primary, & > #primary, #secondary {
+        @include padding-leader();
+    }
+}
+
+#content > h1:first-child {
+    width: 100%;
+    display: inline-block;
+    border-color: $gray;
+    @include trailing-border(1px, 1, 2 * $base-font-size, solid);
+}
+
+#content > #primary:not(:only-child) {
+    float:left;
+    width: 65%;
+    padding: rhythm() rhythm() rhythm() 0;
+    @include trailer(-1);
+    position: relative;
+    
+    & > h1:first-child,
+    & > h2:first-child {
+        @include leader(0);
+        @include trailer(1, 2 * $base-font-size);
+    }
+    
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        right: -1px;
+        top: 0;
+        bottom: 0;
+        background-color: $gray;
+        width: 1px;
+    }
+}
+
+#content nav {
+    overflow:hidden;
+}
+
+#secondary {
+    float:right;
+    width: 35%;
+    padding: 0 0 rhythm() rhythm();
+    word-wrap: break-word;
+    border-left: 1px solid $gray;
+    @include trailer(-1);
+}
+
+.navigation {
+    list-style: none;
+    margin-left: 0;
+}
+
+.pagination {
+    position: relative;
+
+    ul {
+        height: rhythm(1.5);
+        clear:both;
+        margin: 0 0 rhythm();
+        background-color: $gray;
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    input {
+        margin: 0 5px 0 0;
+        width: 4em;
+        text-align: center;
+        display: inline;
+    }
+}
+
+.page-input {
+    padding-right: 10px;
+}
+
+.pagination_next,
+.pagination_previous {
+    background-color: $yellow;
+    font-size: $base-font-size;
+    padding: 0 10px;
+    position: relative;
+
+    a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        height: rhythm(1.5);
+        display: block;
+        line-height: 1.5 * $base-line-height;
+    }
+}
+
+.pagination_next a:after {
+    font-family: "FontAwesome";
+    content: "\f105";
+}
+
+.pagination_previous a:after {
+    font-family: "FontAwesome";
+    content: "\f104";
+}
+
+.pagination li {
+    display:block;
+    float:left;
+}
+
+.hTagcloud li {
+    display: inline;
+}
+
+.hTagcloud ul {
+    list-style:none;
+    margin-left:0;
+    padding-left:0;
+}
+
+.popular { font-size:100%; }
+
+.v-popular { font-size:140%; }
+
+.vv-popular { font-size:180%; }
+
+.vvv-popular { font-size:220%; }
+
+.vvvv-popular { font-size:260%; }
+
+.vvvvv-popular { font-size:300%; }
+
+.vvvvvv-popular { font-size:320%; }
+
+.vvvvvvv-popular { font-size:340%; }
+
+.vvvvvvvv-popular { font-size:360%; }
+
+ul.tags { margin-left:0; }
+
+ul.tags li {
+    display:inline;
+    margin-bottom:0;
+}
+
+.collection {
+    border-color: $gray;
+    @include leading-border(1px, .5, $base-font-size, solid);
+    clear: both;
+}
+
+.image {
+    float: left;
+    display: block;
+    height: rhythm(4);
+    margin: 0 rhythm() rhythm() 0;
+    
+    img {
+        height: 100%;
+        width: auto;
+        padding: 3px;
+        border: 1px solid #ccc;
+        margin: 0;
+        background-color: #fff;
+    }
+}
+
+.collection .image,
+.exhibit .image {
+    @include box-shadow(-3px -3px 0 rgba(0,0,0,.2), -6px -6px 0 rgba(0,0,0,.1));
+    margin-left: 6px;
+}
+
+/* @end */
+
+/* @group ----- Header ----- */
+
+header {
+    @include trailer(.5);
+}
+
+#site-title {
+    font-size: 2 * $base-font-size;
+    line-height: 2 * $base-line-height;
+    padding: 0 0 rhythm(1, 2 * $base-font-size) 0;
+}
+
+#search-container {
+    float: right;
+    text-align: right;
+    vertical-align: top;
+    width: 30%;
+    position: relative;
+
+    form {
+        margin: rhythm(.25) 0;
+        float: left;
+        width: 100%;
+        position: relative;
+        
+        a {
+            font-weight:bold;
+            text-decoration:none;
+        }
+    }
+    
+    input {
+        vertical-align: top;
+        margin: 0;
+    }
+    
+    input[type=text] {
+        width: 100%;
+        float: left;
+        height: 1.5 * $base-line-height;
+    }
+    
+    button {
+        width: rhythm(1.5);
+        position: absolute;
+        top: 0;
+        right: 0;
+        text-indent: -9999px;
+        
+        &:after {
+            font-family: "FontAwesome";
+            content: "\f002";
+            text-indent: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: rhythm(1.5);
+            line-height: rhythm(1.5);
+            text-align: center;
+        }
+    }
+}
+
+#search-container.with-advanced {
+    input[type=text] {
+        width: 100%;
+        padding-right: rhythm(3);
+    }
+    
+    button,
+    .show-advanced {
+        width: rhythm(1.5);
+        position: absolute;
+    }
+    
+    button {
+        right: rhythm(1.5);
+    }
+    
+    .show-advanced {
+        width: rhythm(1.5);
+        color: #fff !important;
+        display: block;
+        right: 0;
+        text-align: center;
+        border-left: 1px solid rgba(0,0,0,.08);
+    }
+}
+
+#advanced-form {
+    // display: none;
+    position: absolute;
+    top: rhythm(1.75);
+    background-color: #fff;
+    z-index: 20;
+    width: 100%;
+    border-color: $gray;
+    border-top-color: #fff;
+    @include rhythm-borders(1px, .25, $base-font-size, solid);
+    text-align: left;
+    padding: rhythm(.5);
+    
+    &.closed {
+        left: -9999px;
+    }
+    
+    &.open  {
+        left: 0;
+    }
+    
+    p {
+        @include trailer(.5);
+    }
+    
+    fieldset {
+        @include trailer();
+    }
+    
+    label {
+        font-size: $base-font-size;
+        font-weight: normal;
+    }
+    
+    input[type=checkbox],
+    input[type=radio] {
+        margin: rhythm(.25) 5px 0 0;
+    }
+    
+    & > *:last-child {
+        margin-bottom: 0;
+    }
+}
+
+/* mega menu list */
+.nav-menu {
+    width: 100%;
+    display: block;
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    z-index: 15;
+    float: left;
+    background-color: $red;
+    
+    a {
+        text-decoration: none;
+
+        &:link, &:visited {
+            color: #fff;
+        }
+        
+        &:hover, &:focus {
+            background-color: #000;
+            color: saturate(lighten($yellow, 20%), 20%);
+        }
+    }
+}
+
+/* a top level navigation item in the mega menu */
+.nav-item {
+    list-style: none;
+    display: block;
+    float: left;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+/* first descendant link within a top level navigation item */
+.nav-item > a {
+    position: relative;
+    display: inline-block;
+    padding: rhythm(.5) rhythm();
+    margin: 0;
+    border: 0;
+    color: #fff;
+}
+
+/* focus/open states of first descendant link within a top level 
+   navigation item */
+.nav-item > a:focus,
+.nav-item > a.open {
+    background-color: #000;
+}
+
+/* open state of first descendant link within a top level 
+   navigation item */
+.nav-item > a.open {
+    background-color: #000;
+    border-bottom: none;
+    z-index: 1;
+}
+
+/* sub-navigation panel */
+.sub-nav {
+    position: absolute;
+    display: none;
+    top: rhythm(2);
+    padding: rhythm();
+    border: 0;
+    margin: 0;
+    background-color: $red;
+    z-index: 2;
+}
+
+/* sub-navigation panel open state */
+.sub-nav.open {
+    display: block;
+    background-color: #000;
+    min-width: 150%;
+}
+
+/* list of items within sub-navigation panel */
+.sub-nav ul {
+    display: block;
+    vertical-align: top;
+    margin: 0;
+    padding: 0;
+    
+    a {
+        &:before {
+            content: "\2014\0020";
+        }
+    }
+}
+
+/* list item within sub-navigation panel */
+.sub-nav li {
+    display: block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#header-image {
+    clear:both;
+    margin: rhythm() 0;
+    border-color: $gray;
+    @include leading-border(1px, 1, $base-font-size, solid);
+
+    img {
+        display:block;
+        max-width: 100%;
+    }
+}
+
+/* @end */
+
+/* @group ----- Footer ----- */
+
+footer {
+    clear:both;
+    @include padding-leader();
+
+    ul {
+        width: 50%;
+        float: right;
+        text-align: right;
+        margin-bottom: 0;
+        
+        ul { display: none; }
+    }
+
+    li {
+        margin-bottom: 0;
+        display: inline;
+
+        a {
+            margin-left: 9px;
+            text-decoration: none;
+            font-weight: bold;
+            border-right: 1px solid $gray;
+            padding-right: 9px;
+            white-space: nowrap;
+        }
+    }
+
+    li.nav-home a {
+        border-width: 0;
+    }
+
+    a:visited { color: $red; }
+}
+
+#footer-text {
+    width: 50%;
+    margin-bottom:0;
+}
+
+/* @end */
+
+/* @group ----- Search ----- */
+
+#search-filters ul {
+    margin: 0;
+
+    ul {
+        display: inline-block;
+    }
+}
+
+#search-filters li {
+    display: inline-block;
+}    
+
+#search-filters > ul > li {
+    padding: rhythm(.5) 10px;
+    background-color: $yellow;
+    color: #fff;
+}
+
+#search-filters li li {
+    text-transform: lowercase;
+    
+    &:after {
+        content: ", "
+    }
+    
+    &:last-of-type:after {
+        content: "";
+    }
+}
+
+#search-results {
+    @include leader();
+    
+    td, th {
+        vertical-align: top;
+    }
+    
+    .image {
+        margin-bottom: 0;
+    }
+}
+
+/* @end */
+
+/* @group ----- Home ----- */
+
+#intro {
+    border-color: $gray;
+    @include padding-leader();
+    @include trailing-border(1px, 1, $base-font-size, solid);
+}
+
+.featured,
+#featured-exhibit {
+    overflow: hidden;
+    background: #7B8D78;
+    color: #fff;
+    padding: rhythm() rhythm() 0;
+    border-color: #4F584D;
+    @include trailing-border(3px, 1, $base-font-size, solid);
+    @include trailer();
+
+    h2 {
+        font-size: 1.25 * $base-font-size;
+        font-weight:bold;
+        margin: rhythm(-1) rhythm(-1) rhythm(1, 1.25 * $base-font-size);
+        padding: rhythm(.5) rhythm();
+        background:#4F584D;
+        color:#fff;
+    }
+    
+    a { color: lighten($yellow, 20%); }
+    
+    a:hover { color: lighten(saturate($yellow, 20%), 20%); }
+
+}
+
+#home #content #primary {
+    padding-top: rhythm() !important;
+}
+
+#featured-item *:last-child,
+#featured-collection *:last-child,
+#featured-exhibit *:last-child {
+    @include trailer(0);
+}
+
+#featured-item .item,
+#featured-collection .collection,
+#featured-exhibit .exhibit {
+    @include leading-border(0px, 0, $base-font-size, solid);
+}
+
+#featured-item {
+    @include trailer();
+}
+
+.item-description {
+    @include trailer();
+}
+
+#recent-items .item img {
+    width: rhythm(3);
+}
+
+/* @end */
+
+/* @group ----- Items ----- */
+
+.items.show #content > #primary {
+    @include padding-leader();
+}
+
+.items.show #secondary {
+    padding-top: 0;
+}
+
+.items-nav,
+#secondary-nav,
+.secondary-nav,
+#exhibit-child-pages {
+    overflow:hidden;
+    @include trailer();
+
+    li {
+        display: inline-block;
+        float:left;
+        padding: 0;
+        margin: 0 10px 0 0;
+    }
+
+    a {
+        text-decoration:none;
+        display:block;
+        float:left;
+        padding: rhythm(.5);
+        text-align:center;
+        color:#fff;
+        background:$yellow;
+        border-width: 0 1px 1px 0;
+        
+        &:hover {
+            background-color: darken($yellow, 20%);
+            color: #fff;
+        }
+    }
+}
+
+div.item {
+    clear: both;
+    overflow:hidden;
+    border-color: $gray;
+    @include leading-border(1px, 1, $base-font-size, solid);
+}
+
+.item img, 
+.item-file img {
+    width: rhythm(4);
+    height: auto;
+    padding: 3px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    float: left;
+}
+
+.item-img img {
+    margin: 0 rhythm() rhythm() 0;
+}
+
+#itemfiles + * {
+    clear: left;
+}
+
+.element-text {
+    font-size: $base-font-size;
+    @include trailer(2, $base-font-size);
+}
+
+.element-text-empty {
+    display: none;
+}
+
+.item-pagination {
+    clear:both;
+    overflow:hidden;
+    border-color: $gray;
+    font-weight:bold;
+    @include leading-border(1px, 1, $base-font-size, solid);
+    margin: rhythm() 0 0;
+    float: left;
+    width: 100%;
+
+    li {
+        display:block;
+        float:left;
+        width: 400px;
+        margin-bottom:0;
+    }
+
+    li.next {
+        float:right;
+        text-align:right;
+    }
+
+    a {
+        text-decoration:none;
+        display:block;
+        float:left;
+        width: 400px;
+    }
+}
+
+.item-file {
+    @include trailer();
+    
+    a, img {
+        vertical-align: top;
+        display: block;
+    }
+     
+    img {
+       height: rhythm(4);
+       width: auto;
+       @include trailer();
+    }
+}
+
+#pagination-top {
+    float: left;
+}
+
+#sort-links {
+    margin: rhythm(.25) 0 rhythm();
+    float: right;
+}
+
+#sort-links-list {
+    margin-left: 10px;
+    display: inline;
+
+    li {
+        display: inline;
+        margin-right: 10px;
+    }
+}
+
+.asc a:after, .desc a:after {
+    display: inline-block;
+    font-family: "FontAwesome";
+    text-decoration: underline;
+}
+
+.asc a:after {
+    content: "\00a0\f0d8";
+}
+
+.desc a:after {
+    content: "\00a0\f0d7";
+}
+
+.sorting {
+    font-weight: bold;
+}
+
+#advanced-search-form {
+    @include padding-trailer(2);
+
+    label {
+        font-size: 1.125 * $base-font-size;
+    }
+
+    input {
+        display: inline-block;
+    }
+}
+
+.remove_search {
+    padding: rhythm(.25) 10px;
+    text-indent: -9999px;
+    width: 1.5 * $base-line-height;
+    position: relative;
+    height: 1.5 * $base-line-height;
+    
+    &:after {
+        content: "\f00d";
+        font-family: "FontAwesome";
+        text-indent: 0;
+        text-align: center;
+        width: 100%;
+        top: 0;
+        left: 0;
+        position: absolute;
+        line-height: 1.5 * $base-line-height;
+    }
+}
+
+/* @end */
+
+/* @group ----- Collections ----- */
+
+.collections.browse h1 {
+    float: left;
+}
+
+.collections .item-img {
+    float: left;
+    margin: 0 rhythm() rhythm() 0;
+    
+    a {
+        display: block;
+        height: rhythm(4);
+    }
+    
+    img {
+        height: 100%;
+        width: auto;
+        padding: 3px;
+        border: 1px solid #ccc;
+        margin: 0;
+        background-color: #fff;
+    }    
+}
+
+/* @end */
+
+/* @group ----- Simple Pages ----- */
+
+.page #primary {
+    width: 100% !important;
+    border-right: 0 !important;
+    padding-top: rhythm() !important;
+}
+
+/* @end */
+
+/* @group ----- Exhibits ----- */
+
+.exhibit {
+    overflow: hidden;
+}
+
+.summary #content > h1:first-of-type {
+    float: left;
+    width: 65%;
+}
+
+.summary #content > h1:first-of-type {
+    margin-right: rhythm(1, 2 * $base-font-size);
+}
+
+.summary #content #primary {
+    margin-right: rhythm();
+}
+
+.exhibits #secondary h2 {
+    @include trailer(.5, 1.5 * $base-font-size);
+}
+
+.browse .exhibit:not(:last-child) {
+    border-color: $gray;
+    @include trailing-border(1px, 0, $base-font-size, solid);
+    @include trailer();
+}
+
+#exhibit-pages {
+    ul {
+        margin: 0;
+        padding: 0;
+        overflow:hidden;
+        @include trailer();
+        
+        ul {
+            padding-left: rhythm();
+            @include trailer(0);
+        }
+    
+        li {
+            width: 100%;
+            display: block;
+            padding: 0;
+            
+            &:last-of-type {
+                @include trailer(0);
+            }
+        }
+    
+        a {
+            width: 100%;
+            text-align: left;
+            text-decoration:none;
+            display:block;
+            padding: rhythm(.5);
+            color:#fff;
+            background:$yellow;
+            border-width: 0 1px 1px 0;
+            
+            &:hover {
+                background-color: darken($yellow, 20%);
+                color: #fff;
+            }
+        }
+    }
+    
+    .current > a {
+        background-color: darken($yellow, 15%);
+    }
+}
+
+.summary #exhibit-pages {
+    padding: rhythm() 0;    
+}
+
+#exhibit-page-navigation {
+    border-color: $gray;
+    @include leading-border(1px, 1, $base-font-size, solid);
+    margin: rhythm() 0 0;
+    float: left;
+    width: 100%;
+}
+
+/* @end */

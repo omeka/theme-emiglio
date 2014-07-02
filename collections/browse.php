@@ -1,37 +1,57 @@
-<?php head(array('title'=>__('Browse Collections'),'bodyid'=>'collections','bodyclass' => 'browse')); ?>
+<?php 
+$pageTitle = __('Browse Collections');
+echo head(array('title'=>$pageTitle,'bodyclass' => 'collections browse')); 
+?>
+
 <div id="primary">
-    <h1><?php echo __('Collections'); ?></h1>
-    <?php if (has_collections_for_loop()): ?>
-        <div class="pagination"><?php echo pagination_links(); ?></div>
-    <?php while (loop_collections()): ?>
+    <h1><?php echo $pageTitle; ?> <?php echo __('(%s total)', $total_results); ?></h1>
+    <?php echo pagination_links(); ?>
+    
+    <?php
+    $sortLinks[__('Title')] = 'Dublin Core,Title';
+    $sortLinks[__('Date Added')] = 'added';
+    ?>
+
+    <div id="sort-links">
+        <span class="sort-label"><?php echo __('Sort by: '); ?></span><?php echo browse_sort_links($sortLinks); ?>
+    </div>
+
+    <?php if (total_records('collection') > 0): ?>
+    <?php foreach (loop('collection') as $collection): ?>
         <div class="collection">
             <h2><?php echo link_to_collection(); ?></h2>
+            <?php if ($collectionImage = record_image('collection', 'square_thumbnail')): ?>
+                <?php echo link_to_collection($collectionImage, array('class' => 'image')); ?>
+            <?php endif; ?>
+            <?php if (metadata('collection', array('Dublin Core', 'Description'))): ?>
             <div class="element">
-                <h3><?php echo __('Description'); ?></h3>
-            <div class="element-text"><?php echo nls2p(collection('Description', array('snippet'=>150))); ?></div>
-        </div>
-        <div class="element">
-            <h3><?php echo __('Collector(s)'); ?></h3>
-            <?php if(collection_has_collectors()): ?>
-            <div class="element-text">
-                <p><?php echo collection('Collectors', array('delimiter'=>', ')); ?></p>
+                <div class="element-text"><?php echo text_to_paragraphs(metadata('collection', array('Dublin Core', 'Description'), array('snippet'=>150))); ?></div>
             </div>
             <?php endif; ?>
-        </div>
-        <p class="view-items-link"><?php echo link_to_browse_items(__('View the items in %s', collection('Name')), array('collection' => collection('id'))); ?></p>
-
-        <?php echo plugin_append_to_collections_browse_each(); ?>
-
+        
+            <?php if ($collection->hasContributor()): ?>
+            <div class="element">
+                <h3><?php echo __('Contributors'); ?></h3>
+                <div class="element-text">
+                    <p><?php echo metadata('collection', array('Dublin Core', 'Contributor'), array('all'=>true, 'delimiter'=>', ')); ?></p>
+                </div>
+            </div>
+            <?php endif; ?>
+            <p class="view-items-link"><?php echo link_to_items_browse(__('View the items in %s', metadata($collection, array('Dublin Core', 'Title')), array('collection' => $collection->id))); ?></p>
+    
+            <?php echo fire_plugin_hook('public_collections_browse_each', array('view' => $this, 'collection' => $collection)); ?>
+    
         </div><!-- end class="collection" -->
-    <?php endwhile; ?>
+    <?php endforeach; ?>
     <?php else: ?>
-        <p>No collections to display.</p>
+        <p><?php echo __('There are no collections.'); ?></p>
     <?php endif; ?>
-        <?php echo plugin_append_to_collections_browse(); ?>
+        <?php echo fire_plugin_hook('public_collections_browse', array('collections'=>$collections, 'view' => $this)); ?>
 </div><!-- end primary -->
 <div id="secondary">
     <div id="featured-collection" class="featured">
-        <?php echo display_random_featured_collection(); ?>
+        <h2><?php echo __('Featured Collection'); ?></h2>
+        <?php echo random_featured_collection(); ?>
     </div><!-- end featured collection -->
 </div>
-<?php foot();
+<?php echo foot(); ?>
