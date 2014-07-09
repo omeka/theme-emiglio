@@ -25,14 +25,14 @@ echo head(array('title'=>$pageTitle,'bodyclass' => 'collections browse'));
             <?php endif; ?>
             <?php if (metadata('collection', array('Dublin Core', 'Description'))): ?>
             <div class="element">
-                <div class="element-text"><?php echo text_to_paragraphs(metadata('collection', array('Dublin Core', 'Description'), array('snippet'=>150))); ?></div>
+                <div class="collection-description"><?php echo text_to_paragraphs(metadata('collection', array('Dublin Core', 'Description'), array('snippet'=>150))); ?></div>
             </div>
             <?php endif; ?>
         
             <?php if ($collection->hasContributor()): ?>
             <div class="element">
                 <h3><?php echo __('Contributors'); ?></h3>
-                <div class="element-text">
+                <div class="collection-description">
                     <p><?php echo metadata('collection', array('Dublin Core', 'Contributor'), array('all'=>true, 'delimiter'=>', ')); ?></p>
                 </div>
             </div>

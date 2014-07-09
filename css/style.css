@@ -1011,6 +1011,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
   #pagination-top {
     float: left;
+    clear: both;
   }
 
   #sort-links {
