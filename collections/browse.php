@@ -37,7 +37,7 @@ echo head(array('title'=>$pageTitle,'bodyclass' => 'collections browse'));
                 </div>
             </div>
             <?php endif; ?>
-            <p class="view-items-link"><?php echo link_to_items_browse(__('View the items in %s', metadata($collection, array('Dublin Core', 'Title')), array('collection' => $collection->id))); ?></p>
+            <p class="view-items-link"><?php echo link_to_items_browse(__('View the items in %s', metadata($collection, array('Dublin Core', 'Title'))), array('collection' => $collection->id)); ?></p>
     
             <?php echo fire_plugin_hook('public_collections_browse_each', array('view' => $this, 'collection' => $collection)); ?>
     
