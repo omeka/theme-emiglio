@@ -311,6 +311,8 @@ label,
 
 .pagination-nav {
     position: relative;
+    float: left;
+    clear: both;
 
     ul {
         height: rhythm(1.5);
@@ -725,6 +727,7 @@ footer {
 
 /* @group ----- Search ----- */
 
+#item-filters ul,
 #search-filters ul {
     margin: 0;
 
@@ -733,16 +736,19 @@ footer {
     }
 }
 
+#item-filters li,
 #search-filters li {
     display: inline-block;
 }    
 
+#item-filters > ul > li,
 #search-filters > ul > li {
     padding: rhythm(.5) 10px;
-    background-color: $yellow;
-    color: #fff;
+    background-color: lighten($yellow, 35%);
+    color: darken($yellow, 15%);
 }
 
+#item-filters li li,
 #search-filters li li {
     text-transform: lowercase;
     
@@ -753,6 +759,12 @@ footer {
     &:last-of-type:after {
         content: "";
     }
+}
+
+#item-filters {
+    border-color: $gray;
+    @include trailing-border(1px, 1, $base-font-size, solid);
+    @include trailer();
 }
 
 #search-results {
@@ -824,10 +836,6 @@ footer {
 
 .item-description {
     @include trailer();
-}
-
-#recent-items .item img {
-    width: rhythm(3);
 }
 
 /* @end */
@@ -950,11 +958,6 @@ div.item {
        width: auto;
        @include trailer();
     }
-}
-
-#pagination-top {
-    float: left;
-    clear: both;
 }
 
 #sort-links {
