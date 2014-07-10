@@ -44,11 +44,16 @@ echo head(array('title'=>$pageTitle,'bodyclass' => 'collections browse'));
             <?php echo fire_plugin_hook('public_collections_browse_each', array('view' => $this, 'collection' => $collection)); ?>
     
         </div><!-- end class="collection" -->
+
+        <?php echo pagination_links(); ?>
+
     <?php endforeach; ?>
+    
     <?php else: ?>
         <p><?php echo __('There are no collections.'); ?></p>
     <?php endif; ?>
-        <?php echo fire_plugin_hook('public_collections_browse', array('collections'=>$collections, 'view' => $this)); ?>
+    
+    <?php echo fire_plugin_hook('public_collections_browse', array('collections'=>$collections, 'view' => $this)); ?>
 </div><!-- end primary -->
 <div id="secondary">
     <div id="featured-collection" class="featured">
