@@ -45,12 +45,12 @@ echo head(array('title'=>$pageTitle,'bodyclass' => 'collections browse'));
     
         </div><!-- end class="collection" -->
 
-        <?php echo pagination_links(); ?>
-
     <?php endforeach; ?>
-    
+
+    <?php echo pagination_links(); ?>
+  
     <?php else: ?>
-        <p><?php echo __('There are no collections.'); ?></p>
+      <p><?php echo __('There are no collections.'); ?></p>
     <?php endif; ?>
     
     <?php echo fire_plugin_hook('public_collections_browse', array('collections'=>$collections, 'view' => $this)); ?>
