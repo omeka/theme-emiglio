@@ -13,7 +13,7 @@ echo head(array('title'=>$pageTitle, 'bodyclass' => 'items browse'));
         <?php echo public_nav_items(); ?>
     </ul>
 
-    <div id="pagination-top" class="pagination"><?php echo pagination_links(); ?></div>
+    <?php echo pagination_links(); ?>
 
     <?php if ($total_results > 0): ?>
 
@@ -63,7 +63,7 @@ echo head(array('title'=>$pageTitle, 'bodyclass' => 'items browse'));
     <?php endforeach; ?>
     <?php echo fire_plugin_hook('public_items_browse', array('items'=>$items, 'view' => $this)); ?>
 
-    <div id="pagination-bottom" class="pagination"><?php echo pagination_links(); ?></div>
+    <?php echo pagination_links(); ?>
 </div>
 <div id="secondary">
     <!-- Featured Item -->
