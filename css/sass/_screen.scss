@@ -1150,3 +1150,12 @@ div.item {
 }
 
 /* @end */
+
+/* @group ----- Other Plugins ----- */
+
+#recaptcha_area input {
+    display: inline;
+    min-height: 0;
+}
+
+/* @end */

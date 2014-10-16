@@ -150,7 +150,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   blockquote {
     margin: 3em 0;
     font-style: italic;
-    border-color: #dddddd;
+    border-color: #ddd;
     padding: 1.5em 1.5em 0;
     border-top-width: 0.07143em;
     border-top-style: solid;
@@ -170,7 +170,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   }
 
   a:visited {
-    color: #a49d4c;
+    color: #A49D4C;
   }
 
   a:hover {
@@ -199,14 +199,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   th, td {
     margin: 0;
     padding: 10px 0;
-    border-bottom: 1px solid #dddddd;
+    border-bottom: 1px solid #ddd;
   }
 
   th {
     text-align: left;
-    color: #a49d4c;
+    color: #A49D4C;
     font-weight: bold;
-    border-bottom: 2px solid #dddddd;
+    border-bottom: 2px solid #ddd;
   }
 
   input {
@@ -217,7 +217,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   input[type=password],
   textarea {
     font-family: "Lato", sans-serif;
-    border-color: #dddddd;
+    border-color: #ddd;
     border-width: 0.07143em;
     border-style: solid;
     padding: 0.30357em;
@@ -240,7 +240,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     font-family: "Lato", sans-serif;
     font-size: 14px;
     line-height: 21px;
-    background-color: #a49d4c;
+    background-color: #A49D4C;
     color: #fff;
     border: 0;
     padding: 0.375em;
@@ -271,7 +271,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     margin-bottom: 1.5em;
     min-width: 50%;
     min-height: 9em;
-    border-color: #dddddd;
+    border-color: #ddd;
     border-width: 0.07143em;
     border-style: solid;
     padding: 0.67857em;
@@ -311,8 +311,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   #content {
     clear: both;
     padding-bottom: 1.5em;
-    border-top: 1px solid #dddddd;
-    border-bottom: 1px solid #dddddd;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
     float: left;
     width: 100%;
     position: relative;
@@ -348,7 +348,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     right: -1px;
     top: 0;
     bottom: 0;
-    background-color: #dddddd;
+    background-color: #ddd;
     width: 1px;
   }
 
@@ -361,7 +361,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     width: 35%;
     padding: 0 0 1.5em 1.5em;
     word-wrap: break-word;
-    border-left: 1px solid #dddddd;
+    border-left: 1px solid #ddd;
     margin-bottom: -1.5em;
   }
 
@@ -379,7 +379,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     height: 2.25em;
     clear: both;
     margin: 0 0 1.5em;
-    background-color: #dddddd;
+    background-color: #ddd;
     display: inline-block;
     vertical-align: top;
   }
@@ -396,7 +396,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
   .pagination_next,
   .pagination_previous {
-    background-color: #a49d4c;
+    background-color: #A49D4C;
     font-size: 14px;
     padding: 0 10px;
     position: relative;
@@ -482,7 +482,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   }
 
   .collection {
-    border-color: #dddddd;
+    border-color: #ddd;
     border-top-width: 0.07143em;
     border-top-style: solid;
     padding-top: 0.67857em;
@@ -597,7 +597,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     background-color: #fff;
     z-index: 20;
     width: 100%;
-    border-color: #dddddd;
+    border-color: #ddd;
     border-top-color: #fff;
     border-width: 0.07143em;
     border-style: solid;
@@ -728,7 +728,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   #header-image {
     clear: both;
     margin: 1.5em 0;
-    border-color: #dddddd;
+    border-color: #ddd;
     border-top-width: 0.07143em;
     border-top-style: solid;
     padding-top: 1.42857em;
@@ -761,7 +761,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     margin-left: 9px;
     text-decoration: none;
     font-weight: bold;
-    border-right: 1px solid #dddddd;
+    border-right: 1px solid #ddd;
     padding-right: 9px;
     white-space: nowrap;
   }
@@ -814,7 +814,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   }
 
   #item-filters {
-    border-color: #dddddd;
+    border-color: #ddd;
     border-bottom-width: 0.07143em;
     border-bottom-style: solid;
     padding-bottom: 1.42857em;
@@ -834,7 +834,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   /* @end */
   /* @group ----- Home ----- */
   #intro {
-    border-color: #dddddd;
+    border-color: #ddd;
     padding-top: 1.5em;
     border-bottom-width: 0.07143em;
     border-bottom-style: solid;
@@ -933,7 +933,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     padding: 0.75em;
     text-align: center;
     color: #fff;
-    background: #a49d4c;
+    background: #A49D4C;
     border-width: 0 1px 1px 0;
   }
   .items-nav a:hover,
@@ -947,7 +947,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   div.item {
     clear: both;
     overflow: hidden;
-    border-color: #dddddd;
+    border-color: #ddd;
     border-top-width: 0.07143em;
     border-top-style: solid;
     padding-top: 1.42857em;
@@ -983,7 +983,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   .item-pagination {
     clear: both;
     overflow: hidden;
-    border-color: #dddddd;
+    border-color: #ddd;
     font-weight: bold;
     border-top-width: 0.07143em;
     border-top-style: solid;
@@ -1138,7 +1138,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   }
 
   .browse .exhibit {
-    border-color: #dddddd;
+    border-color: #ddd;
     border-top-width: 0.07143em;
     border-top-style: solid;
     padding-top: 1.42857em;
@@ -1170,7 +1170,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     display: block;
     padding: 0.75em;
     color: #fff;
-    background: #a49d4c;
+    background: #A49D4C;
     border-width: 0 1px 1px 0;
   }
   #exhibit-pages ul a:hover {
@@ -1186,13 +1186,20 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   }
 
   #exhibit-page-navigation {
-    border-color: #dddddd;
+    border-color: #ddd;
     border-top-width: 0.07143em;
     border-top-style: solid;
     padding-top: 1.42857em;
     margin: 1.5em 0 0;
     float: left;
     width: 100%;
+  }
+
+  /* @end */
+  /* @group ----- Other Plugins ----- */
+  #recaptcha_area input {
+    display: inline;
+    min-height: 0;
   }
 
   /* @end */
