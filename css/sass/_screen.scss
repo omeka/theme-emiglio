@@ -889,7 +889,8 @@ div.item {
 }
 
 .item img, 
-.item-file img {
+.item-file img,
+#itemfiles img {
     width: rhythm(4);
     height: auto;
     padding: 3px;
@@ -900,6 +901,21 @@ div.item {
 
 .item-img img {
     margin: 0 rhythm() rhythm() 0;
+}
+
+.items #primary .item-file img {
+    width: intrinsic;
+    height: auto;
+    max-width: 100%;
+}
+
+#itemfiles {
+    overflow: hidden;
+    @include trailer(2);
+    
+    img {
+        margin: 0 rhythm(.25) rhythm(.25) 0;
+    }
 }
 
 #itemfiles + * {

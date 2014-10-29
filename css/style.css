@@ -954,7 +954,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   }
 
   .item img,
-  .item-file img {
+  .item-file img,
+  #itemfiles img {
     width: 6em;
     height: auto;
     padding: 3px;
@@ -965,6 +966,20 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
   .item-img img {
     margin: 0 1.5em 1.5em 0;
+  }
+
+  .items #primary .item-file img {
+    width: intrinsic;
+    height: auto;
+    max-width: 100%;
+  }
+
+  #itemfiles {
+    overflow: hidden;
+    margin-bottom: 3em;
+  }
+  #itemfiles img {
+    margin: 0 0.375em 0.375em 0;
   }
 
   #itemfiles + * {

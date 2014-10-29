@@ -6,6 +6,13 @@
     <!--  The following function prints all the the metadata associated with an item: Dublin Core, extra element sets, etc. See http://omeka.org/codex or the examples on items/browse for information on how to print only select metadata fields. -->
     <?php echo all_element_texts($item); ?>
 
+    <?php if ((get_theme_option('Item FileGallery') == 0) && metadata('item', 'has files')): ?>
+    <div class="element-text">
+        <h2>Files</h2>
+        <?php echo files_for_item(array('imageSize' => 'fullsize')); ?>
+    </div>
+    <?php endif; ?>
+
     <?php fire_plugin_hook('public_items_show', array('view' => $this, 'item' => $item)); ?>
 
 </div><!-- end primary -->
@@ -13,12 +20,14 @@
 <div id="secondary">
 
     <!-- The following returns all of the files associated with an item. -->
-    <?php if (metadata($item, 'has files')): ?>
+    <?php if ((get_theme_option('Item FileGallery') == 1) && metadata($item, 'has files')): ?>
     <div id="itemfiles" class="element">
         <h2>Files</h2>
-        <div class="element-text"><?php echo files_for_item(); ?></div>
+        <div class="element-text"><?php echo item_image_gallery(); ?></div>
     </div>
     <?php endif; ?>
+    
+
 
     <!-- The following prints a list of all tags associated with the item -->
     <?php if (metadata($item, 'has tags')): ?>
