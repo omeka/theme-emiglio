@@ -3,15 +3,13 @@
 <h1><?php echo metadata($item, array('Dublin Core', 'Title')); ?></h1>
 
 <div id="primary">
-    <!--  The following function prints all the the metadata associated with an item: Dublin Core, extra element sets, etc. See http://omeka.org/codex or the examples on items/browse for information on how to print only select metadata fields. -->
-    <?php echo all_element_texts($item); ?>
-
     <?php if ((get_theme_option('Item FileGallery') == 0) && metadata('item', 'has files')): ?>
-    <div class="element-text">
-        <h2>Files</h2>
+    <div id="itemfiles" class="element">
         <?php echo files_for_item(array('imageSize' => 'fullsize')); ?>
     </div>
     <?php endif; ?>
+
+    <?php echo all_element_texts($item); ?>
 
     <?php fire_plugin_hook('public_items_show', array('view' => $this, 'item' => $item)); ?>
 

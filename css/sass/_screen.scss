@@ -920,6 +920,7 @@ div.item {
 
 #itemfiles + * {
     clear: left;
+    overflow: hidden;
 }
 
 .element-text {
