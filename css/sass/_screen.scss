@@ -889,8 +889,7 @@ div.item {
 }
 
 .item img, 
-.item-file img,
-#itemfiles img {
+.item-file img {
     width: rhythm(4);
     height: auto;
     padding: 3px;
@@ -915,11 +914,21 @@ div.item {
     
     img {
         margin: 0 rhythm(.25) rhythm(.25) 0;
+        height: auto;
+        padding: 3px;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        float: none;
     }
 }
 
 #itemfiles + * {
     clear: left;
+}
+
+#secondary #itemfiles img {
+    width: rhythm(4);
+    float: left;
 }
 
 .element-text {
