@@ -339,7 +339,6 @@ label,
 .pagination_previous {
     background-color: $yellow;
     font-size: $base-font-size;
-    padding: 0 10px;
     position: relative;
 
     a {
@@ -348,6 +347,7 @@ label,
         font-weight: bold;
         height: rhythm(1.5);
         display: block;
+        padding: 0 10px;
         line-height: 1.5 * $base-line-height;
     }
 }
@@ -408,26 +408,20 @@ ul.tags li {
     clear: both;
 }
 
-.image {
-    float: left;
-    display: block;
-    height: rhythm(4);
-    margin: 0 rhythm() rhythm() 0;
-    
-    img {
-        height: 100%;
-        width: auto;
-        padding: 3px;
-        border: 1px solid #ccc;
-        margin: 0;
-        background-color: #fff;
-    }
-}
-
 .collection .image,
 .exhibit .image {
     @include box-shadow(-3px -3px 0 rgba(0,0,0,.2), -6px -6px 0 rgba(0,0,0,.1));
-    margin-left: 6px;
+    float: left;
+    display: block;
+    height: rhythm(4);
+    margin: 0 rhythm() rhythm() 6px;
+
+    img {
+        height: 100%;
+        padding: 3px;
+        border: 1px solid #ccc;
+        background-color: #fff;
+    }
 }
 
 /* @end */
@@ -818,20 +812,12 @@ footer {
     padding-top: rhythm() !important;
 }
 
-#featured-item *:last-child,
-#featured-collection *:last-child,
-#featured-exhibit *:last-child {
+.featured *:last-child {
     @include trailer(0);
 }
 
-#featured-item .item,
-#featured-collection .collection,
-#featured-exhibit .exhibit {
+.featured .record {
     @include leading-border(0px, 0, $base-font-size, solid);
-}
-
-#featured-item {
-    @include trailer();
 }
 
 .item-description {
@@ -888,23 +874,18 @@ div.item {
     @include leading-border(1px, 1, $base-font-size, solid);
 }
 
-.item img, 
-.item-file img {
+.item img {
     width: rhythm(4);
     height: auto;
     padding: 3px;
     border: 1px solid #ccc;
     background-color: #fff;
     float: left;
-}
-
-.item-img img {
     margin: 0 rhythm() rhythm() 0;
 }
 
 .items #primary .item-file img {
     width: auto;
-    height: auto;
     max-width: 100%;
 }
 
@@ -914,11 +895,9 @@ div.item {
     
     img {
         margin: 0 rhythm(.25) rhythm(.25) 0;
-        height: auto;
         padding: 3px;
         border: 1px solid #ccc;
         background-color: #fff;
-        float: none;
     }
 }
 
@@ -967,21 +946,6 @@ div.item {
         display:block;
         float:left;
         width: 400px;
-    }
-}
-
-.item-file {
-    @include trailer();
-    
-    a, img {
-        vertical-align: top;
-        display: block;
-    }
-     
-    img {
-       height: rhythm(4);
-       width: auto;
-       @include trailer();
     }
 }
 

@@ -398,7 +398,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   .pagination_previous {
     background-color: #A49D4C;
     font-size: 14px;
-    padding: 0 10px;
     position: relative;
   }
   .pagination_next a,
@@ -408,6 +407,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     font-weight: bold;
     height: 2.25em;
     display: block;
+    padding: 0 10px;
     line-height: 31.5px;
   }
 
@@ -489,27 +489,22 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     clear: both;
   }
 
-  .image {
-    float: left;
-    display: block;
-    height: 6em;
-    margin: 0 1.5em 1.5em 0;
-  }
-  .image img {
-    height: 100%;
-    width: auto;
-    padding: 3px;
-    border: 1px solid #ccc;
-    margin: 0;
-    background-color: #fff;
-  }
-
   .collection .image,
   .exhibit .image {
     -moz-box-shadow: -3px -3px 0 rgba(0, 0, 0, 0.2), -6px -6px 0 rgba(0, 0, 0, 0.1);
     -webkit-box-shadow: -3px -3px 0 rgba(0, 0, 0, 0.2), -6px -6px 0 rgba(0, 0, 0, 0.1);
     box-shadow: -3px -3px 0 rgba(0, 0, 0, 0.2), -6px -6px 0 rgba(0, 0, 0, 0.1);
-    margin-left: 6px;
+    float: left;
+    display: block;
+    height: 6em;
+    margin: 0 1.5em 1.5em 6px;
+  }
+  .collection .image img,
+  .exhibit .image img {
+    height: 100%;
+    padding: 3px;
+    border: 1px solid #ccc;
+    background-color: #fff;
   }
 
   /* @end */
@@ -875,22 +870,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     padding-top: 1.5em !important;
   }
 
-  #featured-item *:last-child,
-  #featured-collection *:last-child,
-  #featured-exhibit *:last-child {
+  .featured *:last-child {
     margin-bottom: 0em;
   }
 
-  #featured-item .item,
-  #featured-collection .collection,
-  #featured-exhibit .exhibit {
+  .featured .record {
     border-top-width: 0em;
     border-top-style: solid;
     padding-top: 0em;
-  }
-
-  #featured-item {
-    margin-bottom: 1.5em;
   }
 
   .item-description {
@@ -953,23 +940,18 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     padding-top: 1.42857em;
   }
 
-  .item img,
-  .item-file img {
+  .item img {
     width: 6em;
     height: auto;
     padding: 3px;
     border: 1px solid #ccc;
     background-color: #fff;
     float: left;
-  }
-
-  .item-img img {
     margin: 0 1.5em 1.5em 0;
   }
 
   .items #primary .item-file img {
     width: auto;
-    height: auto;
     max-width: 100%;
   }
 
@@ -979,11 +961,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   }
   #itemfiles img {
     margin: 0 0.375em 0.375em 0;
-    height: auto;
     padding: 3px;
     border: 1px solid #ccc;
     background-color: #fff;
-    float: none;
   }
 
   #itemfiles + * {
@@ -1031,19 +1011,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     display: block;
     float: left;
     width: 400px;
-  }
-
-  .item-file {
-    margin-bottom: 1.5em;
-  }
-  .item-file a, .item-file img {
-    vertical-align: top;
-    display: block;
-  }
-  .item-file img {
-    height: 6em;
-    width: auto;
-    margin-bottom: 1.5em;
   }
 
   #sort-links {
