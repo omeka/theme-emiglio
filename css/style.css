@@ -890,7 +890,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     padding-top: 1.5em;
   }
 
-  .items.show #secondary {
+  .items.show #content #secondary {
     padding-top: 0;
   }
 

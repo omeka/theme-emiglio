@@ -832,7 +832,7 @@ footer {
     @include padding-leader();
 }
 
-.items.show #secondary {
+.items.show #content #secondary {
     padding-top: 0;
 }
 
