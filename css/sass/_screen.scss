@@ -295,7 +295,8 @@ label,
     overflow:hidden;
 }
 
-#secondary {
+#secondary,
+#sidebar {
     float:right;
     width: 35%;
     padding: 0 0 rhythm() rhythm();
@@ -884,7 +885,8 @@ div.item {
     margin: 0 rhythm() rhythm() 0;
 }
 
-.items #primary .item-file img {
+.items #primary .item-file img,
+.files #primary .item-file img {
     width: auto;
     max-width: 100%;
 }
@@ -892,13 +894,14 @@ div.item {
 #itemfiles {
     overflow: hidden;
     @include trailer(2);
+}
     
-    img {
-        margin: 0 rhythm(.25) rhythm(.25) 0;
-        padding: 3px;
-        border: 1px solid #ccc;
-        background-color: #fff;
-    }
+#itemfiles img,
+.files .item-file img {
+    margin: 0 rhythm(.25) rhythm(.25) 0;
+    padding: 3px;
+    border: 1px solid #ccc;
+    background-color: #fff;
 }
 
 #itemfiles + * {

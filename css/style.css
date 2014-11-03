@@ -356,7 +356,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     overflow: hidden;
   }
 
-  #secondary {
+  #secondary,
+  #sidebar {
     float: right;
     width: 35%;
     padding: 0 0 1.5em 1.5em;
@@ -950,7 +951,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     margin: 0 1.5em 1.5em 0;
   }
 
-  .items #primary .item-file img {
+  .items #primary .item-file img,
+  .files #primary .item-file img {
     width: auto;
     max-width: 100%;
   }
@@ -959,7 +961,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     overflow: hidden;
     margin-bottom: 3em;
   }
-  #itemfiles img {
+
+  #itemfiles img,
+  .files .item-file img {
     margin: 0 0.375em 0.375em 0;
     padding: 3px;
     border: 1px solid #ccc;
