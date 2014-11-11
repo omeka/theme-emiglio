@@ -925,9 +925,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     border-width: 0 1px 1px 0;
   }
   .items-nav a:hover,
+  .items-nav li.active a,
   #secondary-nav a:hover,
+  #secondary-nav li.active a,
   .secondary-nav a:hover,
-  #exhibit-child-pages a:hover {
+  .secondary-nav li.active a,
+  #exhibit-child-pages a:hover,
+  #exhibit-child-pages li.active a {
     background-color: #5e5a2c;
     color: #fff;
   }
