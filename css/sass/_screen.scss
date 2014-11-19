@@ -1063,6 +1063,27 @@ div.item {
     overflow: hidden;
 }
 
+.exhibits #exhibit-pages {
+    width: -moz-calc(35% - 1.5em);
+    width: -webkit-calc(35% - 1.5em);
+    width: calc(35% - 1.5em);
+    float: right;
+    position: relative;
+    overflow: visible;
+    @include trailer(-1);
+
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        left: rhythm(-1);
+        top: 0;
+        bottom: 0;
+        background-color: #DDD;
+        width: 1px;
+    }
+}
+
 .summary #content > h1:first-of-type {
     float: left;
     width: 65%;

@@ -3,10 +3,31 @@ body, #wrap {
     margin: 0;
 }
 
-#primary, #secondary {
+#primary, 
+#secondary,
+#exhibit-pages,
+#sidebar {
     width: 100% !important;
     border-right: 0 !important;
     padding: 0 !important;
+}
+
+#exhibit-pages {
+    clear: both;
+}
+
+.exhibit #exhibit-pages:after,
+#content > #primary:not(:only-child):after {
+    background-color: transparent;
+}
+
+#content > #primary:not(:only-child) {
+    @include trailer();
+}
+
+#secondary,
+#sidebar {
+    border-left: 0;
 }
 
 #search-container {
