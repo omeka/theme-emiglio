@@ -519,6 +519,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     line-height: 42px;
     padding: 0 0 0.75em 0;
   }
+  #site-title img {
+    max-width: 100%;
+  }
 
   #search-container {
     float: right;
