@@ -1122,7 +1122,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     overflow: hidden;
   }
 
-  .exhibits #exhibit-pages {
+  .browse .exhibit {
+    clear: both;
+  }
+
+  .browse #featured-exhibit .exhibit {
+    padding: 0;
+    border-top: 0;
+  }
+
+  .summary #exhibit-pages {
     width: -moz-calc(35% - 1.5em);
     width: -webkit-calc(35% - 1.5em);
     width: calc(35% - 1.5em);
@@ -1130,8 +1139,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     position: relative;
     overflow: visible;
     margin-bottom: -1.5em;
+    padding: 1.5em 0;
   }
-  .exhibits #exhibit-pages:after {
+  .summary #exhibit-pages:after {
     content: "";
     display: block;
     position: absolute;
@@ -1140,6 +1150,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     bottom: 0;
     background-color: #DDD;
     width: 1px;
+  }
+
+  #exhibit-pages > ul > li:not(.parent) li {
+    display: none;
+  }
+
+  #exhibit-pages > ul > li.current li {
+    display: block;
   }
 
   .summary #content > h1:first-of-type {
@@ -1167,6 +1185,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     margin-top: 1.5em;
   }
 
+  #exhibit-pages > ul > li {
+    margin-bottom: 1.5em;
+  }
   #exhibit-pages ul {
     margin: 0;
     padding: 0;
@@ -1201,10 +1222,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   }
   #exhibit-pages .current > a {
     background-color: #706b34;
-  }
-
-  .summary #exhibit-pages {
-    padding: 1.5em 0;
   }
 
   #exhibit-page-navigation {

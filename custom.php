@@ -1,32 +1,35 @@
 <?php 
 
-function emiglio_exhibit_builder_page_nav($exhibitPage = null)
+function emiglio_exhibit_builder_page_nav($exhibitPage = null, $currentPageId)
 {
     if (!$exhibitPage) {
-        if (!($exhibitPage = get_current_record('exhibit_page', false))) {
-            return;
-        }
+        $exhibitPage = get_current_record('exhibit_page');
     }
 
-    $exhibit = $exhibitPage->getExhibit();
-    $html = '<ul class="exhibit-page-nav navigation" id="secondary-nav">' . "\n";    
-    $pages = $exhibit->getTopPages();
-    foreach ($pages as $page) {
-        $current = (exhibit_builder_is_current_page($page)) ? 'class="current"' : '';
-        $html .= "<li $current>" . exhibit_builder_link_to_exhibit($exhibit, $page->title, array(), $page);
-        if ($page->countChildPages() > 0) {
-            $childPages = $page->getChildPages();
-            $html .= '<ul class="child-pages">';
-                foreach ($childPages as $childPage) {
-                    $current = (exhibit_builder_is_current_page($childPage)) ? 'class="current"' : '';
-                    $html .= "<li $current>" . exhibit_builder_link_to_exhibit($exhibit, $childPage->title, array(), $childPage) . '</li>';
-                }
-            $html .= '</ul>';
-        }
-        $html .='</li>';
+    $parents = array();
+    $currentPage = get_record_by_id('Exhibit Page', $currentPageId);
+    while ($currentPage->parent_id) {        
+        $currentPage = $currentPage->getParent();
+        array_unshift($parents, $currentPage->id);
     }
-    $html .= '</ul>' . "\n";
-    $html = apply_filters('exhibit_builder_page_nav', $html);
+    
+    $class  = '';
+    $class .= ($exhibitPage->id == $currentPageId) ? 'current' : '';
+    $parent = (array_search($exhibitPage->id, $parents) !== false) ? ' parent' : '';
+
+    $html = '<li class="' . $class . $parent . '">'
+          . '<a href="' . exhibit_builder_exhibit_uri(get_current_record('exhibit'), $exhibitPage) . '">'
+          . metadata($exhibitPage, 'title') .'</a>';
+
+    $children = $exhibitPage->getChildPages();
+    if ($children) {
+        $html .= '<ul>';
+        foreach ($children as $child) {
+            $html .= emiglio_exhibit_builder_page_nav($child, $currentPageId);
+            release_object($child);
+        }
+        $html .= '</ul>';
+    }
+    $html .= '</li>';
     return $html;
 }
-?>

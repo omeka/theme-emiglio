@@ -14,7 +14,15 @@ echo head(array(
 <div id="secondary">
     <h2><?php echo exhibit_builder_link_to_exhibit($exhibit); ?></h2>
     <nav id="exhibit-pages">
-        <?php echo emiglio_exhibit_builder_page_nav(); ?>
+        <ul>
+        <?php $currentPageId = metadata('exhibit_page', 'id'); ?>
+        <?php $currentPage = get_current_record('exhibit page'); ?>
+        <?php set_exhibit_pages_for_loop_by_exhibit(); ?>
+        <?php foreach (loop('exhibit_page') as $exhibitPage): ?>
+        <?php echo emiglio_exhibit_builder_page_nav($exhibitPage, $currentPageId); ?>
+        <?php endforeach; ?>
+        <?php set_current_record('exhibit page', $currentPage); ?>
+        </ul>
     </nav>
 </div>
 
