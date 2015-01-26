@@ -7,22 +7,15 @@ echo head(array(
 
 <div id="primary">
     <h1><span class="exhibit-page"><?php echo metadata('exhibit_page', 'title'); ?></h1>
-        
-    <?php exhibit_builder_render_exhibit_page(); ?>
+    <div id="exhibit-blocks">
+        <?php exhibit_builder_render_exhibit_page(); ?>
+    </div>
 </div>
 
 <div id="secondary">
     <h2><?php echo exhibit_builder_link_to_exhibit($exhibit); ?></h2>
     <nav id="exhibit-pages">
-        <ul>
-        <?php $currentPageId = metadata('exhibit_page', 'id'); ?>
-        <?php $currentPage = get_current_record('exhibit page'); ?>
-        <?php set_exhibit_pages_for_loop_by_exhibit(); ?>
-        <?php foreach (loop('exhibit_page') as $exhibitPage): ?>
-        <?php echo emiglio_exhibit_builder_page_nav($exhibitPage, $currentPageId); ?>
-        <?php endforeach; ?>
-        <?php set_current_record('exhibit page', $currentPage); ?>
-        </ul>
+        <?php echo exhibit_builder_page_tree($exhibit, $exhibit_page); ?>
     </nav>
 </div>
 
