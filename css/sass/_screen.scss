@@ -94,7 +94,7 @@ dd {
 }
 
 
-blockquote { 
+blockquote {
     margin: rhythm(2) 0;
     font-style:italic;
     border-color: $gray;
@@ -118,10 +118,10 @@ a:hover { color:#7B8D78; }
 
 a:active { color:#7B8D78; }
 
-h1 a, 
-h2 a, 
-h3 a, 
-h4 a, 
+h1 a,
+h2 a,
+h3 a,
+h4 a,
 #site-title a { text-decoration:none; }
 
 table {
@@ -181,7 +181,7 @@ a.button {
     padding: rhythm(.25);
     cursor: pointer;
     margin: 0;
-    
+
     &:hover {
         background-color: darken($yellow, 15%);
     }
@@ -196,9 +196,9 @@ select {
     line-height: 1.5 * $base-line-height;
     height: 1.5 * $base-line-height;
     margin-right: 3px;
-    vertical-align: top;    
+    vertical-align: top;
 }
-    
+
 
 textarea {
     @include trailer(1, $base-font-size);
@@ -224,6 +224,16 @@ label,
     line-height: 2 * $base-line-height;
 }
 
+#skipnav {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;    
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
 
 /* @end */
 
@@ -250,12 +260,12 @@ label,
     float: left;
     width: 100%;
     position: relative;
-    
+
     & > h1:first-of-type {
         padding: rhythm(.5) 0;
         margin: 0;
     }
-    
+
     #intro + #primary, & > #primary, #secondary {
         @include padding-leader();
     }
@@ -272,13 +282,13 @@ label,
     padding: rhythm() rhythm() rhythm() 0;
     @include trailer(-1);
     position: relative;
-    
+
     & > h1:first-child,
     & > h2:first-child {
         @include leader(0);
         @include trailer(1, 2 * $base-font-size);
     }
-    
+
     &:after {
         content: "";
         display: block;
@@ -437,7 +447,7 @@ header {
     font-size: 2 * $base-font-size;
     line-height: 2 * $base-line-height;
     padding: 0 0 rhythm(1, 2 * $base-font-size) 0;
-    
+
     img {
         max-width: 100%;
     }
@@ -455,31 +465,31 @@ header {
         float: left;
         width: 100%;
         position: relative;
-        
+
         a {
             font-weight:bold;
             text-decoration:none;
         }
     }
-    
+
     input {
         vertical-align: top;
         margin: 0;
     }
-    
+
     input[type=text] {
         width: 100%;
         float: left;
         height: 1.5 * $base-line-height;
     }
-    
+
     button {
         width: rhythm(1.5);
         position: absolute;
         top: 0;
         right: 0;
         text-indent: -9999px;
-        
+
         &:after {
             font-family: "FontAwesome";
             content: "\f002";
@@ -500,17 +510,17 @@ header {
         width: 100%;
         padding-right: rhythm(3);
     }
-    
+
     button,
     .show-advanced {
         width: rhythm(1.5);
         position: absolute;
     }
-    
+
     button {
         right: rhythm(1.5);
     }
-    
+
     .show-advanced {
         width: rhythm(1.5);
         color: #fff !important;
@@ -533,33 +543,33 @@ header {
     @include rhythm-borders(1px, .25, $base-font-size, solid);
     text-align: left;
     padding: rhythm(.5);
-    
+
     &.closed {
         left: -9999px;
     }
-    
+
     &.open  {
         left: 0;
     }
-    
+
     p {
         @include trailer(.5);
     }
-    
+
     fieldset {
         @include trailer();
     }
-    
+
     label {
         font-size: $base-font-size;
         font-weight: normal;
     }
-    
+
     input[type=checkbox],
     input[type=radio] {
         margin: rhythm(.25) 5px 0 0;
     }
-    
+
     & > *:last-child {
         margin-bottom: 0;
     }
@@ -576,14 +586,14 @@ header {
     z-index: 15;
     float: left;
     background-color: $red;
-    
+
     a {
         text-decoration: none;
 
         &:link, &:visited {
             color: #fff;
         }
-        
+
         &:hover, &:focus {
             background-color: #000;
             color: saturate(lighten($yellow, 20%), 20%);
@@ -611,14 +621,14 @@ header {
     color: #fff;
 }
 
-/* focus/open states of first descendant link within a top level 
+/* focus/open states of first descendant link within a top level
    navigation item */
 .nav-item > a:focus,
 .nav-item > a.open {
     background-color: #000;
 }
 
-/* open state of first descendant link within a top level 
+/* open state of first descendant link within a top level
    navigation item */
 .nav-item > a.open {
     background-color: #000;
@@ -651,7 +661,7 @@ header {
     vertical-align: top;
     margin: 0;
     padding: 0;
-    
+
     a {
         &:before {
             content: "\2014\0020";
@@ -692,7 +702,7 @@ footer {
         float: right;
         text-align: right;
         margin-bottom: 0;
-        
+
         ul { display: none; }
     }
 
@@ -738,7 +748,7 @@ footer {
 #item-filters li,
 #search-filters li {
     display: inline-block;
-}    
+}
 
 #item-filters > ul > li,
 #search-filters > ul > li {
@@ -750,11 +760,11 @@ footer {
 #item-filters li li,
 #search-filters li li {
     text-transform: lowercase;
-    
+
     &:after {
         content: ", "
     }
-    
+
     &:last-of-type:after {
         content: "";
     }
@@ -768,11 +778,11 @@ footer {
 
 #search-results {
     @include leader();
-    
+
     td, th {
         vertical-align: top;
     }
-    
+
     .image {
         margin-bottom: 0;
     }
@@ -806,9 +816,9 @@ footer {
         background:#4F584D;
         color:#fff;
     }
-    
+
     a { color: lighten($yellow, 20%); }
-    
+
     a:hover { color: lighten(saturate($yellow, 20%), 20%); }
 
 }
@@ -900,7 +910,7 @@ div.item {
     overflow: hidden;
     @include trailer(2);
 }
-    
+
 #itemfiles img,
 .files .item-file img {
     margin: 0 rhythm(.25) rhythm(.25) 0;
@@ -1008,7 +1018,7 @@ div.item {
     width: 1.5 * $base-line-height;
     position: relative;
     height: 1.5 * $base-line-height;
-    
+
     &:after {
         content: "\f00d";
         font-family: "FontAwesome";
@@ -1033,12 +1043,12 @@ div.item {
 .collections .item-img {
     float: left;
     margin: 0 rhythm() rhythm() 0;
-    
+
     a {
         display: block;
         height: rhythm(4);
     }
-    
+
     img {
         height: 100%;
         width: auto;
@@ -1046,7 +1056,7 @@ div.item {
         border: 1px solid #ccc;
         margin: 0;
         background-color: #fff;
-    }    
+    }
 }
 
 /* @end */
@@ -1084,7 +1094,7 @@ div.item {
     position: relative;
     overflow: visible;
     @include trailer(-1);
-    padding: rhythm() 0;    
+    padding: rhythm() 0;
 
     &:after {
         content: "";
@@ -1130,32 +1140,32 @@ div.item {
 }
 
 #exhibit-pages {
-    
+
     & > ul > li {
         @include trailer();
     }
-    
+
     ul {
         margin: 0;
         padding: 0;
         overflow:hidden;
         @include trailer();
-        
+
         ul {
             padding-left: rhythm();
             @include trailer(0);
         }
-    
+
         li {
             width: 100%;
             display: block;
             padding: 0;
-            
+
             &:last-of-type {
                 @include trailer(0);
             }
         }
-    
+
         a {
             width: 100%;
             text-align: left;
@@ -1165,14 +1175,14 @@ div.item {
             color:#fff;
             background:$yellow;
             border-width: 0 1px 1px 0;
-            
+
             &:hover {
                 background-color: darken($yellow, 20%);
                 color: #fff;
             }
         }
     }
-    
+
     .current > a {
         background-color: darken($yellow, 15%);
     }
