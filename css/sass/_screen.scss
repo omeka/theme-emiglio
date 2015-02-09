@@ -1196,6 +1196,14 @@ div.item {
     width: 100%;
 }
 
+.exhibit-block {
+    overflow: hidden;
+}
+
+.exhibit-block > *:last-child {
+    margin-bottom: 0;
+}
+
 /* @end */
 
 /* @group ----- Other Plugins ----- */

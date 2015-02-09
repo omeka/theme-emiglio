@@ -1245,6 +1245,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     width: 100%;
   }
 
+  .exhibit-block {
+    overflow: hidden;
+  }
+
+  .exhibit-block > *:last-child {
+    margin-bottom: 0;
+  }
+
   /* @end */
   /* @group ----- Other Plugins ----- */
   #recaptcha_area input {
