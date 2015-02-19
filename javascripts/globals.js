@@ -89,12 +89,9 @@ if (!Emiglio) {
         };
         
         Emiglio.skipNav = function() {
-          $("a[href^='#']").click(function() {
-            // get the href attribute of the internal link
-            // then strip the first character off it (#)
-            // leaving the corresponding id attribute
-            $("#"+$(this).attr("href").slice(1)+"").focus();
-          });
+            $("#skipnav").click(function() {
+                $("#content").focus();
+            });
         };
     });
 })(jQuery)

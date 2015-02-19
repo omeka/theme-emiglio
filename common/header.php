@@ -35,7 +35,7 @@
 </head>
 
 <?php echo body_tag(array('id' => @$bodyid, 'class' => @$bodyclass)); ?>
-    <a href="#content" id="skipnav">Skip to main content</a>
+    <a href="#content" id="skipnav"><?php echo __('Skip to main content'); ?></a>
     <?php fire_plugin_hook('public_body', array('view'=>$this)); ?>
     <div id="wrap">
 
