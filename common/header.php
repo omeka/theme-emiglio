@@ -28,8 +28,7 @@
 
     <!-- JavaScripts -->
     <?php 
-    queue_js_file('globals');
-    queue_js_file('jquery-accessibleMegaMenu');
+    queue_js_file(array('jquery-accessibleMegaMenu','emiglio', 'globals'));
     echo head_js(); 
     ?>
 </head>
