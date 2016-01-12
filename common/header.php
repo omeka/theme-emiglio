@@ -27,9 +27,9 @@
     ?>
 
     <!-- JavaScripts -->
-    <?php 
-    queue_js_file(array('jquery-accessibleMegaMenu','emiglio', 'globals'));
-    echo head_js(); 
+    <?php
+    queue_js_file(array('vendor/jquery-accessibleMegaMenu','emiglio', 'globals'));
+    echo head_js();
     ?>
 </head>
 
@@ -59,7 +59,7 @@
             <?php echo theme_header_image(); ?>
 
         </header>
-        
+
         <article id="content" role="main" tabindex="-1">
-        
+
             <?php fire_plugin_hook('public_content_top', array('view'=>$this)); ?>
