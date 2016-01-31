@@ -251,7 +251,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   input[type=submit]:hover,
   button:hover,
   a.button:hover {
-    background-color: #706b34;
+    background-color: #50624c;
   }
 
   select {
