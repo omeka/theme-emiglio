@@ -438,42 +438,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     padding-left: 0;
   }
 
-  .popular {
-    font-size: 100%;
-  }
-
-  .v-popular {
-    font-size: 140%;
-  }
-
-  .vv-popular {
-    font-size: 180%;
-  }
-
-  .vvv-popular {
-    font-size: 220%;
-  }
-
-  .vvvv-popular {
-    font-size: 260%;
-  }
-
-  .vvvvv-popular {
-    font-size: 300%;
-  }
-
-  .vvvvvv-popular {
-    font-size: 320%;
-  }
-
-  .vvvvvvv-popular {
-    font-size: 340%;
-  }
-
-  .vvvvvvvv-popular {
-    font-size: 360%;
-  }
-
   ul.tags {
     margin-left: 0;
   }
