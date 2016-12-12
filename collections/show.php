@@ -32,7 +32,7 @@ echo head(array('title'=>metadata('collection', array('Dublin Core', 'Title')), 
 
             <?php if (metadata($item, 'has thumbnail')): ?>
             <div class="item-img">
-                <?php echo link_to_item(item_image('square_thumbnail', array('alt'=>metadata($item,array('Dublin Core', 'Title'))))); ?>
+                <?php echo link_to_item(item_image(null, array('alt'=>metadata($item,array('Dublin Core', 'Title'))))); ?>
             </div>
             <?php endif; ?>
 
