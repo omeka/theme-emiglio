@@ -1084,6 +1084,10 @@ div.item {
     }
 }
 
+.search-entry:first-child .advanced-search-joiner {
+    display: none;
+}
+
 /* @end */
 
 /* @group ----- Collections ----- */

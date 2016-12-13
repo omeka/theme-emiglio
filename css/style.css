@@ -1491,6 +1491,10 @@ th {
     line-height: 31.5px;
   }
 
+  .search-entry:first-child .advanced-search-joiner {
+    display: none;
+  }
+
   /* @end */
   /* @group ----- Collections ----- */
   .collections.browse h1 {
