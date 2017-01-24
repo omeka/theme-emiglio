@@ -1121,6 +1121,11 @@ div.record h2 {
     @include leader(0);
 }
 
+#collection-items h3,
+.view-items-link {
+    clear: both;
+}
+
 /* @end */
 
 /* @group ----- Simple Pages ----- */

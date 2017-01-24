@@ -1524,6 +1524,11 @@ th {
     margin-top: 0em;
   }
 
+  #collection-items h3,
+  .view-items-link {
+    clear: both;
+  }
+
   /* @end */
   /* @group ----- Simple Pages ----- */
   .page #primary {
