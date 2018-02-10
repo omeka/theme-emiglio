@@ -1,14 +1,11 @@
-<?php 
-echo head(array('title' => metadata($item, array('Dublin Core', 'Title')), 'bodyclass' => 'items show')); 
-$linkToFileMetadata = (get_option('link_to_file_metadata')) ? true : false; 
-?>
+<?php echo head(array('title' => metadata($item, array('Dublin Core', 'Title')), 'bodyclass' => 'items show')); ?>
 
 <h1><?php echo metadata($item, array('Dublin Core', 'Title')); ?></h1>
 
 <div id="primary">
     <?php if ((get_theme_option('Item FileGallery') == 0) && metadata('item', 'has files')): ?>
     <div id="itemfiles" class="element">
-        <?php echo files_for_item(array('imageSize' => 'fullsize', 'linkToMetadata' => $linkToFileMetadata)); ?>
+        <?php echo files_for_item(array('imageSize' => 'fullsize')); ?>
     </div>
     <?php endif; ?>
 
@@ -24,7 +21,7 @@ $linkToFileMetadata = (get_option('link_to_file_metadata')) ? true : false;
     <?php if ((get_theme_option('Item FileGallery') == 1) && metadata($item, 'has files')): ?>
     <div id="itemfiles" class="element">
         <h2>Files</h2>
-        <div class="element-text"><?php echo item_image_gallery(array(), 'square_thumbnail', $filesShow = $linkToFileMetadata); ?></div>
+        <div class="element-text"><?php echo item_image_gallery(); ?></div>
     </div>
     <?php endif; ?>
     
