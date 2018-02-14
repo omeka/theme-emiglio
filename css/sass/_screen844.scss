@@ -22,7 +22,7 @@ body, #wrap {
 }
 
 #content > #primary:not(:only-child) {
-    @include trailer();
+    margin-bottom: $spacing-unit;
 }
 
 #secondary,
@@ -32,5 +32,5 @@ body, #wrap {
 
 #search-container {
     width: 100%;
-    @include trailer();
+    margin-bottom: $spacing-unit;
 }

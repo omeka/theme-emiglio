@@ -9,8 +9,7 @@
 .navigation li {
     display: block;
     width: 100%;
-    border-color: rgba(255,255,255,.15);
-    @include trailing-border(1px, 0, $base-font-size, solid);
+    border-bottom: 1px solid rgba(255,255,255,.15);
     
     a {
         width: 100%;
@@ -32,7 +31,7 @@
 }
 
 .search-entry {
-    @include trailer();
+    margin-bottom: $spacing-unit;
 }
 
 .search-entry select, 
@@ -42,5 +41,5 @@
 }
 
 #content {
-    padding: rhythm() 0;
+    padding: $spacing-unit 0;
 }

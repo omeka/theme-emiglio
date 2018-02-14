@@ -1,0 +1,34 @@
+{
+  "name": "emiglio",
+  "version": "2.3.0",
+  "description": "\"Named after our favorite robot. A simple, minimal theme with reds and greens.\"",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^6.4.0",
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-postcss": "^6.1.1",
+    "gulp-sass": "^2.3.2",
+    "susy": "^2.2.12"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omeka/theme-emiglio.git"
+  },
+  "keywords": [
+    "\"white",
+    "red",
+    "green",
+    "yellow",
+    "sans-serif\""
+  ],
+  "author": "\"Roy Rosenzweig Center for History and New Media\"",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/omeka/theme-emiglio/issues"
+  },
+  "homepage": "https://github.com/omeka/theme-emiglio#readme"
+}

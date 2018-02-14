@@ -14,10 +14,8 @@ Table of Contents
 
 /* @group ----- Generic HTML elements ----- */
 
-@include establish-baseline;
-
 * {
-    @include box-sizing(border-box);
+    box-sizing: border-box;
 }
 
 body {
@@ -31,14 +29,14 @@ body {
 h1 {
     font-size: 2 * $base-font-size;
     line-height: 2 * $base-line-height;
-    @include trailer(1);
+    margin-bottom: $spacing-unit;
 }
 
 
 h2 {
     font-size: 1.75 * $base-font-size;
     line-height: 2 * $base-line-height;
-    @include trailer(1, 1.75 * $base-font-size);
+    margin-bottom: $spacing-unit;
     font-weight: bold;
     color: #9e9e9e;
 }
@@ -47,19 +45,19 @@ h2 {
 h3 {
     font-size: 1.25 * $base-font-size;
     line-height: $base-line-height;
-    @include trailer(1, 1.25 * $base-font-size);
+    margin-bottom: $spacing-unit;
     color:#7B8D78;
 }
 
 
 h4 {
-    @include trailer();
+    margin-bottom: $spacing-unit;
     font-weight:bold;
     color:#7B8D78;
 }
 
 p, ul, ol, dl {
-    @include trailer();
+    margin-bottom: $spacing-unit;
 }
 
 
@@ -90,16 +88,15 @@ dt {
 
 dd {
     margin-left:1.5em;
-    @include trailer();
+    margin-bottom: $spacing-unit;
 }
 
 
 blockquote { 
-    margin: rhythm(2) 0;
+    margin: (2 * $spacing-unit) 0;
     font-style:italic;
-    border-color: $gray;
-    padding: rhythm() 1.5em 0;
-    @include leading-border(1px, 1, $base-font-size, solid);
+    padding: ($spacing-unit - 1px) 1.5em 0;
+    border-top: 1px solid $gray;
 }
 
 em, i {
@@ -126,7 +123,7 @@ h4 a,
 
 table {
     width: 100%;
-    margin: rhythm(2) 0;
+    margin: (2 * $spacing-unit) 0;
     border-collapse: collapse;
     border-spacing: 0px;
 }
@@ -162,28 +159,28 @@ input[type=text],
 input[type=password],
 textarea {
     font-family: "Lato", sans-serif;
-    border-color: $gray;
-    @include rhythm-borders(1px, .25, $base-font-size, solid);
+    border: 1px solid $gray;
+    padding: ((.25 * $spacing-unit) - 1px);
     font-size: $base-font-size;
     line-height: $base-line-height;
-    margin: rhythm(.25) 0;;
+    margin: (.25 * $spacing-unit) 0;;
     max-width: 100%;
     display: block;
-    min-height: rhythm(1.5);
+    min-height: 1.5 * $spacing-unit;
 }
 
 input[type=submit],
 button,
 a.button {
-    @include appearance(none);
-    @include border-radius(0);
+    appearance: none;
+    border-radius: 0;
     font-family: "Lato", sans-serif;
     font-size: $base-font-size;
     line-height: $base-line-height;
     background-color: $yellow;
     color: #fff;
     border: 0;
-    padding: rhythm(.25);
+    padding: (.25 * $spacing-unit);
     cursor: pointer;
     margin: 0;
     
@@ -194,8 +191,8 @@ a.button {
 
 select {
     display: inline-block;
-    margin: rhythm(.25) 0;
-    @include border-radius(0px);
+    margin: (.25 * $spacing-unit) 0;
+    border-radius: 0px;
     border: 1px solid #ccc;
     font-size: $base-font-size;
     line-height: 1.5 * $base-line-height;
@@ -206,11 +203,11 @@ select {
     
 
 textarea {
-    @include trailer(1, $base-font-size);
+    margin-bottom: $spacing-unit;
     min-width: 50%;
-    min-height: rhythm(6);
-    border-color: $gray;
-    @include rhythm-borders(1px, .5, $base-font-size, solid);
+    min-height: (6 * $spacing-unit);
+    border: 1px solid $gray;
+    padding: ((.5 * $spacing-unit) - 1px);
     vertical-align: top;
 }
 
@@ -221,11 +218,11 @@ label,
 }
 
 .field {
-    @include trailer();
+    margin-bottom: $spacing-unit;
 }
 
 .inputs {
-    min-height: rhythm(2);
+    min-height: (2 * $spacing-unit);
     line-height: 2 * $base-line-height;
 }
 
@@ -264,13 +261,13 @@ label,
     overflow: hidden;
     background: #fff;
     width: 884px;
-    padding: rhythm();
-    margin: rhythm(2) auto;
+    padding: $spacing-unit;
+    margin: (2 * $spacing-unit) auto;
 }
 
 #content {
     clear:both;
-    @include padding-trailer();
+    padding-bottom: $spacing-unit;
     border-top:1px solid $gray;
     border-bottom:1px solid $gray;
     float: left;
@@ -278,12 +275,12 @@ label,
     position: relative;
     
     & > h1:first-of-type {
-        padding: rhythm(.5) 0;
+        padding: (.5 * $spacing-unit) 0;
         margin: 0;
     }
     
     #intro + #primary, & > #primary, #secondary {
-        @include padding-leader();
+        padding-top: $spacing-unit;
     }
 }
 
@@ -295,14 +292,14 @@ label,
 #content > #primary:not(:only-child) {
     float:left;
     width: 65%;
-    padding: rhythm() rhythm() rhythm() 0;
-    @include trailer(-1);
+    padding: $spacing-unit $spacing-unit $spacing-unit 0;
+    margin-bottom: (-1 * $spacing-unit);
     position: relative;
     
     & > h1:first-child,
     & > h2:first-child {
-        @include leader(0);
-        @include trailer(1, 2 * $base-font-size);
+        margin-top: 0;
+        margin-bottom: $spacing-unit;
     }
     
     &:after {
@@ -325,10 +322,10 @@ label,
 #sidebar {
     float:right;
     width: 35%;
-    padding: 0 0 rhythm() rhythm();
+    padding: 0 0 $spacing-unit $spacing-unit;
     word-wrap: break-word;
     border-left: 1px solid $gray;
-    @include trailer(-1);
+    margin-bottom: (-1 * $spacing-unit);
 }
 
 .navigation {
@@ -342,9 +339,9 @@ label,
     clear: both;
 
     ul {
-        height: rhythm(1.5);
+        height: 1.5 * $spacing-unit;
         clear:both;
-        margin: 0 0 rhythm();
+        margin: 0 0 $spacing-unit;
         background-color: $gray;
         display: inline-block;
         vertical-align: top;
@@ -373,7 +370,7 @@ label,
         color: #fff;
         text-decoration: none;
         font-weight: bold;
-        height: rhythm(1.5);
+        height: 1.5 * $spacing-unit;
         display: block;
         padding: 0 10px;
         line-height: 1.5 * $base-line-height;
@@ -431,18 +428,18 @@ ul.tags li {
 }
 
 .collection {
-    border-color: $gray;
-    @include leading-border(1px, .5, $base-font-size, solid);
+    border-top: 1px solid $gray;
+    padding-top: ($spacing-unit - 1px);
     clear: both;
 }
 
 .collection .image,
 .exhibit .image {
-    @include box-shadow(-3px -3px 0 rgba(0,0,0,.2), -6px -6px 0 rgba(0,0,0,.1));
+    box-shadow: -3px -3px 0 rgba(0,0,0,.2), -6px -6px 0 rgba(0,0,0,.1);
     float: left;
     display: block;
-    height: rhythm(4);
-    margin: 0 rhythm() rhythm() 6px;
+    height: (4 * $spacing-unit);
+    margin: 0 $spacing-unit $spacing-unit 6px;
 
     img {
         height: 100%;
@@ -457,13 +454,13 @@ ul.tags li {
 /* @group ----- Header ----- */
 
 header {
-    @include trailer(.5);
+    margin-bottom: (.5 * $spacing-unit);
 }
 
 #site-title {
     font-size: 2 * $base-font-size;
     line-height: 2 * $base-line-height;
-    padding: 0 0 rhythm(1, 2 * $base-font-size) 0;
+    padding: 0 0 $spacing-unit  0;
     
     img {
         max-width: 100%;
@@ -478,7 +475,7 @@ header {
     position: relative;
 
     form {
-        margin: rhythm(.25) 0;
+        margin: (.25 * $spacing-unit) 0;
         float: left;
         width: 100%;
         position: relative;
@@ -502,7 +499,7 @@ header {
     
     button,
     .button {
-        width: rhythm(1.5);
+        width: 1.5 * $spacing-unit;
         position: absolute;
         top: 0;
         right: 0;
@@ -515,8 +512,8 @@ header {
             top: 0;
             left: 0;
             bottom: 0;
-            width: rhythm(1.5);
-            line-height: rhythm(1.5);
+            width: 1.5 * $spacing-unit;
+            line-height: 1.5 * $spacing-unit;
             text-align: center;
         }
     }
@@ -533,12 +530,12 @@ header {
 #search-container.with-advanced {
     input[type=text] {
         width: 100%;
-        padding-right: rhythm(3);
+        padding-right: (3 * $spacing-unit);
     }
     
     button,
     .show-advanced {
-        width: rhythm(1.5);
+        width: 1.5 * $spacing-unit;
         position: absolute;
     }
     
@@ -547,10 +544,10 @@ header {
     }
     
     .show-advanced {
-        width: rhythm(1.5);
+        width: 1.5 * $spacing-unit;
         color: #fff !important;
         display: block;
-        right: rhythm(1.5);
+        right: 1.5 * $spacing-unit;
         text-align: center;
         border-left: 1px solid rgba(0,0,0,.08);
     }
@@ -558,15 +555,14 @@ header {
 
 #advanced-form {
     position: absolute;
-    top: rhythm(1.5);
+    top: 1.5 * $spacing-unit;
     background-color: #fff;
     z-index: 20;
     width: 100%;
-    border-color: $gray;
+    border: 1px solid $gray;
     border-top-color: #fff;
-    @include rhythm-borders(1px, .25, $base-font-size, solid);
     text-align: left;
-    padding: rhythm(.5);
+    padding: ((.5 * $spacing-unit) - 1px);
     
     &.closed {
         display: none;
@@ -577,11 +573,11 @@ header {
     }
     
     p {
-        @include trailer(.5);
+        margin-bottom: (.5 * $spacing-unit);
     }
     
     fieldset {
-        @include trailer();
+        margin-bottom: $spacing-unit;
     }
     
     label {
@@ -591,7 +587,7 @@ header {
     
     input[type=checkbox],
     input[type=radio] {
-        margin: rhythm(.25) 5px 0 0;
+        margin: (.25 * $spacing-unit) 5px 0 0;
     }
     
     & > *:last-child {
@@ -639,7 +635,7 @@ header {
 .nav-item > a {
     position: relative;
     display: inline-block;
-    padding: rhythm(.5) rhythm();
+    padding: (.5 * $spacing-unit) $spacing-unit;
     margin: 0;
     border: 0;
     color: #fff;
@@ -664,8 +660,8 @@ header {
 .sub-nav {
     position: absolute;
     display: none;
-    top: rhythm(2);
-    padding: rhythm();
+    top: (2 * $spacing-unit);
+    padding: $spacing-unit;
     border: 0;
     margin: 0;
     background-color: $red;
@@ -714,9 +710,9 @@ header {
 
 #header-image {
     clear:both;
-    margin: rhythm() 0;
-    border-color: $gray;
-    @include leading-border(1px, 1, $base-font-size, solid);
+    margin: $spacing-unit 0;
+    border-top: 1px solid $gray;
+    padding-top: ($spacing-unit - 1px);
 
     img {
         display:block;
@@ -730,7 +726,7 @@ header {
 
 footer {
     clear:both;
-    @include padding-leader();
+    padding-top: $spacing-unit;
 
     ul {
         width: 50%;
@@ -787,7 +783,7 @@ footer {
 
 #item-filters > ul > li,
 #search-filters > ul > li {
-    padding: rhythm(.5) 10px;
+    padding: (.5 * $spacing-unit) 10px;
     background-color: lighten($yellow, 35%);
     color: darken($yellow, 15%);
 }
@@ -806,13 +802,13 @@ footer {
 }
 
 #item-filters {
-    border-color: $gray;
-    @include trailing-border(1px, 1, $base-font-size, solid);
-    @include trailer();
+    border-bottom: 1px solid $gray;
+    padding-bottom: ($spacing-unit - 1px);
+    margin-bottom: $spacing-unit;
 }
 
 #search-results {
-    @include leader();
+    margin-top: $spacing-unit;
     
     td, th {
         vertical-align: top;
@@ -828,9 +824,9 @@ footer {
 /* @group ----- Home ----- */
 
 #intro {
-    border-color: $gray;
-    @include padding-leader();
-    @include trailing-border(1px, 1, $base-font-size, solid);
+    border-bottom: 1px solid $gray;
+    padding-top: $spacing-unit;
+    padding-bottom: ($spacing-unit - 1px);
 }
 
 .featured,
@@ -838,22 +834,22 @@ footer {
     overflow: hidden;
     background: #7B8D78;
     color: #fff;
-    padding: rhythm() rhythm() 0;
-    border-color: #4F584D;
-    @include trailing-border(3px, 1, $base-font-size, solid);
-    @include trailer();
+    padding: $spacing-unit $spacing-unit 0;
+    border-bottom: 3px solid #4F584D;
+    padding-bottom: ($spacing-unit - 3px);
+    margin-bottom: $spacing-unit;
 
     h2 {
         font-size: 1.25 * $base-font-size;
         font-weight:bold;
-        margin: rhythm(-1) rhythm(-1) rhythm(1, 1.25 * $base-font-size);
-        padding: rhythm(.5) rhythm();
+        margin: (-1 * $spacing-unit) (-1 * $spacing-unit) $spacing-unit;
+        padding: (.5 * $spacing-unit) $spacing-unit;
         background:#4F584D;
         color:#fff;
     }
 
     h3 {
-        @include leader(0);
+        margin-top: 0;
     }
     
     a { color: lighten($yellow, 20%); }
@@ -863,23 +859,24 @@ footer {
 }
 
 #home #content #primary {
-    padding-top: rhythm() !important;
+    padding-top: $spacing-unit !important;
 }
 
 .featured *:last-child {
-    @include trailer(0);
+    margin-bottom: (0 * $spacing-unit);
 }
 
 .featured .record {
-    @include leading-border(0px, 0, $base-font-size, solid);
+    border-top: 0;
+    padding-top: 0;
 }
 
 .item-description {
-    @include trailer();
+    margin-bottom: $spacing-unit;
 }
 
 #recent-items h3 {
-    @include leader(0);
+    margin-top: 0;
 }
 
 /* @end */
@@ -887,7 +884,7 @@ footer {
 /* @group ----- Items ----- */
 
 .items.show #content > #primary {
-    @include padding-leader();
+    padding-top: $spacing-unit;
 }
 
 .items.show #content #secondary {
@@ -899,7 +896,7 @@ footer {
 .secondary-nav,
 #exhibit-child-pages {
     overflow:hidden;
-    @include trailer();
+    margin-bottom: $spacing-unit;
     padding-left: 0;
 
     ul {
@@ -917,7 +914,7 @@ footer {
         text-decoration:none;
         display:block;
         float:left;
-        padding: rhythm(.5);
+        padding: (.5 * $spacing-unit);
         text-align:center;
         color:#fff;
         background:$yellow;
@@ -934,22 +931,22 @@ footer {
 div.item {
     clear: both;
     overflow:hidden;
-    border-color: $gray;
-    @include leading-border(1px, 1, $base-font-size, solid);
+    border-top: 1px solid $gray;
+    padding-top: ($spacing-unit - 1px);
 
     h2 {
-        @include leader(0);
+        margin-top: 0;
     }
 }
 
 .item img {
-    width: rhythm(4);
+    width: (4 * $spacing-unit);
     height: auto;
     padding: 3px;
     border: 1px solid #ccc;
     background-color: #fff;
     float: left;
-    margin: 0 rhythm() rhythm() 0;
+    margin: 0 $spacing-unit $spacing-unit 0;
 }
 
 .items #primary .item-file img,
@@ -960,12 +957,12 @@ div.item {
 
 #itemfiles {
     overflow: hidden;
-    @include trailer(2);
+    margin-bottom: (2 * $spacing-unit);
 }
     
 #itemfiles img,
 .files .item-file img {
-    margin: 0 rhythm(.25) rhythm(.25) 0;
+    margin: 0 (.25 * $spacing-unit) (.25 * $spacing-unit) 0;
     padding: 3px;
     border: 1px solid #ccc;
     background-color: #fff;
@@ -976,13 +973,13 @@ div.item {
 }
 
 #secondary #itemfiles img {
-    width: rhythm(4);
+    width: (4 * $spacing-unit);
     float: left;
 }
 
 .element-text {
     font-size: $base-font-size;
-    @include trailer(2, $base-font-size);
+    margin-bottom: (2 * $spacing-unit);
 }
 
 .element-text-empty {
@@ -992,10 +989,10 @@ div.item {
 .item-pagination {
     clear:both;
     overflow:hidden;
-    border-color: $gray;
+    border-top: 1px solid $gray;
+    padding-top: ($spacing-unit - 1px);
     font-weight:bold;
-    @include leading-border(1px, 1, $base-font-size, solid);
-    margin: rhythm() 0 0;
+    margin: $spacing-unit 0 0;
     float: left;
     width: 100%;
 
@@ -1020,7 +1017,7 @@ div.item {
 }
 
 #sort-links {
-    margin: rhythm(.25) 0 rhythm();
+    margin: (.25 * $spacing-unit) 0 $spacing-unit;
     float: right;
 }
 
@@ -1053,7 +1050,7 @@ div.item {
 }
 
 #advanced-search-form {
-    @include padding-trailer(2);
+    padding-bottom: (2 * $spacing-unit);
 
     label {
         font-size: 1.125 * $base-font-size;
@@ -1065,7 +1062,7 @@ div.item {
 }
 
 .remove_search {
-    padding: rhythm(.25) 10px;
+    padding: (.25 * $spacing-unit) 10px;
     text-indent: -9999px;
     width: 1.5 * $base-line-height;
     position: relative;
@@ -1098,11 +1095,11 @@ div.item {
 
 .collections .item-img {
     float: left;
-    margin: 0 rhythm() rhythm() 0;
+    margin: 0 $spacing-unit $spacing-unit 0;
     
     a {
         display: block;
-        height: rhythm(4);
+        height: (4 * $spacing-unit);
     }
     
     img {
@@ -1118,7 +1115,7 @@ div.item {
 div.collection h2,
 div.exhibit h2,
 div.record h2 {
-    @include leader(0);
+    margin-top: 0;
 }
 
 #collection-items h3,
@@ -1133,7 +1130,7 @@ div.record h2 {
 .page #primary {
     width: 100% !important;
     border-right: 0 !important;
-    padding-top: rhythm() !important;
+    padding-top: $spacing-unit !important;
 }
 
 /* @end */
@@ -1160,14 +1157,14 @@ div.record h2 {
     float: right;
     position: relative;
     overflow: visible;
-    @include trailer(-1);
-    padding: rhythm() 0;    
+    margin-bottom: (-1 * $spacing-unit);
+    padding: $spacing-unit 0;    
 
     &:after {
         content: "";
         display: block;
         position: absolute;
-        left: rhythm(-1);
+        left: (-1 * $spacing-unit);
         top: 0;
         bottom: 0;
         background-color: #DDD;
@@ -1189,38 +1186,38 @@ div.record h2 {
 }
 
 .summary #content > h1:first-of-type {
-    margin-right: rhythm(1, 2 * $base-font-size);
+    margin-right: $spacing-unit;
 }
 
 .summary #content #primary {
-    margin-right: rhythm();
+    margin-right: $spacing-unit;
 }
 
 .exhibits #secondary h2 {
-    @include trailer(.5, 1.5 * $base-font-size);
+    margin-bottom: $spacing-unit;
 }
 
 .browse .exhibit {
-    border-color: $gray;
-    @include leading-border(1px, 1, $base-font-size, solid);
-    @include leader();
+    border-top: 1px solid $gray;
+    padding-top: ($spacing-unit - 1px);
+    margin-top: $spacing-unit;
 }
 
 #exhibit-pages {
     
     & > ul > li {
-        @include trailer();
+        margin-bottom: $spacing-unit;
     }
     
     ul {
         margin: 0;
         padding: 0;
         overflow:hidden;
-        @include trailer();
+        margin-bottom: $spacing-unit;
         
         ul {
-            padding-left: rhythm();
-            @include trailer(0);
+            padding-left: $spacing-unit;
+            margin-bottom: (0 * $spacing-unit);
         }
     
         li {
@@ -1229,7 +1226,7 @@ div.record h2 {
             padding: 0;
             
             &:last-of-type {
-                @include trailer(0);
+                margin-bottom: (0 * $spacing-unit);
             }
         }
     
@@ -1238,7 +1235,7 @@ div.record h2 {
             text-align: left;
             text-decoration:none;
             display:block;
-            padding: rhythm(.5);
+            padding: (.5 * $spacing-unit);
             color:#fff;
             background:$yellow;
             border-width: 0 1px 1px 0;
@@ -1256,9 +1253,9 @@ div.record h2 {
 }
 
 #exhibit-page-navigation {
-    border-color: $gray;
-    @include leading-border(1px, 1, $base-font-size, solid);
-    margin: rhythm() 0 0;
+    border-top: 1px solid $gray;
+    padding-top: ($spacing-unit - 1px);
+    margin: $spacing-unit 0 0;
     float: left;
     width: 100%;
 }
