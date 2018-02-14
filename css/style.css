@@ -1144,6 +1144,9 @@ Table of Contents
   #collection-items h3,
   .view-items-link {
     clear: both; }
+  .view-items-link {
+    display: block;
+    margin-bottom: 21px; }
   /* @end */
   /* @group ----- Simple Pages ----- */
   .page #primary {

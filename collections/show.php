@@ -1,5 +1,6 @@
 <?php
 $collectionId = $collection->id;
+$totalItems = metadata('collection', 'total_items');
 echo head(array('title'=>metadata('collection', array('Dublin Core', 'Title')), 'bodyclass' => 'collections show')); ?>
 
 <h1><?php echo metadata('collection', array('Dublin Core', 'Title')); ?></h1>
@@ -25,6 +26,7 @@ echo head(array('title'=>metadata('collection', array('Dublin Core', 'Title')), 
 </div>
 <div id="secondary">
     <div id="collection-items">
+        <h2><?php echo __('Collection Items'); ?></h2>
         <?php $collectionItems = get_records('item', array('collection' => $collectionId), 3); ?>
         <?php foreach (loop('items', $collectionItems) as $item): ?>
 
@@ -43,8 +45,6 @@ echo head(array('title'=>metadata('collection', array('Dublin Core', 'Title')), 
             <?php endif; ?>
     <?php endforeach; ?>
     </div><!-- end collection-items -->
-    <?php if (count($collectionItems) > 0): ?>
-    <p class="view-items-link"><?php echo link_to_items_browse(__('View the items in %s', metadata('collection', array('Dublin Core', 'Title'))), array('collection' => $collectionId)); ?></p>
-    <?php endif; ?>
+    <?php echo link_to_items_browse(__(plural('View item', 'View all %s items', $totalItems), $totalItems), array('collection' => metadata('collection', 'id')), array('class' => 'view-items-link')); ?>
 </div>
 <?php echo foot(); ?>
