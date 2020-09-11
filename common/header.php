@@ -56,7 +56,8 @@
                 <?php echo public_nav_main(); ?>
             </nav>
 
-            <?php echo theme_header_image(); ?>
+            <?php $altText = (get_theme_option('header_image_alt') !== null) ? get_theme_option('header_image_alt') : ''; ?>
+            <?php echo theme_header_image($altText); ?>
 
         </header>
 

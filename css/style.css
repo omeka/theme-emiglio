@@ -861,7 +861,9 @@ Table of Contents
     padding-top: 20px; }
     #header-image img {
       display: block;
-      max-width: 100%; }
+      max-width: 100%;
+      width: 100%;
+      height: auto; }
   /* @end */
   /* @group ----- Footer ----- */
   footer {
