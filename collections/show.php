@@ -34,7 +34,7 @@ echo head(array('title'=>metadata('collection', array('Dublin Core', 'Title')), 
 
             <?php if (metadata($item, 'has thumbnail')): ?>
             <div class="item-img">
-                <?php echo link_to_item(item_image(null, array('alt'=>metadata($item,'rich_title', array('no_escape' => true))))); ?>
+                <?php echo link_to_item(item_image(null, array('alt'=>metadata($item,'display_title')))); ?>
             </div>
             <?php endif; ?>
 
