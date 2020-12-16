@@ -32,7 +32,7 @@ echo head(array('title'=>$pageTitle, 'bodyclass' => 'items browse'));
         <div class="item hentry">
             <div class="item-meta">
 
-            <h2><?php echo link_to_item(metadata($item, 'rich_title', array('no_escape' => true), array('class'=>'permalink'))); ?></h2>
+            <h2><?php echo link_to_item(null, array('class'=>'permalink'))); ?></h2>
 
             <?php if (metadata($item, 'has thumbnail')): ?>
                 <div class="item-img">

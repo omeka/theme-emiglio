@@ -30,7 +30,7 @@ echo head(array('title'=>metadata('collection', array('Dublin Core', 'Title')), 
         <?php $collectionItems = get_records('item', array('collection' => $collectionId), 3); ?>
         <?php foreach (loop('items', $collectionItems) as $item): ?>
 
-            <h3><?php echo link_to_item(metadata($item, 'rich_title', array('no_escape' => true)), array('class'=>'permalink'), 'show', $item); ?></h3>
+            <h3><?php echo link_to_item(null, array('class'=>'permalink'), 'show', $item); ?></h3>
 
             <?php if (metadata($item, 'has thumbnail')): ?>
             <div class="item-img">
