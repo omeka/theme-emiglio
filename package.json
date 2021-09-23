@@ -1,6 +1,6 @@
 {
   "name": "emiglio",
-  "version": "2.4.1",
+  "version": "2.4.2",
   "description": "\"Named after our favorite robot. A simple, minimal theme with reds and greens.\"",
   "main": "gulpfile.js",
   "devDependencies": {
@@ -33,5 +33,9 @@
   "bugs": {
     "url": "https://github.com/omeka/theme-emiglio/issues"
   },
-  "homepage": "https://github.com/omeka/theme-emiglio#readme"
+  "homepage": "https://github.com/omeka/theme-emiglio#readme",
+  "browserslist": [
+    "> 5%",
+    "> 1% in US"
+  ]
 }
