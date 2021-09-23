@@ -374,16 +374,19 @@ label,
         display: block;
         padding: 0 10px;
         line-height: 1.5 * $base-line-height;
+
+        &:after {
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+        }
     }
 }
 
 .pagination_next a:after {
-    font-family: "FontAwesome";
     content: "\f105";
 }
 
 .pagination_previous a:after {
-    font-family: "FontAwesome";
     content: "\f104";
 }
 
@@ -506,7 +509,8 @@ header {
         text-indent: -9999px;
         
         &:after {
-            font-family: "FontAwesome";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
             text-indent: 0;
             position: absolute;
             top: 0;
@@ -698,8 +702,9 @@ header {
 }
 
 [aria-haspopup="true"]:after {
-    font-family: "FontAwesome";
+    font-family: "Font Awesome 5 Free";
     content: "\f0da";
+    font-weight: 900;
     margin: 0 0 0 .5em;
     vertical-align: bottom;
 }
@@ -1035,7 +1040,8 @@ div.item {
 
 .asc a:after, .desc a:after {
     display: inline-block;
-    font-family: "FontAwesome";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
     text-decoration: underline;
 }
 
@@ -1072,7 +1078,8 @@ div.item {
     
     &:after {
         content: "\f00d";
-        font-family: "FontAwesome";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
         text-indent: 0;
         text-align: center;
         width: 100%;
