@@ -38,7 +38,7 @@ h2 {
     line-height: 2 * $base-line-height;
     margin-bottom: $spacing-unit;
     font-weight: bold;
-    color: #9e9e9e;
+    color: #888;
 }
 
 
@@ -507,6 +507,7 @@ header {
         top: 0;
         right: 0;
         text-indent: -9999px;
+        height: 100%;
         
         &:after {
             font-family: "Font Awesome 5 Free";
@@ -839,10 +840,10 @@ footer {
 .featured,
 #featured-exhibit {
     overflow: hidden;
-    background: #7B8D78;
+    background: #636E60;
     color: #fff;
     padding: $spacing-unit $spacing-unit 0;
-    border-bottom: 3px solid #4F584D;
+    border-bottom: 3px solid #4B5847;
     padding-bottom: ($spacing-unit - 3px);
     margin-bottom: $spacing-unit;
 
@@ -851,7 +852,7 @@ footer {
         font-weight:bold;
         margin: (-1 * $spacing-unit) (-1 * $spacing-unit) $spacing-unit;
         padding: (.5 * $spacing-unit) $spacing-unit;
-        background:#4F584D;
+        background: #4B5847;
         color:#fff;
     }
 
@@ -859,9 +860,9 @@ footer {
         margin-top: 0;
     }
     
-    a { color: lighten($yellow, 20%); }
+    a { color: #fff8bd; }
     
-    a:hover { color: lighten(saturate($yellow, 20%), 20%); }
+    a:hover { color: lighten(saturate(#fff8bd, 20%), 20%); }
 
 }
 
@@ -986,7 +987,6 @@ div.item {
 
 .element-text {
     font-size: $base-font-size;
-    margin-bottom: (2 * $spacing-unit);
 }
 
 .element-text-empty {
@@ -997,7 +997,7 @@ div.item {
     clear:both;
     overflow:hidden;
     border-top: 1px solid $gray;
-    padding-top: ($spacing-unit - 1px);
+    padding: ($spacing-unit - 1px) 0 0 0;
     font-weight:bold;
     margin: $spacing-unit 0 0;
     float: left;
@@ -1071,27 +1071,28 @@ div.item {
 
 .remove_search {
     padding: (.25 * $spacing-unit) 10px;
-    text-indent: -9999px;
-    width: 1.5 * $base-line-height;
-    position: relative;
-    height: 1.5 * $base-line-height;
-    
-    &:after {
-        content: "\f00d";
-        font-family: "Font Awesome 5 Free";
-        font-weight: 900;
-        text-indent: 0;
-        text-align: center;
-        width: 100%;
-        top: 0;
-        left: 0;
-        position: absolute;
-        line-height: 1.5 * $base-line-height;
-    }
+}
+
+#search-narrow-by-fields .inputs {
+    line-height: 1;
+}
+
+.search-entry {
+    margin-top: .5 * $spacing-unit;
+    border: 1px solid $gray;
+    padding: .5 * $spacing-unit;
+}
+
+.search-entry:only-child {
+    padding-bottom: 0;
 }
 
 .search-entry:first-child .advanced-search-joiner {
     display: none;
+}
+
+.advanced-search-terms input {
+    min-width: 50%;
 }
 
 /* @end */

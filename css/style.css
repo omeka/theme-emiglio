@@ -432,7 +432,7 @@ th {
     line-height: 42px;
     margin-bottom: 21px;
     font-weight: bold;
-    color: #9e9e9e;
+    color: #888;
   }
 
   h3 {
@@ -500,7 +500,7 @@ ol ul {
   }
 
   a:visited {
-    color: #A49D4C;
+    color: #807500;
   }
 
   a:hover {
@@ -534,7 +534,7 @@ h4 a,
 
   th {
     text-align: left;
-    color: #A49D4C;
+    color: #807500;
     font-weight: bold;
     border-bottom: 2px solid #ddd;
   }
@@ -571,7 +571,7 @@ a.button {
     font-family: "Lato", sans-serif;
     font-size: 14px;
     line-height: 21px;
-    background-color: #A49D4C;
+    background-color: #807500;
     color: #fff;
     border: 0;
     padding: 5.25px;
@@ -581,7 +581,7 @@ a.button {
   input[type=submit]:hover,
 button:hover,
 a.button:hover {
-    background-color: #706b34;
+    background-color: #342f00;
   }
 
   select {
@@ -639,7 +639,7 @@ a.button:hover {
     width: auto;
     padding: 0.5em;
     border: 1px blue dashed;
-    color: #A49D4C;
+    color: #807500;
   }
 
   /* @end */
@@ -747,7 +747,7 @@ a.button:hover {
 
   .pagination_next,
 .pagination_previous {
-    background-color: #A49D4C;
+    background-color: #807500;
     font-size: 14px;
     position: relative;
   }
@@ -905,6 +905,7 @@ a.button:hover {
     top: 0;
     right: 0;
     text-indent: -9999px;
+    height: 100%;
   }
   #search-container button:after,
 #search-container .button:after {
@@ -1002,7 +1003,7 @@ a.button:hover {
   }
   .nav-menu a:hover, .nav-menu a:focus {
     background-color: #000;
-    color: #dbd37b;
+    color: #e6d200;
   }
 
   /* a top level navigation item in the mega menu */
@@ -1161,8 +1162,8 @@ a.button:hover {
   #item-filters > ul > li,
 #search-filters > ul > li {
     padding: 10.5px 10px;
-    background-color: #e2dfc0;
-    color: #706b34;
+    background-color: #ffee34;
+    color: #342f00;
   }
 
   #item-filters li li,
@@ -1205,10 +1206,10 @@ a.button:hover {
   .featured,
 #featured-exhibit {
     overflow: hidden;
-    background: #7B8D78;
+    background: #636E60;
     color: #fff;
     padding: 21px 21px 0;
-    border-bottom: 3px solid #4F584D;
+    border-bottom: 3px solid #4B5847;
     padding-bottom: 18px;
     margin-bottom: 21px;
   }
@@ -1218,7 +1219,7 @@ a.button:hover {
     font-weight: bold;
     margin: -21px -21px 21px;
     padding: 10.5px 21px;
-    background: #4F584D;
+    background: #4B5847;
     color: #fff;
   }
   .featured h3,
@@ -1227,11 +1228,11 @@ a.button:hover {
   }
   .featured a,
 #featured-exhibit a {
-    color: #cac58c;
+    color: #fff8bd;
   }
   .featured a:hover,
 #featured-exhibit a:hover {
-    color: #dbd37b;
+    color: white;
   }
 
   #home #content #primary {
@@ -1298,7 +1299,7 @@ a.button:hover {
     padding: 10.5px;
     text-align: center;
     color: #fff;
-    background: #A49D4C;
+    background: #807500;
     border-width: 0 1px 1px 0;
   }
   .items-nav a:hover,
@@ -1309,7 +1310,7 @@ a.button:hover {
 .secondary-nav li.active a,
 #exhibit-child-pages a:hover,
 #exhibit-child-pages li.active a {
-    background-color: #5e5a2c;
+    background-color: #1a1800;
     color: #fff;
   }
 
@@ -1363,7 +1364,6 @@ a.button:hover {
 
   .element-text {
     font-size: 14px;
-    margin-bottom: 42px;
   }
 
   .element-text-empty {
@@ -1374,7 +1374,7 @@ a.button:hover {
     clear: both;
     overflow: hidden;
     border-top: 1px solid #ddd;
-    padding-top: 20px;
+    padding: 20px 0 0 0;
     font-weight: bold;
     margin: 21px 0 0;
     float: left;
@@ -1442,26 +1442,28 @@ a.button:hover {
 
   .remove_search {
     padding: 5.25px 10px;
-    text-indent: -9999px;
-    width: 31.5px;
-    position: relative;
-    height: 31.5px;
   }
-  .remove_search:after {
-    content: "";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    text-indent: 0;
-    text-align: center;
-    width: 100%;
-    top: 0;
-    left: 0;
-    position: absolute;
-    line-height: 31.5px;
+
+  #search-narrow-by-fields .inputs {
+    line-height: 1;
+  }
+
+  .search-entry {
+    margin-top: 10.5px;
+    border: 1px solid #ddd;
+    padding: 10.5px;
+  }
+
+  .search-entry:only-child {
+    padding-bottom: 0;
   }
 
   .search-entry:first-child .advanced-search-joiner {
     display: none;
+  }
+
+  .advanced-search-terms input {
+    min-width: 50%;
   }
 
   /* @end */
@@ -1604,15 +1606,15 @@ div.record h2 {
     display: block;
     padding: 10.5px;
     color: #fff;
-    background: #A49D4C;
+    background: #807500;
     border-width: 0 1px 1px 0;
   }
   #exhibit-pages ul a:hover {
-    background-color: #5e5a2c;
+    background-color: #1a1800;
     color: #fff;
   }
   #exhibit-pages .current > a {
-    background-color: #706b34;
+    background-color: #342f00;
   }
 
   #exhibit-page-navigation {
