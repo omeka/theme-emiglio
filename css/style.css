@@ -1449,6 +1449,7 @@ a.button:hover {
   }
 
   .search-entry {
+    justify-content: space-between;
     margin-top: 10.5px;
     border: 1px solid #ddd;
     padding: 10.5px;

@@ -1078,6 +1078,7 @@ div.item {
 }
 
 .search-entry {
+    justify-content: space-between;
     margin-top: .5 * $spacing-unit;
     border: 1px solid $gray;
     padding: .5 * $spacing-unit;
