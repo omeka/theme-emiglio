@@ -1449,14 +1449,18 @@ a.button:hover {
   }
 
   .search-entry {
-    justify-content: space-between;
     margin-top: 10.5px;
     border: 1px solid #ddd;
     padding: 10.5px;
+    align-items: flex-end;
   }
-
-  .search-entry:only-child {
-    padding-bottom: 0;
+  .search-entry .input {
+    margin: 0 5.25px 0 0;
+  }
+  .search-entry select,
+.search-entry input[type=text],
+.search-entry button {
+    margin: 0;
   }
 
   .search-entry:first-child .advanced-search-joiner {
