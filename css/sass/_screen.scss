@@ -1094,6 +1094,14 @@ div.item {
     }
 }
 
+.input.advanced-search-terms {
+    flex-grow: 1;
+
+    input {
+        width: 100%;
+    }
+}
+
 .search-entry:first-child .advanced-search-joiner {
     display: none;
 }

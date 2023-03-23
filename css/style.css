@@ -1463,6 +1463,13 @@ a.button:hover {
     margin: 0;
   }
 
+  .input.advanced-search-terms {
+    flex-grow: 1;
+  }
+  .input.advanced-search-terms input {
+    width: 100%;
+  }
+
   .search-entry:first-child .advanced-search-joiner {
     display: none;
   }
