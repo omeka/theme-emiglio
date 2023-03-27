@@ -55,10 +55,14 @@ echo head(array('title'=>$pageTitle,'bodyclass' => 'collections browse'));
     
     <?php echo fire_plugin_hook('public_collections_browse', array('collections'=>$collections, 'view' => $this)); ?>
 </div><!-- end primary -->
+
+<?php if (get_theme_option('Display Featured Collection') !== '0'): ?>
 <div id="secondary">
     <div id="featured-collection" class="featured">
         <h2><?php echo __('Featured Collection'); ?></h2>
         <?php echo random_featured_collection(); ?>
     </div><!-- end featured collection -->
 </div>
+<?php endif; ?>
+
 <?php echo foot(); ?>

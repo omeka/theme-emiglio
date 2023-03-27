@@ -45,8 +45,10 @@ echo head(array('title' => $title, 'bodyclass' => 'exhibits browse'));
 <?php endif; ?>
 </div>
 
+<?php if (get_theme_option('Display Featured Exhibit') !== '0'): ?>
 <div id="secondary">
     <?php echo exhibit_builder_display_random_featured_exhibit(); ?>
 </div>
+<?php endif; ?>
 
 <?php echo foot(); ?>
