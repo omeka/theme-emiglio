@@ -439,13 +439,13 @@ th {
     font-size: 17.5px;
     line-height: 21px;
     margin-bottom: 21px;
-    color: #7B8D78;
+    color: #52714C;
   }
 
   h4 {
     margin-bottom: 21px;
     font-weight: bold;
-    color: #7B8D78;
+    color: #52714C;
   }
 
   p, ul, ol, dl {
@@ -504,11 +504,11 @@ ol ul {
   }
 
   a:hover {
-    color: #7B8D78;
+    color: #52714C;
   }
 
   a:active {
-    color: #7B8D78;
+    color: #52714C;
   }
 
   h1 a,

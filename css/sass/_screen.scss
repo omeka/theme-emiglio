@@ -46,14 +46,14 @@ h3 {
     font-size: 1.25 * $base-font-size;
     line-height: $base-line-height;
     margin-bottom: $spacing-unit;
-    color:#7B8D78;
+    color: $green;
 }
 
 
 h4 {
     margin-bottom: $spacing-unit;
     font-weight:bold;
-    color:#7B8D78;
+    color:$green;
 }
 
 p, ul, ol, dl {
@@ -111,9 +111,9 @@ a:link { color:$red; }
 
 a:visited { color:$yellow; }
 
-a:hover { color:#7B8D78; }
+a:hover { color:$green; }
 
-a:active { color:#7B8D78; }
+a:active { color:$green; }
 
 h1 a, 
 h2 a, 
