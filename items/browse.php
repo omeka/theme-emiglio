@@ -62,7 +62,7 @@ echo head(array('title'=>$pageTitle, 'bodyclass' => 'items browse'));
     <?php echo pagination_links(); ?>
 </div>
 
-<?php if (get_theme_option('Display Featured Item') !== '0'): ?>''
+<?php if (get_theme_option('Display Featured Item') !== '0'): ?>
 <div id="secondary">
     <!-- Featured Item -->
     <div id="featured-item" class="featured">
