@@ -618,6 +618,9 @@ a.button:hover {
     min-height: 42px;
     line-height: 42px;
   }
+  .inputs select {
+    max-width: 100%;
+  }
 
   #skipnav {
     border: 0;

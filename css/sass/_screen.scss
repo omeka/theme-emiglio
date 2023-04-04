@@ -224,6 +224,10 @@ label,
 .inputs {
     min-height: (2 * $spacing-unit);
     line-height: 2 * $base-line-height;
+
+    select {
+        max-width: 100%;
+    }
 }
 
 #skipnav {
