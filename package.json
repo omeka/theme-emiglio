@@ -1,6 +1,6 @@
 {
   "name": "emiglio",
-  "version": "2.4.4",
+  "version": "2.4.5",
   "description": "\"Named after our favorite robot. A simple, minimal theme with reds and greens.\"",
   "main": "gulpfile.js",
   "devDependencies": {
