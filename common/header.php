@@ -49,11 +49,11 @@
             <?php fire_plugin_hook('public_header', array('view'=>$this)); ?>
 
             <div id="search-container" role="search">
-                <?php if (get_theme_option('use_advanced_search') === null || get_theme_option('use_advanced_search')): ?>
-                <?php echo search_form(array('show_advanced' => true)); ?>
-                <?php else: ?>
-                <?php echo search_form(); ?>
-                <?php endif; ?>
+                <?php 
+                    $showAdvanced = get_theme_option('use_advanced_search'); 
+                    $formClass = ($showAdvanced) ? 'with-advanced' : '';
+                    echo search_form(array('show_advanced' => $showAdvanced, 'form_attributes' => array('class' => $formClass)));
+                ?>
             </div>
 
             <div id="site-title"><?php echo link_to_home_page(theme_logo()); ?></div>

@@ -565,7 +565,8 @@ textarea {
   input[type=submit],
 button,
 a.button {
-    appearance: none;
+    -webkit-appearance: none;
+            appearance: none;
     border-radius: 0;
     font-family: "Lato", sans-serif;
     font-size: 14px;
@@ -905,7 +906,6 @@ a.button:hover {
     width: 31.5px;
     position: absolute;
     top: 0;
-    right: 0;
     text-indent: -9999px;
     height: 100%;
   }
@@ -922,6 +922,9 @@ a.button:hover {
     line-height: 31.5px;
     text-align: center;
   }
+  #search-container [type=submit] {
+    right: 0;
+  }
   #search-container button:after {
     content: "";
   }
@@ -929,19 +932,19 @@ a.button:hover {
     content: "";
   }
 
-  #search-container.with-advanced input[type=text] {
+  .with-advanced input[type=text] {
     width: 100%;
     padding-right: 63px;
   }
-  #search-container.with-advanced button,
-#search-container.with-advanced .show-advanced {
+  .with-advanced button,
+.with-advanced .show-advanced {
     width: 31.5px;
     position: absolute;
   }
-  #search-container.with-advanced button {
+  .with-advanced button {
     right: 0;
   }
-  #search-container.with-advanced .show-advanced {
+  .with-advanced .show-advanced {
     width: 31.5px;
     color: #fff !important;
     display: block;

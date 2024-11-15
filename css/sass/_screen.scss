@@ -509,7 +509,6 @@ header {
         width: 1.5 * $spacing-unit;
         position: absolute;
         top: 0;
-        right: 0;
         text-indent: -9999px;
         height: 100%;
         
@@ -527,6 +526,10 @@ header {
         }
     }
 
+    [type="submit"] {
+        right: 0;
+    }
+
     button:after {
         content: "\f002";
     }
@@ -536,7 +539,7 @@ header {
     }
 }
 
-#search-container.with-advanced {
+.with-advanced {
     input[type=text] {
         width: 100%;
         padding-right: (3 * $spacing-unit);
