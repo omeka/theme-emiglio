@@ -1004,32 +1004,10 @@ div.item {
 
 .item-pagination {
     clear:both;
-    overflow:hidden;
-    border-top: 1px solid $gray;
-    padding: ($spacing-unit - 1px) 0 0 0;
-    font-weight:bold;
-    margin: $spacing-unit 0 0;
-    float: left;
+    padding-left: 0;
     width: 100%;
-
-    li {
-        display:block;
-        float:left;
-        width: 400px;
-        margin-bottom:0;
-    }
-
-    li.next {
-        float:right;
-        text-align:right;
-    }
-
-    a {
-        text-decoration:none;
-        display:block;
-        float:left;
-        width: 400px;
-    }
+    display: flex;
+    justify-content: space-between;
 }
 
 #sort-links {

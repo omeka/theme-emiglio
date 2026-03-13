@@ -49,11 +49,12 @@
         <div class="element-text"><?php echo metadata('item', 'citation', array('no_escape' => true)); ?></div>
     </div>
 
+    <nav aria-label="<?php echo __('Item pagination'); ?>">
+        <ul class="item-pagination navigation">
+            <li id="previous-item" class="previous"><?php echo link_to_previous_item_show(); ?></li>
+            <li id="next-item" class="next"><?php echo link_to_next_item_show(); ?></li>
+        </ul>
+    </nav>
 </div><!-- end secondary -->
-
-<ul class="item-pagination navigation">
-    <li id="previous-item" class="previous"><?php echo link_to_previous_item_show(); ?></li>
-    <li id="next-item" class="next"><?php echo link_to_next_item_show(); ?></li>
-</ul>
 
 <?php echo foot();

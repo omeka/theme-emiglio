@@ -565,8 +565,7 @@ textarea {
   input[type=submit],
 button,
 a.button {
-    -webkit-appearance: none;
-            appearance: none;
+    appearance: none;
     border-radius: 0;
     font-family: "Lato", sans-serif;
     font-size: 14px;
@@ -1379,29 +1378,10 @@ a.button:hover {
 
   .item-pagination {
     clear: both;
-    overflow: hidden;
-    border-top: 1px solid #ddd;
-    padding: 20px 0 0 0;
-    font-weight: bold;
-    margin: 21px 0 0;
-    float: left;
+    padding-left: 0;
     width: 100%;
-  }
-  .item-pagination li {
-    display: block;
-    float: left;
-    width: 400px;
-    margin-bottom: 0;
-  }
-  .item-pagination li.next {
-    float: right;
-    text-align: right;
-  }
-  .item-pagination a {
-    text-decoration: none;
-    display: block;
-    float: left;
-    width: 400px;
+    display: flex;
+    justify-content: space-between;
   }
 
   #sort-links {
