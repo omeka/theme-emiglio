@@ -1382,6 +1382,19 @@ a.button:hover {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    margin-top: 21px;
+  }
+  .item-pagination .next {
+    margin-left: auto;
+  }
+  .item-pagination a {
+    background-color: #807500;
+    color: #fff;
+    text-decoration: none;
+    padding: 5.25px;
+  }
+  .item-pagination a:hover {
+    background-color: #342f00;
   }
 
   #sort-links {

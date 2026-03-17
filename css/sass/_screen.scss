@@ -1008,6 +1008,22 @@ div.item {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    margin-top: $spacing-unit;
+
+    .next {
+        margin-left: auto;
+    }
+
+    a {
+        background-color: $yellow;
+        color: #fff;
+        text-decoration: none;
+        padding: (.25 * $spacing-unit);
+
+        &:hover {
+            background-color: darken($yellow, 15%);
+        }
+    }
 }
 
 #sort-links {
