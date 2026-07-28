@@ -12,6 +12,27 @@ Table of Contents
 -- Exhibits
 */
 
+
+@mixin font-face(
+    $filename,
+    $family,
+    $style: normal,
+    $weight: 400
+) {
+    @font-face {
+        font-family: $family;
+        font-style: $style;
+        font-weight: $weight;
+        font-display: swap;
+        src: url("../fonts/#{$filename}.woff2") format("woff2"), url("../fonts/#{$filename}.woff") format("woff");
+    }
+}
+
+@include font-face("Lato-Regular", "Lato");
+@include font-face("Lato-Italic", "Lato", $style: italic);
+@include font-face("Lato-Bold", "Lato", $weight: 700);
+@include font-face("Lato-BoldItalic", "Lato", $style: italic, $weight: 700);
+
 /* @group ----- Generic HTML elements ----- */
 
 * {
