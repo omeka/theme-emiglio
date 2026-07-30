@@ -408,11 +408,11 @@ label,
 }
 
 .pagination_next a:after {
-    content: "\f105";
+    content: "\f105" / "";
 }
 
 .pagination_previous a:after {
-    content: "\f104";
+    content: "\f104" / "";
 }
 
 .pagination li {
@@ -552,11 +552,11 @@ header {
     }
 
     button:after {
-        content: "\f002";
+        content: "\f002" / "";
     }
 
     .show-advanced:after {
-        content: "\f141";
+        content: "\f141" / "";
     }
 }
 
@@ -717,7 +717,7 @@ header {
     
     a {
         &:before {
-            content: "\2014\0020";
+            content: "\2014\0020" / "";
         }
     }
 }
@@ -732,7 +732,7 @@ header {
 
 [aria-haspopup="true"]:after {
     font-family: "Font Awesome 5 Free";
-    content: "\f0da";
+    content: "\f0da" / "";
     font-weight: 900;
     margin: 0 0 0 .5em;
     vertical-align: bottom;
@@ -741,7 +741,7 @@ header {
 }
 
 [aria-haspopup="true"].open:after {
-    content: "\f0d7";
+    content: "\f0d7" / "";
 }
 
 #header-image {
@@ -1070,11 +1070,11 @@ div.item {
 }
 
 .asc a:after {
-    content: "\00a0\f0d8";
+    content: "\00a0\f0d8" / "";
 }
 
 .desc a:after {
-    content: "\00a0\f0d7";
+    content: "\00a0\f0d7" / "";
 }
 
 .sorting {
@@ -1215,7 +1215,7 @@ div.record h2 {
     padding: $spacing-unit 0;    
 
     &:after {
-        content: "";
+        content: "" / "";
         display: block;
         position: absolute;
         left: (-1 * $spacing-unit);

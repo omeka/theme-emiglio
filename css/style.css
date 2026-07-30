@@ -798,11 +798,11 @@ a.button:hover {
   }
 
   .pagination_next a:after {
-    content: "";
+    content: ""/"";
   }
 
   .pagination_previous a:after {
-    content: "";
+    content: ""/"";
   }
 
   .pagination li {
@@ -953,10 +953,10 @@ a.button:hover {
     right: 0;
   }
   #search-container button:after {
-    content: "";
+    content: ""/"";
   }
   #search-container .show-advanced:after {
-    content: "";
+    content: ""/"";
   }
 
   .with-advanced input[type=text] {
@@ -1100,7 +1100,7 @@ a.button:hover {
     padding: 0;
   }
   .sub-nav ul a:before {
-    content: "— ";
+    content: "— "/"";
   }
 
   /* list item within sub-navigation panel */
@@ -1113,7 +1113,7 @@ a.button:hover {
 
   [aria-haspopup=true]:after {
     font-family: "Font Awesome 5 Free";
-    content: "";
+    content: ""/"";
     font-weight: 900;
     margin: 0 0 0 0.5em;
     vertical-align: bottom;
@@ -1122,7 +1122,7 @@ a.button:hover {
   }
 
   [aria-haspopup=true].open:after {
-    content: "";
+    content: ""/"";
   }
 
   #header-image {
@@ -1447,11 +1447,11 @@ a.button:hover {
   }
 
   .asc a:after {
-    content: " ";
+    content: " "/"";
   }
 
   .desc a:after {
-    content: " ";
+    content: " "/"";
   }
 
   .sorting {
@@ -1577,7 +1577,7 @@ div.record h2 {
     padding: 21px 0;
   }
   .summary #exhibit-pages:after {
-    content: "";
+    content: ""/"";
     display: block;
     position: absolute;
     left: -21px;
