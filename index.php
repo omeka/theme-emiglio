@@ -1,5 +1,7 @@
 <?php echo head(array('bodyid'=>'home')); ?>
 
+<h1 class="sr-only"><?php echo __('Home'); ?></h1>
+
 <?php if ($homepageText = get_theme_option('Homepage Text')): ?>
     <!-- Homepage Text -->
     <div id="intro">
